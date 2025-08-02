@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { LineShadowText } from "@/components/magicui/line-shadow-text";
 
 export default function Home() {
     useEffect(() => {
@@ -58,7 +59,12 @@ export default function Home() {
                                 transition={{ delay: 0.2, duration: 0.8 }}
                             >
                                 SYMPOSIUM{" "}
-                                <span className="text-emerald-300">2025</span>
+                                <LineShadowText
+                                    className="italic"
+                                    shadowColor={"white"}
+                                >
+                                    2025
+                                </LineShadowText>
                             </motion.span>
                         </h1>
 

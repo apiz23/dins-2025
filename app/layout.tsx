@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${poppins.className}`}>
                 <Navbar />
+                <SmoothCursor />
                 {children}
             </body>
         </html>
