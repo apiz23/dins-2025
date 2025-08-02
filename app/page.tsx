@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LineShadowText } from "@/components/magicui/line-shadow-text";
+import Footer from "@/components/footer";
 
 export default function Home() {
     useEffect(() => {
@@ -30,7 +31,6 @@ export default function Home() {
                 },
             });
         });
-
         return () => ctx.revert();
     }, []);
     return (
@@ -151,7 +151,7 @@ export default function Home() {
                             }}
                             className="flex flex-col items-center"
                         >
-                            <span className="text-sm text-white/80 mb-2 tracking-wider">
+                            <span className="text-lg text-white/80 mb-2 tracking-wider">
                                 EXPLORE MORE
                             </span>
                             <svg
@@ -203,7 +203,7 @@ export default function Home() {
             </div>
 
             {/* Outro Section */}
-            <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-br from-black to-gray-800 px-4">
+            <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-b from-black to-gray-800 px-4">
                 <div className="p-12 rounded-3xl shadow-xl max-w-2xl text-center">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                         Thank you for joining DINS 2025 🚀
@@ -213,6 +213,7 @@ export default function Home() {
                     </p>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

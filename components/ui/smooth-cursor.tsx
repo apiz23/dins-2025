@@ -184,6 +184,7 @@ export function SmoothCursor({
 
     return (
         <motion.div
+            className={isMoving ? "opacity-100 scale-110" : "opacity-90"}
             style={{
                 position: "fixed",
                 left: cursorX,

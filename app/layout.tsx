@@ -10,8 +10,16 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-    title: "DIGITAL INNOVATHON SYMPOSIUM",
-    description: "DIGITAL INNOVATHON SYMPOSIUM",
+    title: "Digital Innovathon Symposium",
+    description: "Digital Innovathon Symposium",
+    icons: {
+        icon: [
+            {
+                url: "/favicon.ico",
+                href: "/favicon.ico",
+            },
+        ],
+    },
 };
 
 export default function RootLayout({
