@@ -310,8 +310,8 @@ export function TimelineEvent() {
     ];
 
     return (
-        <section className="relative w-full bg-gradient-to-b from-gray-900 to-black overflow-hidden">
-            <div className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <section className="relative w-full bg-gradient-to-bl from-gray-900 to-black overflow-hidden">
+            <div className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8" id="schedule">
                 <div className="mt-12 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                         Event Timeline

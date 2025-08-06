@@ -1,10 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { LineShadowText } from "../magicui/line-shadow-text";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-black to-gray-800">
+        <section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-bl from-black to-gray-800">
             <div className="relative z-10 min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 py-16 md:py-24">
                 {/* Main Heading */}
                 <motion.div
@@ -28,13 +27,7 @@ export default function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.8 }}
                         >
-                            SYMPOSIUM{" "}
-                            <LineShadowText
-                                className="italic"
-                                shadowColor={"white"}
-                            >
-                                2025
-                            </LineShadowText>
+                            SYMPOSIUM 2025
                         </motion.span>
                     </h1>
 

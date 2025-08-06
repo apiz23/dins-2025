@@ -1,6 +1,9 @@
+"use client";
+
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 export default function HorizontolInfo() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -25,41 +28,188 @@ export default function HorizontolInfo() {
                 },
             });
         });
+
         return () => ctx.revert();
     }, []);
 
     return (
-        <>
-            {/* Horizontal Scroll Section */}
-            <div className="container flex h-screen w-[400vw]">
-                {/* Panel 1 */}
-                <div className="panel flex-shrink-0 w-screen h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-600">
-                    <h2 className="text-4xl md:text-6xl font-bold text-white">
-                        Innovation Hub
+        <div className="container flex h-screen w-[300vw]">
+            {/* Panel 1 - Title */}
+            <div className="panel flex-shrink-0 w-screen h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 to-black px-10 text-center">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+                        Participation{" "}
+                        <span className="text-blue-400">Details</span>
                     </h2>
-                </div>
 
-                {/* Panel 2 */}
-                <div className="panel flex-shrink-0 w-screen h-screen flex items-center justify-center bg-gradient-to-br from-emerald-900 to-emerald-600">
-                    <h2 className="text-4xl md:text-6xl font-bold text-white">
-                        Digital Transformation
-                    </h2>
-                </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
+                            <h3 className="text-xl font-semibold text-blue-400 mb-3">
+                                Team Formation
+                            </h3>
+                            <ul className="space-y-3 text-gray-300">
+                                <li className="flex items-start gap-2">
+                                    <span className="text-emerald-400 mt-1">
+                                        ✓
+                                    </span>
+                                    <span>Open to all university students</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-emerald-400 mt-1">
+                                        ✓
+                                    </span>
+                                    <span>Teams of 2-5 members</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-emerald-400 mt-1">
+                                        ✓
+                                    </span>
+                                    <span>Single registration per team</span>
+                                </li>
+                            </ul>
+                        </div>
 
-                {/* Panel 3 */}
-                <div className="panel flex-shrink-0 w-screen h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 to-purple-600">
-                    <h2 className="text-4xl md:text-6xl font-bold text-white">
-                        100+ Innovators
-                    </h2>
-                </div>
-
-                {/* Panel 4 */}
-                <div className="panel flex-shrink-0 w-screen h-screen flex items-center justify-center bg-gradient-to-br from-pink-900 to-pink-600">
-                    <h2 className="text-4xl md:text-6xl font-bold text-white">
-                        30+ Global Speakers
-                    </h2>
+                        <div className="bg-gray-800/50 p-6 rounded-xl border border-gray-700">
+                            <h3 className="text-xl font-semibold text-purple-400 mb-3">
+                                Event Structure
+                            </h3>
+                            <ul className="space-y-3 text-gray-300">
+                                <li className="flex items-start gap-2">
+                                    <span className="text-emerald-400 mt-1">
+                                        ✓
+                                    </span>
+                                    <span>48-hour innovation sprint</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-emerald-400 mt-1">
+                                        ✓
+                                    </span>
+                                    <span>Mentorship sessions</span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-emerald-400 mt-1">
+                                        ✓
+                                    </span>
+                                    <span>Final pitch showcase</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </>
+
+            {/* Panel 3 - Benefits */}
+            <div className="panel flex-shrink-0 w-screen h-screen flex items-center justify-center bg-black  px-10 text-center">
+                <div className="absolute inset-0 overflow-hidden opacity-20"></div>
+                <div className="relative z-10 max-w-6xl mx-auto">
+                    <h2 className="text-3xl md:text-5xl font-semibold text-white mb-10 text-center">
+                        Why{" "}
+                        <span className="text-emerald-400">Participate?</span>{" "}
+                        💡
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                            {
+                                icon: "💸",
+                                title: "Exciting Prizes",
+                                desc: "Worth up to RM1,000 or more!",
+                                color: "text-yellow-400",
+                            },
+                            {
+                                icon: "🎤",
+                                title: "Expert Sessions",
+                                desc: "Keynotes by industry leaders",
+                                color: "text-blue-400",
+                            },
+                            {
+                                icon: "🛠️",
+                                title: "Hands-on Workshops",
+                                desc: "Interactive learning experiences",
+                                color: "text-purple-400",
+                            },
+                            {
+                                icon: "🌍",
+                                title: "Real Impact",
+                                desc: "Build solutions for real problems",
+                                color: "text-green-400",
+                            },
+                            {
+                                icon: "🧠",
+                                title: "Creativity Unleashed",
+                                desc: "Platform for your best ideas",
+                                color: "text-pink-400",
+                            },
+                            {
+                                icon: "🤝",
+                                title: "Networking",
+                                desc: "Connect with like-minded peers",
+                                color: "text-cyan-400",
+                            },
+                        ].map((item, index) => (
+                            <div
+                                key={index}
+                                className="bg-gray-900/70 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-emerald-400 transition-all"
+                            >
+                                <span className={`text-3xl ${item.color}`}>
+                                    {item.icon}
+                                </span>
+                                <h3 className="text-xl font-semibold text-white mt-3">
+                                    {item.title}
+                                </h3>
+                                <p className="text-gray-300 mt-2">
+                                    {item.desc}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* Panel 4 - Terms & Values */}
+            <div className="panel flex-shrink-0 w-screen h-screen flex items-center justify-center bg-gradient-to-tl from-gray-900 to-black px-10 text-center">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+                        Our <span className="text-blue-400">Commitment</span>
+                    </h2>
+
+                    <div className="space-y-6">
+                        {[
+                            {
+                                title: "Inclusive Environment",
+                                desc: "We welcome participants from all backgrounds and skill levels",
+                                icon: "🌍",
+                            },
+                            {
+                                title: "Fair Judging",
+                                desc: "Transparent evaluation criteria and experienced judges",
+                                icon: "⚖️",
+                            },
+                            {
+                                title: "Quality Content",
+                                desc: "Curated workshops and mentorship sessions",
+                                icon: "✨",
+                            },
+                            {
+                                title: "Safe Space",
+                                desc: "Zero tolerance for harassment or discrimination",
+                                icon: "🛡️",
+                            },
+                        ].map((item, index) => (
+                            <div key={index} className="flex gap-4">
+                                <div className="bg-blue-500/20 p-3 rounded-lg text-blue-400 text-xl">
+                                    {item.icon}
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-semibold text-white">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-gray-400">{item.desc}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 }
