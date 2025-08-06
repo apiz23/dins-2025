@@ -33,10 +33,7 @@ export default function Navbar() {
                         <AnchorLink href="#hero" offset={80}>
                             <div className="flex items-center space-x-3 cursor-pointer">
                                 <Avatar className="h-9 w-9 border border-emerald-400/30">
-                                    <AvatarImage
-                                        src="/logo.png"
-                                        alt="DINS Logo"
-                                    />
+                                    <AvatarImage src="https://github.com/shadcn.png" />
                                     <AvatarFallback className="bg-gradient-to-br from-blue-600 to-emerald-500 text-white font-bold">
                                         DINS
                                     </AvatarFallback>
