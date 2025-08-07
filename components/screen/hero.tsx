@@ -14,9 +14,9 @@ export default function Hero() {
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     className="md:max-w-6xl mx-auto w-full"
                 >
-                    <h1 className="text-5xl md:text-6xl lg:text-[90px] font-bold text-white mb-4 sm:mb-6 leading-tight tracking-tight">
+                    <h1 className="text-4xl md:text-6xl lg:text-[80px] font-bold text-white mb-4 sm:mb-6 leading-tight tracking-tighter">
                         <motion.span
-                            className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"
+                            className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-emerald-400"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1, duration: 0.8 }}
@@ -41,12 +41,16 @@ export default function Hero() {
                         className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto mt-3 sm:mt-6 leading-relaxed px-2"
                     >
                         Where{" "}
-                        <span className="font-semibold text-blue-300">
+                        <span className="font-semibold text-blue-300 bg-white/5 px-1.5 py-0.5 rounded-md">
                             Innovation
                         </span>{" "}
-                        Meets{" "}
-                        <span className="font-semibold text-emerald-300">
+                        meets{" "}
+                        <span className="font-semibold text-emerald-300 bg-white/5 px-1.5 py-0.5 rounded-md">
                             Digital Transformation
+                        </span>{" "}
+                        in a{" "}
+                        <span className="font-semibold text-purple-300 bg-white/5 px-1.5 py-0.5 rounded-md">
+                            3-day immersive experience
                         </span>
                     </motion.p>
                 </motion.div>
@@ -62,24 +66,36 @@ export default function Hero() {
                         href="https://docs.google.com/forms/d/e/1FAIpQLScTZ-hp-i0fr51nNivRIInBJSYiiU4VIakaiFxULgAOoLECtw/viewform"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-5 py-2.5 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-500 to-emerald-500 text-white font-semibold rounded-full hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 text-sm sm:text-base"
+                        className="relative overflow-hidden group px-5 py-2.5 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-500 to-emerald-500 text-white font-semibold rounded-full hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300 text-sm sm:text-base"
                     >
-                        <motion.button
+                        <motion.div
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
+                            className="relative z-10 flex items-center justify-center"
                         >
-                            {" "}
                             Register Now
-                            <span className="ml-1">→</span>
-                        </motion.button>
+                            <span className="ml-2 transition-transform group-hover:translate-x-1">
+                                →
+                            </span>
+                        </motion.div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </Link>
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-5 py-2.5 sm:px-8 sm:py-3.5 bg-transparent border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/5 hover:border-white/50 transition-all duration-300 text-sm sm:text-base"
+                    <Link
+                        href="#about"
+                        className="relative overflow-hidden group px-5 py-2.5 sm:px-8 sm:py-3.5 bg-transparent border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/5 hover:border-white/50 transition-all duration-300 text-sm sm:text-base"
                     >
-                        Learn More
-                    </motion.button>
+                        <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="relative z-10 flex items-center justify-center"
+                        >
+                            Learn More
+                            <span className="ml-2 transition-transform group-hover:translate-x-1">
+                                ↓
+                            </span>
+                        </motion.div>
+                        <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </Link>
                 </motion.div>
 
                 {/* Stats */}
@@ -97,8 +113,11 @@ export default function Hero() {
                         <motion.div
                             key={index}
                             whileHover={{ y: -5 }}
-                            className="flex flex-col items-center p-3 sm:p-5 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-white/20 transition-all"
+                            className="flex flex-col items-center p-3 sm:p-5 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-white/20 transition-all hover:shadow-lg hover:shadow-blue-500/10 relative overflow-hidden group"
                         >
+                            {/* Animated highlight on hover */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
                             <div className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
                                 {item.number}
                             </div>
@@ -125,12 +144,12 @@ export default function Hero() {
                             repeat: Infinity,
                             ease: "easeInOut",
                         }}
-                        className="flex flex-col items-center"
+                        className="flex flex-col items-center group cursor-pointer"
                     >
-                        <span className="text-xs sm:text-sm text-white/80 mb-1 tracking-wider">
+                        <span className="text-xs sm:text-sm text-white/80 mb-1 tracking-wider transition-colors group-hover:text-white">
                             EXPLORE MORE
                         </span>
-                        <ChevronDown className="text-white" />
+                        <ChevronDown className="text-white/80 group-hover:text-white transition-colors" />
                     </motion.div>
                 </motion.div>
             </div>

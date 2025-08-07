@@ -7,7 +7,6 @@ import {
     PartyPopper,
     Download,
     MapPin,
-    CalendarPlus,
     AlertTriangle,
     FileText,
     File,
@@ -25,7 +24,6 @@ import t1 from "@/public/images/timeline/t1.png";
 import t2 from "@/public/images/timeline/t2.png";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
-import CountdownProgress from "../countdown";
 
 export function TimelineEvent() {
     const data = [
@@ -45,11 +43,6 @@ export function TimelineEvent() {
                                 </h3>
 
                                 <div className="flex flex-wrap items-center gap-3">
-                                    <div className="flex items-center gap-1.5 text-sm text-blue-300">
-                                        <Clock className="h-4 w-4" />
-                                        <CountdownProgress endDate="2025-08-15" />
-                                    </div>
-
                                     <Badge variant="secondary">
                                         All Participants
                                     </Badge>
@@ -145,10 +138,6 @@ export function TimelineEvent() {
                                     Final submissions must be in PDF format and
                                     adhere to the conference guidelines
                                 </p>
-                                <div className="flex items-center gap-1.5 text-sm text-blue-300">
-                                    <Clock className="h-4 w-4" />
-                                    <CountdownProgress endDate="2025-10-20" />
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -226,10 +215,7 @@ export function TimelineEvent() {
                             <CalendarDays className="h-5 w-5 text-purple-400" />
                             Symposium Day @ Universiti Tun Hussein Onn Malaysia
                         </h3>
-                        <div className="flex items-center gap-1.5 text-sm text-blue-300">
-                            <Clock className="h-4 w-4" />
-                            <CountdownProgress endDate="2025-11-03" />
-                        </div>
+
                         <p className="mt-2 text-sm text-neutral-400 flex items-center gap-2">
                             <Clock className="h-4 w-4 text-purple-400" />
                             <span>Main Campus, 9:00 AM - 5:00 PM</span>

@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import ClientWrapper from "@/lib/client-wrapper";
+import { ScrollProgress } from "@/components/magicui/scroll-progress";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -31,7 +32,10 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${poppins.className}`}>
                 <Navbar />
-                <ClientWrapper>{children}</ClientWrapper>
+                <ClientWrapper>
+                    <ScrollProgress />
+                    {children}
+                </ClientWrapper>
             </body>
         </html>
     );

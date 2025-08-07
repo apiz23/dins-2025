@@ -15,6 +15,7 @@ import Lenis from "lenis";
 import Link from "next/link";
 import Image from "next/image";
 import tvLogo from "@/public/images/tv-logo.svg";
+import uthmLogo from "@/public/images/unis/uthm.png";
 
 export default function Footer() {
     useEffect(() => {
@@ -134,11 +135,11 @@ export default function Footer() {
                     <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
                         <div className="flex items-center gap-3">
                             <Image
-                                src={tvLogo}
+                                src={uthmLogo}
                                 alt="UTHM Logo"
-                                width={32}
-                                height={32}
-                                className="w-8 h-8 object-contain"
+                                width={100}
+                                height={100}
+                                className="w-12 h-12 object-contain bg-white rounded-full p-1"
                             />
                             <span className="text-gray-400 text-sm">
                                 © 2024 Universiti Tun Hussein Onn Malaysia
@@ -149,9 +150,9 @@ export default function Footer() {
                             <Image
                                 src={tvLogo}
                                 alt="Tech Ventura Logo"
-                                width={32}
-                                height={32}
-                                className="w-8 h-8 object-contain"
+                                width={100}
+                                height={100}
+                                className="w-12 h-12 object-contain bg-white rounded-full p-1"
                             />
                             <span className="text-gray-400 hover:text-white transition-colors text-sm">
                                 Tech Ventura
