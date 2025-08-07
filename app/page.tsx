@@ -38,7 +38,7 @@ export default function Home() {
 
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <Link
-                            href="https://docs.google.com/forms/YOUR_FORM_LINK"
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScTZ-hp-i0fr51nNivRIInBJSYiiU4VIakaiFxULgAOoLECtw/viewform"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="px-8 py-4 bg-gradient-to-r from-blue-500 to-emerald-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:scale-105"
