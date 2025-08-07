@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
     return (
-        <section className="relative h-screen w-full overflow-hidden bg-gradient-to-bl from-black to-gray-800">
+        <section className="relative h-screen w-full bg-gradient-to-bl from-black to-gray-800">
             <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8">
                 {/* Main Heading */}
                 <motion.div
