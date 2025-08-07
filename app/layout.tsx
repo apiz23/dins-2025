@@ -29,10 +29,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${poppins.className} md:overflow-hidden`}>
+            <body className={`${poppins.className}`}>
                 <Navbar />
-                <ClientWrapper />
-                {children}
+                <ClientWrapper>{children}</ClientWrapper>
             </body>
         </html>
     );

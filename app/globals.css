@@ -138,17 +138,6 @@
     body {
         @apply bg-background text-foreground;
     }
-    input,
-    textarea,
-    select {
-        cursor: text !important;
-    }
-    @media (min-width: 768px) {
-        html,
-        body {
-            overflow: hidden;
-        }
-    }
 }
 
 @theme inline {

@@ -24,6 +24,8 @@ import Image from "next/image";
 import t1 from "@/public/images/timeline/t1.png";
 import t2 from "@/public/images/timeline/t2.png";
 import Link from "next/link";
+import { Badge } from "../ui/badge";
+import CountdownProgress from "../countdown";
 
 export function TimelineEvent() {
     const data = [
@@ -37,26 +39,27 @@ export function TimelineEvent() {
                             <div className="bg-blue-500/10 p-2 rounded-lg border border-blue-500/20">
                                 <CalendarCheck className="h-5 w-5 text-blue-400" />
                             </div>
-                            <div>
-                                <h3 className="text-lg font-medium text-neutral-100">
+                            <div className="flex flex-col gap-2">
+                                <h3 className="text-base sm:text-lg font-medium text-neutral-100">
                                     Registration & Payment Period
                                 </h3>
-                                <div className="mt-2 flex items-center gap-3">
+
+                                <div className="flex flex-wrap items-center gap-3">
                                     <div className="flex items-center gap-1.5 text-sm text-blue-300">
                                         <Clock className="h-4 w-4" />
-                                        <span>45 days remaining</span>
+                                        <CountdownProgress endDate="2025-08-15" />
                                     </div>
-                                    <div className="h-1.5 w-1.5 rounded-full bg-gray-500"></div>
-                                    <div className="text-xs px-2 py-1 bg-gray-700/60 rounded-full text-gray-300 border border-gray-600">
-                                        All participants
-                                    </div>
+
+                                    <Badge variant="secondary">
+                                        All Participants
+                                    </Badge>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/60 p-5 rounded-xl border border-gray-700 shadow-xl overflow-hidden">
-                        <div className="relative w-full aspect-square rounded-xl overflow-hidden border-2 border-gray-700 shadow-2xl">
+                        <div className="relative w-full h-[250px] sm:aspect-square sm:h-auto rounded-xl overflow-hidden border-2 border-gray-700 shadow-2xl">
                             <Image
                                 src={t1}
                                 alt="Registration period"
@@ -65,19 +68,6 @@ export function TimelineEvent() {
                                 priority
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/30 to-transparent pointer-events-none" />
-                        </div>
-
-                        <div className="mt-4">
-                            <div className="flex justify-between text-xs text-neutral-400 mb-1">
-                                <span>Time remaining</span>
-                                <span>45 of 60 days</span>
-                            </div>
-                            <div className="w-full bg-gray-700 rounded-full h-2">
-                                <div
-                                    className="bg-gradient-to-r from-blue-500 to-emerald-500 h-2 rounded-full"
-                                    style={{ width: "75%" }}
-                                ></div>
-                            </div>
                         </div>
 
                         {/* Enhanced Action Buttons */}
@@ -155,12 +145,15 @@ export function TimelineEvent() {
                                     Final submissions must be in PDF format and
                                     adhere to the conference guidelines
                                 </p>
+                                <div className="flex items-center gap-1.5 text-sm text-blue-300">
+                                    <Clock className="h-4 w-4" />
+                                    <CountdownProgress endDate="2025-10-20" />
+                                </div>
                             </div>
                         </div>
                     </div>
-
                     <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/60 p-5 rounded-xl border border-gray-700 shadow-xl overflow-hidden">
-                        <div className="relative w-full aspect-square rounded-xl overflow-hidden border-2 border-gray-700 shadow-2xl">
+                        <div className="relative w-full h-[250px] sm:aspect-square sm:h-auto rounded-xl overflow-hidden border-2 border-gray-700 shadow-2xl">
                             <Image
                                 src={t2}
                                 alt="Registration period"
@@ -233,6 +226,10 @@ export function TimelineEvent() {
                             <CalendarDays className="h-5 w-5 text-purple-400" />
                             Symposium Day @ Universiti Tun Hussein Onn Malaysia
                         </h3>
+                        <div className="flex items-center gap-1.5 text-sm text-blue-300">
+                            <Clock className="h-4 w-4" />
+                            <CountdownProgress endDate="2025-11-03" />
+                        </div>
                         <p className="mt-2 text-sm text-neutral-400 flex items-center gap-2">
                             <Clock className="h-4 w-4 text-purple-400" />
                             <span>Main Campus, 9:00 AM - 5:00 PM</span>
@@ -249,17 +246,15 @@ export function TimelineEvent() {
                         </h4>
 
                         {/* Enhanced Google Map Embed */}
-                        <div className="relative rounded-xl overflow-hidden border-2 border-gray-700 shadow-2xl">
+                        <div className="relative w-full aspect-video max-h-[400px] md:max-h-[450px] rounded-xl overflow-hidden border-2 border-gray-700 shadow-2xl">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.160378290877!2d103.0852!3d1.8554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da72f8a7a8b2c5%3A0x9f7cf7e6b9a05a!2sUniversiti%20Tun%20Hussein%20Onn%20Malaysia!5e0!3m2!1sen!2smy!4v1691505630664!5m2!1sen!2smy"
-                                width="100%"
-                                height="450"
-                                allowFullScreen={true}
+                                allowFullScreen
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                className="block"
+                                className="w-full h-full"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent pointer-events-none"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent pointer-events-none" />
                         </div>
 
                         <div className="mt-6 space-y-3">
@@ -296,12 +291,6 @@ export function TimelineEvent() {
                                     View Campus Map
                                 </span>
                             </Link>
-                            <button className="w-full py-3 bg-gradient-to-r from-gray-700/40 to-gray-800/30 hover:from-gray-700/50 hover:to-gray-800/40 rounded-lg text-neutral-100 border border-gray-600/30 flex items-center justify-center gap-2 transition-all hover:shadow-gray-500/10 hover:shadow-md">
-                                <CalendarPlus className="h-5 w-5" />
-                                <span className="font-medium">
-                                    Add to Calendar
-                                </span>
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -311,7 +300,10 @@ export function TimelineEvent() {
 
     return (
         <section className="relative w-full bg-gradient-to-bl from-gray-900 to-black overflow-hidden">
-            <div className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8" id="schedule">
+            <div
+                className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8"
+                id="schedule"
+            >
                 <div className="mt-12 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                         Event Timeline

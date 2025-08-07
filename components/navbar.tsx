@@ -14,19 +14,22 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 // @ts-expect-error no types available
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { PanelBottomOpen } from "lucide-react";
-import Link from "next/link";
+import * as React from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Navbar() {
+    const isMobile = useIsMobile();
+
     return (
         <motion.nav
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-black/80 border-b border-gray-800/50"
+            className="w-full bg-black border-b border-gray-800/50 backdrop-blur-sm"
         >
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
-                    {/* Logo - scrolls to top */}
+                    {/* Logo */}
                     <motion.div
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -47,8 +50,12 @@ export default function Navbar() {
                         </AnchorLink>
                     </motion.div>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden lg:flex items-center space-x-1">
+                    {/* Desktop Nav */}
+                    <div
+                        className={`hidden lg:flex items-center space-x-1 ${
+                            isMobile ? "invisible" : "visible"
+                        }`}
+                    >
                         {[
                             { name: "About", id: "about" },
                             { name: "Schedule", id: "schedule" },
@@ -70,7 +77,7 @@ export default function Navbar() {
                         ))}
                     </div>
 
-                    {/* Mobile Navigation - Drawer */}
+                    {/* Mobile Nav - Drawer */}
                     <div className="lg:hidden flex items-center">
                         <Drawer>
                             <DrawerTrigger asChild>
@@ -83,7 +90,11 @@ export default function Navbar() {
                                 </motion.button>
                             </DrawerTrigger>
 
-                            <DrawerContent className="bg-gradient-to-br from-gray-900 to-black backdrop-blur-2xl border-t-2 border-gray-900/50">
+                            <DrawerContent
+                                className={`bg-gradient-to-br from-gray-900 to-black backdrop-blur-2xl border-t-2 border-gray-900/50 h-screen overflow-y-auto ${
+                                    isMobile ? "" : "hidden"
+                                }`}
+                            >
                                 <DrawerHeader className="pt-6 px-6">
                                     <div className="flex items-center space-x-3">
                                         <Avatar className="h-9 w-9 border border-emerald-400/30">

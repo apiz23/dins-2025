@@ -2,16 +2,22 @@
 
 import Footer from "@/components/footer";
 import { TimelineEvent } from "@/components/screen/timeline-event";
-import HorizontolInfo from "@/components/screen/horizontol-info";
+import {
+    HorizontolInfo,
+    VerticalInfo,
+} from "@/components/screen/horizontol-info";
 import Hero from "@/components/screen/hero";
-import { Github, Car, Square, FileText, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Home() {
+    const isMobile = useIsMobile();
+
     return (
         <>
             <Hero />
-            <HorizontolInfo />
+            <VerticalInfo />
             <TimelineEvent />
             {/* Registration CTA Section */}
             <div className="relative flex flex-col justify-center items-center min-h-screen bg-gradient-to-b from-black to-gray-900 px-4 overflow-hidden">
