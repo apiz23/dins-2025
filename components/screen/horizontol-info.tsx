@@ -14,6 +14,7 @@ import uthm from "@/public/images/unis/uthm.png";
 import Image, { StaticImageData } from "next/image";
 import { Marquee } from "../magicui/marquee";
 import { Calendar, CheckCircle, Users } from "lucide-react";
+import mdec from "@/public/images/mdec-logo.png";
 
 const universities = [
     { name: "UTM", img: utm },
@@ -23,6 +24,21 @@ const universities = [
     { name: "UKM", img: ukm },
     { name: "UTEM", img: utem },
     { name: "UTHM", img: uthm },
+];
+
+const partners = [
+    {
+        name: "Faculty of Computer Science and Information Technology UTHM",
+        logo: uthm,
+        description:
+            "Leading academic institution fostering tech talent and research",
+    },
+    {
+        name: "Malaysia Digital Economy Corporation",
+        logo: mdec,
+        description:
+            "National agency driving Malaysia's digital transformation",
+    },
 ];
 
 type Props = {
@@ -286,45 +302,67 @@ export function HorizontolInfo() {
 
             {/* Panel 3 - Commitment */}
             <div className="panel w-screen h-screen flex-shrink-0 flex items-center justify-center bg-gradient-to-tl from-gray-900 to-black px-6 text-center">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-                        Our <span className="text-blue-400">Commitment</span>
-                    </h2>
+                {/* Decorative elements */}
+                <div className="absolute top-0 left-0 w-full h-full opacity-10">
+                    <div className="absolute top-20 left-10 w-40 h-40 bg-blue-500 rounded-full filter blur-3xl opacity-20"></div>
+                    <div className="absolute bottom-10 right-10 w-60 h-60 bg-purple-500 rounded-full filter blur-3xl opacity-20"></div>
+                </div>
 
-                    <div className="space-y-6">
-                        {[
-                            {
-                                title: "Inclusive Environment",
-                                desc: "We welcome participants from all backgrounds and skill levels",
-                                icon: "🌍",
-                            },
-                            {
-                                title: "Fair Judging",
-                                desc: "Transparent evaluation criteria and experienced judges",
-                                icon: "⚖️",
-                            },
-                            {
-                                title: "Quality Content",
-                                desc: "Curated workshops and mentorship sessions",
-                                icon: "✨",
-                            },
-                            {
-                                title: "Safe Space",
-                                desc: "Zero tolerance for harassment or discrimination",
-                                icon: "🛡️",
-                            },
-                        ].map((item, index) => (
-                            <div key={index} className="flex gap-4">
-                                <div className="bg-blue-500/20 p-3 rounded-lg text-blue-400 text-xl">
-                                    {item.icon}
-                                </div>
-                                <div className="text-left">
-                                    <h3 className="text-lg font-semibold text-white">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-gray-400 text-sm">
-                                        {item.desc}
-                                    </p>
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="text-center mb-20">
+                        <span className="inline-block text-blue-400 font-medium mb-4 tracking-wider">
+                            STRATEGIC PARTNERSHIPS
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                            Our{" "}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                                Valued
+                            </span>{" "}
+                            Collaborators
+                        </h2>
+                        <div className="max-w-2xl mx-auto">
+                            <p className="text-gray-300 text-lg leading-relaxed">
+                                We partner with industry leaders and academic
+                                institutions to drive digital innovation and
+                                create impactful solutions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-10">
+                        {partners.map((partner, index) => (
+                            <div
+                                key={index}
+                                className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-800 to-gray-950 border border-gray-700 hover:border-blue-400/30 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2"
+                            >
+                                {/* Content */}
+                                <div className="relative h-full flex flex-col">
+                                    {/* Logo container */}
+                                    <div className="relative h-64 sm:h-72 lg:h-80 w-full flex items-center justify-center p-8">
+                                        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        <Image
+                                            src={partner.logo}
+                                            alt={partner.name}
+                                            width={300}
+                                            height={200}
+                                            className="object-contain transition-all duration-500 group-hover:scale-110"
+                                            style={{
+                                                maxWidth: "80%",
+                                                maxHeight: "80%",
+                                                opacity: 0.9,
+                                            }}
+                                        />
+                                    </div>
+
+                                    {/* Text content */}
+                                    <div className="p-8 pt-0 text-center">
+                                        <h3 className="text-xl font-bold text-white mb-3">
+                                            {partner.name}
+                                        </h3>
+                                        <p className="text-gray-400 mb-6">
+                                            {partner.description}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -539,70 +577,69 @@ export function VerticalInfo() {
 
             {/* Section 3: Commitment */}
             <section className="w-full py-16 px-4 bg-gradient-to-tl from-gray-900 to-black">
-                <div className="max-w-3xl mx-auto">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        viewport={{ once: true }}
-                        className="text-3xl font-bold text-white mb-8 text-center"
-                    >
-                        Our <span className="text-blue-400">Commitment</span>
-                    </motion.h2>
+               {/* Decorative elements */}
+                <div className="absolute top-0 left-0 w-full h-full opacity-10">
+                    <div className="absolute top-20 left-10 w-40 h-40 bg-blue-500 rounded-full filter blur-3xl opacity-20"></div>
+                    <div className="absolute bottom-10 right-10 w-60 h-60 bg-purple-500 rounded-full filter blur-3xl opacity-20"></div>
+                </div>
 
-                    <div className="space-y-4">
-                        {[
-                            {
-                                title: "Inclusive Environment",
-                                desc: "We welcome participants from all backgrounds and skill levels",
-                                icon: "🌍",
-                                color: "text-blue-400",
-                            },
-                            {
-                                title: "Fair Judging",
-                                desc: "Transparent evaluation criteria and experienced judges",
-                                icon: "⚖️",
-                                color: "text-emerald-400",
-                            },
-                            {
-                                title: "Quality Content",
-                                desc: "Curated workshops and mentorship sessions",
-                                icon: "✨",
-                                color: "text-purple-400",
-                            },
-                            {
-                                title: "Safe Space",
-                                desc: "Zero tolerance for harassment or discrimination",
-                                icon: "🛡️",
-                                color: "text-amber-400",
-                            },
-                        ].map((item, index) => (
-                            <motion.div
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="text-center mb-20">
+                        <span className="inline-block text-blue-400 font-medium mb-4 tracking-wider">
+                            STRATEGIC PARTNERSHIPS
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                            Our{" "}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                                Valued
+                            </span>{" "}
+                            Collaborators
+                        </h2>
+                        <div className="max-w-2xl mx-auto">
+                            <p className="text-gray-300 text-lg leading-relaxed">
+                                We partner with industry leaders and academic
+                                institutions to drive digital innovation and
+                                create impactful solutions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-10">
+                        {partners.map((partner, index) => (
+                            <div
                                 key={index}
-                                initial={{
-                                    opacity: 0,
-                                    x: index % 2 === 0 ? -20 : 20,
-                                }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                transition={{
-                                    duration: 0.5,
-                                    delay: index * 0.1,
-                                }}
-                                viewport={{ once: true }}
-                                className="flex gap-3 items-start p-4 rounded-lg bg-gray-800/30 hover:bg-gray-800/50 transition-all"
+                                className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-800 to-gray-950 border border-gray-700 hover:border-blue-400/30 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2"
                             >
-                                <div className={`text-xl ${item.color}`}>
-                                    {item.icon}
+                                {/* Content */}
+                                <div className="relative h-full flex flex-col">
+                                    {/* Logo container */}
+                                    <div className="relative h-64 sm:h-72 lg:h-80 w-full flex items-center justify-center p-8">
+                                        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                        <Image
+                                            src={partner.logo}
+                                            alt={partner.name}
+                                            width={300}
+                                            height={200}
+                                            className="object-contain transition-all duration-500 group-hover:scale-110"
+                                            style={{
+                                                maxWidth: "80%",
+                                                maxHeight: "80%",
+                                                opacity: 0.9,
+                                            }}
+                                        />
+                                    </div>
+
+                                    {/* Text content */}
+                                    <div className="p-8 pt-0 text-center">
+                                        <h3 className="text-xl font-bold text-white mb-3">
+                                            {partner.name}
+                                        </h3>
+                                        <p className="text-gray-400 mb-6">
+                                            {partner.description}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 className="text-base font-semibold text-white">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-gray-400 text-xs">
-                                        {item.desc}
-                                    </p>
-                                </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

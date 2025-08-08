@@ -16,7 +16,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { PanelBottomOpen } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
-
+import dinsLogo from "@/public/icon/android-chrome-512x512.png";
 export default function Navbar() {
     const isMobile = useIsMobile();
     const [scrolled, setScrolled] = useState(false);
@@ -48,7 +48,7 @@ export default function Navbar() {
                         <AnchorLink href="#hero" offset={80}>
                             <div className="flex items-center space-x-3 cursor-pointer">
                                 <Avatar className="h-9 w-9 border border-emerald-400/30">
-                                    <AvatarImage src="https://github.com/shadcn.png" />
+                                    <AvatarImage src={dinsLogo.src} />
                                     <AvatarFallback className="bg-gradient-to-br from-blue-600 to-emerald-500 text-white font-bold">
                                         DINS
                                     </AvatarFallback>
