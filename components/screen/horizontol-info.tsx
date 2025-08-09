@@ -575,9 +575,9 @@ export function VerticalInfo() {
                 </div>
             </section>
 
-            {/* Section 3: Commitment */}
+            {/* Section 3: Partner */}
             <section className="w-full py-16 px-4 bg-gradient-to-tl from-gray-900 to-black">
-               {/* Decorative elements */}
+                {/* Decorative elements */}
                 <div className="absolute top-0 left-0 w-full h-full opacity-10">
                     <div className="absolute top-20 left-10 w-40 h-40 bg-blue-500 rounded-full filter blur-3xl opacity-20"></div>
                     <div className="absolute bottom-10 right-10 w-60 h-60 bg-purple-500 rounded-full filter blur-3xl opacity-20"></div>
@@ -604,17 +604,17 @@ export function VerticalInfo() {
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-10">
+                    <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
                         {partners.map((partner, index) => (
                             <div
                                 key={index}
-                                className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-800 to-gray-950 border border-gray-700 hover:border-blue-400/30 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2"
+                                className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-gray-800 to-gray-950 border border-gray-700 hover:border-blue-400/30 shadow-xl sm:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2"
                             >
                                 {/* Content */}
-                                <div className="relative h-full flex flex-col">
+                                <div className="relative h-full flex flex-col bg-gray-200 sm:bg-black">
                                     {/* Logo container */}
-                                    <div className="relative h-64 sm:h-72 lg:h-80 w-full flex items-center justify-center p-8">
-                                        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                    <div className="relative h-40 xs:h-48 sm:h-64 lg:h-72 w-full flex items-center justify-center p-4 sm:p-8">
+                                        <div className="absolute inset-0 bg-gradient-to-b sm:from-gray-50 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
                                         <Image
                                             src={partner.logo}
                                             alt={partner.name}
@@ -622,19 +622,19 @@ export function VerticalInfo() {
                                             height={200}
                                             className="object-contain transition-all duration-500 group-hover:scale-110"
                                             style={{
-                                                maxWidth: "80%",
-                                                maxHeight: "80%",
+                                                maxWidth: "75%",
+                                                maxHeight: "75%",
                                                 opacity: 0.9,
                                             }}
                                         />
                                     </div>
 
                                     {/* Text content */}
-                                    <div className="p-8 pt-0 text-center">
-                                        <h3 className="text-xl font-bold text-white mb-3">
+                                    <div className="p-4 sm:p-8 pt-0 text-center">
+                                        <h3 className="text-lg sm:text-xl font-bold text-black sm:text-white mb-2 sm:mb-3">
                                             {partner.name}
                                         </h3>
-                                        <p className="text-gray-400 mb-6">
+                                        <p className="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6">
                                             {partner.description}
                                         </p>
                                     </div>
