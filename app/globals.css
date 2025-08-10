@@ -41,7 +41,15 @@
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
     --radius-xl: calc(var(--radius) + 4px);
+
+    /* Animation Variables */
     --animate-line-shadow: line-shadow 15s linear infinite;
+    --animate-pulse: pulse var(--duration) ease-out infinite;
+    --animate-marquee: marquee var(--duration) infinite linear;
+    --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+    --animate-gradient: gradient 8s linear infinite;
+
+    /* Keyframes */
     @keyframes line-shadow {
         0% {
             background-position: 0 0;
@@ -50,7 +58,6 @@
             background-position: 100% -100%;
         }
     }
-    --animate-pulse: pulse var(--duration) ease-out infinite;
     @keyframes pulse {
         0%,
         100% {
@@ -60,8 +67,6 @@
             boxshadow: 0 0 0 8px var(--pulse-color);
         }
     }
-    --animate-marquee: marquee var(--duration) infinite linear;
-    --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
     @keyframes marquee {
         from {
             transform: translateX(0);
@@ -76,6 +81,11 @@
         }
         to {
             transform: translateY(calc(-100% - var(--gap)));
+        }
+    }
+    @keyframes gradient {
+        to {
+            background-position: var(--bg-size, 300%) 0;
         }
     }
 }

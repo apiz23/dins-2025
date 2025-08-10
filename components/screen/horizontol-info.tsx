@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import utm from "@/public/images/unis/utm.png";
 import uitm from "@/public/images/unis/uitm.png";
 import usm from "@/public/images/unis/usm.png";
@@ -11,19 +11,22 @@ import um from "@/public/images/unis/um.png";
 import ukm from "@/public/images/unis/ukm.png";
 import utem from "@/public/images/unis/utem.png";
 import uthm from "@/public/images/unis/uthm.png";
+import ump from "@/public/images/unis/ump.png";
 import Image, { StaticImageData } from "next/image";
 import { Marquee } from "../magicui/marquee";
 import { Calendar, CheckCircle, Users } from "lucide-react";
 import mdec from "@/public/images/mdec-logo.png";
+import { AnimatedGradientText } from "../magicui/animated-gradient-text";
 
 const universities = [
     { name: "UTM", img: utm },
-    { name: "UiTM", img: uitm },
+    { name: "UITM", img: uitm },
     { name: "USM", img: usm },
     { name: "UM", img: um },
     { name: "UKM", img: ukm },
     { name: "UTEM", img: utem },
     { name: "UTHM", img: uthm },
+    { name: "UMP", img: ump },
 ];
 
 const partners = [
@@ -588,13 +591,14 @@ export function VerticalInfo() {
                         <span className="inline-block text-blue-400 font-medium mb-4 tracking-wider">
                             STRATEGIC PARTNERSHIPS
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Our{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-                                Valued
-                            </span>{" "}
-                            Collaborators
-                        </h2>
+                        <AnimatedGradientText
+                            speed={2}
+                            colorFrom="#4ade80"
+                            colorTo="#a855f7"
+                            className="text-4xl md:text-5xl font-bold text-white mb-6"
+                        >
+                            Valued
+                        </AnimatedGradientText>
                         <div className="max-w-2xl mx-auto">
                             <p className="text-gray-300 text-lg leading-relaxed">
                                 We partner with industry leaders and academic

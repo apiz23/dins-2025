@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { AnimatedGradientText } from "../magicui/animated-gradient-text";
 
 export default function Hero() {
     return (
@@ -14,20 +15,35 @@ export default function Hero() {
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     className="md:max-w-6xl mx-auto w-full"
                 >
-                    <h1 className="text-4xl md:text-6xl lg:text-[80px] font-bold text-white mb-4 sm:mb-6 leading-tight tracking-tighter">
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight tracking-tight">
                         <motion.span
-                            className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-400 to-emerald-400"
-                            initial={{ opacity: 0, y: 20 }}
+                            className="block"
+                            initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1, duration: 0.8 }}
+                            transition={{
+                                delay: 0.1,
+                                duration: 0.8,
+                                ease: [0.16, 1, 0.3, 1],
+                            }}
                         >
-                            DIGITAL INNOVATHON
+                            <AnimatedGradientText
+                                speed={1.2}
+                                colorFrom="#3b82f6"
+                                colorTo="#10b981"
+                                className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                            >
+                                DIGITAL INNOVATHON
+                            </AnimatedGradientText>
                         </motion.span>
                         <motion.span
-                            className="block text-white mt-2 sm:mt-4"
-                            initial={{ opacity: 0, y: 20 }}
+                            className="block mt-2 sm:mt-4 bg-gradient-to-r from-white to-gray-200 text-transparent bg-clip-text"
+                            initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2, duration: 0.8 }}
+                            transition={{
+                                delay: 0.3,
+                                duration: 0.8,
+                                ease: [0.16, 1, 0.3, 1],
+                            }}
                         >
                             SYMPOSIUM 2025
                         </motion.span>

@@ -137,8 +137,8 @@ export default function Footer() {
                             <Image
                                 src={uthmLogo}
                                 alt="UTHM Logo"
-                                width={100}
-                                height={100}
+                                width={2000}
+                                height={2000}
                                 className="w-12 h-12 object-contain bg-white rounded-full p-1"
                             />
                             <span className="text-gray-400 text-sm">
@@ -150,8 +150,8 @@ export default function Footer() {
                             <Image
                                 src={tvLogo}
                                 alt="Tech Ventura Logo"
-                                width={100}
-                                height={100}
+                                width={2000}
+                                height={2000}
                                 className="w-12 h-12 object-contain bg-white rounded-full p-1"
                             />
                             <span className="text-gray-400 hover:text-white transition-colors text-sm">
