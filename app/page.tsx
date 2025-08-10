@@ -9,6 +9,7 @@ import {
 import Hero from "@/components/screen/hero";
 import { useIsMobile } from "@/hooks/use-mobile";
 import CTA from "@/components/screen/cta";
+import Speakers from "@/components/screen/speaker";
 
 export default function Home() {
     const isMobile = useIsMobile();
@@ -23,6 +24,7 @@ export default function Home() {
                     <HorizontolInfo />
                 </div>
             )}
+            <Speakers />
             <TimelineEvent />
             <CTA />
             <Footer />

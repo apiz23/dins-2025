@@ -221,7 +221,7 @@ export default function Navbar() {
                                                 <AnchorLink
                                                     href="https://docs.google.com/forms/d/e/1FAIpQLScTZ-hp-i0fr51nNivRIInBJSYiiU4VIakaiFxULgAOoLECtw/viewform"
                                                     offset={80}
-                                                    className="mt-4 px-4 py-3 rounded-lg text-center font-medium text-white bg-gradient-to-r from-blue-600 to-emerald-500 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300"
+                                                    className="mt-4 px-4 py-3 rounded-lg w-full block text-center font-medium text-white bg-gradient-to-r from-blue-600 to-emerald-500 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300"
                                                 >
                                                     Register Now
                                                 </AnchorLink>

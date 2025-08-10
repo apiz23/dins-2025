@@ -285,7 +285,7 @@ export function TimelineEvent() {
     ];
 
     return (
-        <section className="relative w-full  bg-gradient-to-bl from-gray-900 to-black overflow-hidden">
+        <section className="relative w-full bg-black overflow-hidden">
             <div
                 className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8"
                 id="schedule"
