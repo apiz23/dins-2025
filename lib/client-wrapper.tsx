@@ -2,6 +2,7 @@
 
 import { useIsMobile } from "@/hooks/use-mobile";
 import SmoothCursor from "@/components/ui/smooth-cursor";
+import SplashScreenWrapper from "@/components/screen/splash";
 
 export default function ClientWrapper({
     children,
@@ -10,12 +11,19 @@ export default function ClientWrapper({
 }) {
     const isMobile = useIsMobile();
 
-    if (isMobile) return <>{children}</>;
+    if (isMobile)
+        return (
+            <>
+                <SplashScreenWrapper>{children}</SplashScreenWrapper>
+            </>
+        );
 
     return (
         <>
-            <SmoothCursor />
-            {children}
+            <SplashScreenWrapper>
+                <SmoothCursor />
+                {children}
+            </SplashScreenWrapper>
         </>
     );
 }
