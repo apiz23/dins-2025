@@ -1,30 +1,66 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { AnimatedGradientText } from "../magicui/animated-gradient-text";
 import AboutSection from "./about";
 
 export default function Hero() {
+    const [timeLeft, setTimeLeft] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+    });
+
+    useEffect(() => {
+        const calculateTimeLeft = () => {
+            const endDate = new Date("September 30, 2025 23:59:59").getTime();
+            const now = new Date().getTime();
+            const difference = endDate - now;
+
+            if (difference > 0) {
+                setTimeLeft({
+                    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                    hours: Math.floor(
+                        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                    ),
+                    minutes: Math.floor(
+                        (difference % (1000 * 60 * 60)) / (1000 * 60)
+                    ),
+                    seconds: Math.floor((difference % (1000 * 60)) / 1000),
+                });
+            }
+        };
+
+        const timer = setInterval(calculateTimeLeft, 1000);
+        calculateTimeLeft(); // Initial call
+
+        return () => clearInterval(timer);
+    }, []);
+
     return (
-        <section className="relative h-screen w-full bg-gradient-to-t from-black via-black to-gray-900">
+        <section
+            className="relative h-screen w-full bg-gradient-to-t from-black via-black to-gray-900"
+            id="hero"
+        >
+            {/* Background Blobs */}
             <div className="absolute inset-0 overflow-hidden">
                 {/* Blue Blobs */}
                 <div className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-blue-500/20 blur-3xl animate-pulse"></div>
                 <div className="absolute top-1/3 right-1/3 w-40 h-40 rounded-full bg-blue-400/15 blur-3xl animate-pulse delay-100"></div>
-
                 {/* Emerald/Green Blobs */}
                 <div className="absolute bottom-1/3 right-1/4 w-40 h-40 rounded-full bg-emerald-500/20 blur-3xl animate-pulse delay-300"></div>
                 <div className="absolute top-1/5 left-3/4 w-36 h-36 rounded-full bg-emerald-400/15 blur-3xl animate-pulse delay-700"></div>
-
                 {/* Purple Blobs */}
                 <div className="absolute bottom-1/4 right-3/4 w-28 h-28 rounded-full bg-purple-500/20 blur-3xl animate-pulse delay-500"></div>
                 <div className="absolute top-3/4 left-1/5 w-44 h-44 rounded-full bg-purple-400/15 blur-3xl animate-pulse delay-200"></div>
-
                 {/* Additional Color Variations */}
                 <div className="absolute top-2/5 left-1/5 w-24 h-24 rounded-full bg-cyan-500/15 blur-3xl animate-pulse delay-400"></div>
                 <div className="absolute bottom-1/5 right-1/5 w-48 h-48 rounded-full bg-indigo-500/15 blur-3xl animate-pulse delay-600"></div>
             </div>
+
             <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8">
                 {/* Main Heading */}
                 <motion.div
@@ -96,10 +132,7 @@ export default function Hero() {
                             whileTap={{ scale: 0.95 }}
                             className="flex items-center justify-center"
                         >
-                            Register Now
-                            <span className="ml-2 transition-transform group-hover:translate-x-1">
-                                →
-                            </span>
+                            Register Now →
                         </motion.span>
                     </Link>
 
@@ -112,10 +145,7 @@ export default function Hero() {
                             whileTap={{ scale: 0.95 }}
                             className="flex items-center justify-center"
                         >
-                            Learn More
-                            <span className="ml-2 transition-transform group-hover:translate-y-1">
-                                ↓
-                            </span>
+                            Learn More ↓
                         </motion.span>
                     </Link>
                 </motion.div>
@@ -145,6 +175,38 @@ export default function Hero() {
                             </div>
                         </motion.div>
                     ))}
+                </motion.div>
+
+                 <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.7, duration: 0.8 }}
+                    className="mb-16"
+                >
+                    <h3 className="text-lg sm:text-xl text-gray-300/80 mb-6 tracking-wider">
+                        COUNTDOWN TO EVENT
+                    </h3>
+                    <div className="flex justify-center gap-4">
+                        {Object.entries(timeLeft).map(([unit, value]) => (
+                            <div
+                                key={unit}
+                                className="flex flex-col items-center p-4 w-20 bg-white/5 backdrop-blur-md rounded-lg border border-white/10 hover:border-white/30 transition-colors"
+                            >
+                                <motion.span
+                                    key={value}
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent"
+                                >
+                                    {value.toString().padStart(2, "0")}
+                                </motion.span>
+                                <span className="text-xs text-gray-300/80 uppercase tracking-wider mt-1">
+                                    {unit}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
                 </motion.div>
 
                 {/* Scroll Indicator */}

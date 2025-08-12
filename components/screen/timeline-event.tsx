@@ -472,6 +472,12 @@ export function TimelineEvent() {
                             transition={{ delay: 0.5, duration: 0.8 }}
                             className="relative overflow-hidden"
                         >
+                            {/* Left shadow gradient */}
+                            <div className="absolute left-0 top-0 h-full w-24 z-10 bg-gradient-to-r from-black to-transparent pointer-events-none" />
+
+                            {/* Right shadow gradient */}
+                            <div className="absolute right-0 top-0 h-full w-24 z-10 bg-gradient-to-l from-black to-transparent pointer-events-none" />
+
                             <Marquee className="w-full" pauseOnHover={true}>
                                 <div className="flex items-center py-2">
                                     {universities.map((uni, index) => (

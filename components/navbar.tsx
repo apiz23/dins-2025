@@ -88,8 +88,6 @@ export default function Navbar() {
                                 {[
                                     { name: "About", id: "about" },
                                     { name: "Schedule", id: "schedule" },
-                                    { name: "Speakers", id: "speakers" },
-                                    { name: "Partners", id: "partners" },
                                     { name: "FAQs", id: "faqs" },
                                 ].map((item, index) => (
                                     <motion.div
@@ -112,6 +110,18 @@ export default function Navbar() {
                                         </AnchorLink>
                                     </motion.div>
                                 ))}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.6 }}
+                                >
+                                    <AnchorLink
+                                        href="https://docs.google.com/forms/d/e/1FAIpQLScTZ-hp-i0fr51nNivRIInBJSYiiU4VIakaiFxULgAOoLECtw/viewform"
+                                        className="ml-2 px-6 py-2 rounded-lg font-medium text-white bg-gradient-to-r from-blue-600 to-emerald-500 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300"
+                                    >
+                                        Register
+                                    </AnchorLink>
+                                </motion.div>
                             </motion.div>
 
                             {/* Mobile Nav - Drawer */}
@@ -160,14 +170,6 @@ export default function Navbar() {
                                                 {
                                                     name: "Schedule",
                                                     id: "schedule",
-                                                },
-                                                {
-                                                    name: "Speakers",
-                                                    id: "speakers",
-                                                },
-                                                {
-                                                    name: "Partners",
-                                                    id: "partners",
                                                 },
                                                 { name: "FAQs", id: "faqs" },
                                             ].map((item, index) => (

@@ -18,6 +18,7 @@ import { ArrowRight, Calendar, CheckCircle, Users } from "lucide-react";
 import mdec from "@/public/images/mdec-logo.png";
 import { AnimatedGradientText } from "../magicui/animated-gradient-text";
 import Speakers from "./speaker";
+import { BlurFade } from "../magicui/blur-fade";
 
 const universities = [
     { name: "UTHM", img: uthm },
@@ -94,30 +95,28 @@ export function HorizontolInfo() {
 
     return (
         <div className="horizontal-scroll-container flex h-screen w-[300vw] overflow-hidden ">
-            {/* Panel 1 - Benefits */}
-
+            {/* Panel 1 - Why Participate */}
             <div className="panel w-screen min-h-screen flex-shrink-0 flex items-center justify-center bg-gradient-to-tr from-gray-800 via-black to-black px-4 sm:px-6 py-16 text-center">
                 <div className="w-full max-w-6xl mx-auto">
                     {/* Centered Header */}
-                    <motion.div
-                        className="text-center mb-12 sm:mb-16"
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                            Why{" "}
-                            <span className="text-emerald-400">
-                                Participate?
-                            </span>
-                        </h2>
-                        <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                            Discover the amazing benefits of joining our
-                            challenge
-                        </p>
-                    </motion.div>
+                    <div className="text-center mb-12 sm:mb-16">
+                        <BlurFade delay={0.1} inView>
+                            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+                                Why{" "}
+                                <span className="text-emerald-400">
+                                    Participate?
+                                </span>
+                            </h2>
+                        </BlurFade>
+                        <BlurFade delay={0.2} inView>
+                            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+                                Discover the amazing benefits of joining our
+                                challenge
+                            </p>
+                        </BlurFade>
+                    </div>
 
-                    {/* Centered Cards Grid */}
+                    {/* Cards Grid */}
                     <div className="flex justify-center">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
                             {[
@@ -164,108 +163,87 @@ export function HorizontolInfo() {
                                     bg: "bg-cyan-400/10",
                                 },
                             ].map((item, index) => (
-                                <motion.div
+                                <BlurFade
                                     key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{
-                                        delay: index * 0.1,
-                                        duration: 0.5,
-                                    }}
-                                    whileHover={{ y: -8, scale: 1.03 }}
-                                    className={`px-10 py-20 rounded-xl border border-gray-800 hover:border-emerald-400/50 transition-all flex flex-col ${item.bg}`}
+                                    delay={0.3 + index * 0.1}
+                                    inView
                                 >
-                                    <div
-                                        className={`text-4xl mb-4 ${item.color}`}
+                                    <motion.div
+                                        whileHover={{ y: -8, scale: 1.03 }}
+                                        className={`px-10 py-20 rounded-xl border border-gray-800 hover:border-emerald-400/50 transition-all flex flex-col ${item.bg}`}
                                     >
-                                        {item.icon}
-                                    </div>
-                                    <h3 className="text-xl font-bold text-white mb-2">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-gray-300">{item.desc}</p>
-                                </motion.div>
+                                        <div
+                                            className={`text-4xl mb-4 ${item.color}`}
+                                        >
+                                            {item.icon}
+                                        </div>
+                                        <h3 className="text-xl font-bold text-white mb-2">
+                                            {item.title}
+                                        </h3>
+                                        <p className="text-gray-300">
+                                            {item.desc}
+                                        </p>
+                                    </motion.div>
+                                </BlurFade>
                             ))}
                         </div>
                     </div>
                 </div>
             </div>
-
             {/* Panel 2 - Partner */}
-            <div className="panel w-screen h-screen flex-shrink-0 flex items-center justify-center px-6 text-center bg-black">
-                <div className="absolute inset-0 overflow-hidden">
-                    {/* Blue Blobs */}
-                    <div className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-blue-500/20 blur-3xl animate-pulse"></div>
-                    <div className="absolute top-1/3 right-1/3 w-40 h-40 rounded-full bg-blue-400/15 blur-3xl animate-pulse delay-100"></div>
-
-                    {/* Emerald/Green Blobs */}
-                    <div className="absolute bottom-1/3 right-1/4 w-40 h-40 rounded-full bg-emerald-500/20 blur-3xl animate-pulse delay-300"></div>
-                    <div className="absolute top-1/5 left-3/4 w-36 h-36 rounded-full bg-emerald-400/15 blur-3xl animate-pulse delay-700"></div>
-
-                    {/* Purple Blobs */}
-                    <div className="absolute bottom-1/4 right-3/4 w-28 h-28 rounded-full bg-purple-500/20 blur-3xl animate-pulse delay-500"></div>
-                    <div className="absolute top-3/4 left-1/5 w-44 h-44 rounded-full bg-purple-400/15 blur-3xl animate-pulse delay-200"></div>
-
-                    {/* Additional Color Variations */}
-                    <div className="absolute top-2/5 left-1/5 w-24 h-24 rounded-full bg-cyan-500/15 blur-3xl animate-pulse delay-400"></div>
-                    <div className="absolute bottom-1/5 right-1/5 w-48 h-48 rounded-full bg-indigo-500/15 blur-3xl animate-pulse delay-600"></div>
-
-                    {/* Large Background Blobs */}
-                    <div className="absolute top-1/5 left-70 -translate-y-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl animate-pulse delay-1000"></div>
-                    <div className="absolute bottom-1/6 right-72 translate-y-1/2 translate-x-1/2 w-80 h-80 rounded-full bg-purple-500/10 blur-3xl animate-pulse delay-800"></div>
+            <div className="panel w-screen h-screen flex items-center justify-center bg-black relative overflow-hidden">
+                {/* Background elements */}
+                <div className="absolute inset-0">
+                    <div className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl"></div>
+                    <div className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-purple-500/10 blur-3xl"></div>
                 </div>
 
-                <div className="max-w-7xl mx-auto relative z-10">
-                    <div className="text-center mb-20">
-                        <span className="inline-block text-blue-400 font-medium mb-4 tracking-wider">
-                            STRATEGIC PARTNERSHIPS
-                        </span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Our{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-                                Valued
-                            </span>{" "}
-                            Collaborators
-                        </h2>
-                        <div className="max-w-2xl mx-auto">
-                            <p className="text-gray-300 text-lg leading-relaxed">
-                                We partner with industry leaders and academic
-                                institutions to drive digital innovation and
-                                create impactful solutions.
+                <div className="max-w-6xl mx-auto relative z-10 px-8">
+                    <div className="mb-20 text-center">
+                        <BlurFade delay={0.1} inView>
+                            <span className="text-blue-400 font-medium tracking-wider uppercase text-lg">
+                                Strategic Partnerships
+                            </span>
+                        </BlurFade>
+                        <BlurFade delay={0.2} inView>
+                            <h2 className="text-5xl md:text-6xl font-bold text-white mt-6 mb-8">
+                                Our{" "}
+                                <span className="text-blue-400">Trusted</span>{" "}
+                                Partners
+                            </h2>
+                        </BlurFade>
+                        <BlurFade delay={0.3} inView>
+                            <p className="text-gray-300 max-w-2xl mx-auto text-xl leading-relaxed">
+                                Collaborating with industry leaders to drive
+                                innovation forward.
                             </p>
-                        </div>
+                        </BlurFade>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {partners.map((partner, index) => (
-                            <div
+                    {/* Partner Logos */}
+                    <div className="grid grid-cols-2 gap-16 md:gap-24">
+                        {partners.slice(0, 2).map((partner, index) => (
+                            <BlurFade
                                 key={index}
-                                className="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 hover:scale-102 hover:border-blue-400"
+                                delay={0.4 + index * 0.2}
+                                inView
                             >
-                                <div className="flex flex-col h-full">
-                                    {/* Logo container */}
-                                    <div className="h-64 w-full flex items-center justify-center p-8 bg-gray-300 transition-colors duration-300 hover:bg-gray-200">
+                                <div className="flex flex-col items-center group">
+                                    <div className="bg-green-100/10 hover:bg-green-100/60 w-64 h-64 md:w-80 md:h-80 rounded-full border border-white/10 flex items-center justify-center p-8 transition-all duration-300 ease-in-out group-hover:border-emerald-400 group-hover:shadow-[0_0_20px_rgba(52,211,153,0.3)] group-hover:scale-105">
                                         <Image
                                             src={partner.logo}
                                             alt={partner.name}
-                                            width={300}
-                                            height={200}
-                                            className="object-contain"
-                                            style={{
-                                                maxWidth: "80%",
-                                                maxHeight: "80%",
-                                            }}
+                                            width={320}
+                                            height={320}
+                                            className="object-contain w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-110"
+                                            priority
                                         />
                                     </div>
-
-                                    {/* Text content */}
-                                    <div className="p-6 text-center">
-                                        <h3 className="text-xl font-bold text-white transition-colors duration-300 hover:text-blue-400">
-                                            {partner.name}
-                                        </h3>
-                                    </div>
+                                    <h3 className="mt-8 text-white font-medium text-center text-2xl transition-colors duration-300 group-hover:text-emerald-400">
+                                        {partner.name}
+                                    </h3>
                                 </div>
-                            </div>
+                            </BlurFade>
                         ))}
                     </div>
                 </div>
