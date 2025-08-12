@@ -10,6 +10,7 @@ import Hero from "@/components/screen/hero";
 import { useIsMobile } from "@/hooks/use-mobile";
 import CTA from "@/components/screen/cta";
 import Speakers from "@/components/screen/speaker";
+import AboutSection from "@/components/screen/about";
 
 export default function Home() {
     const isMobile = useIsMobile();
@@ -17,6 +18,7 @@ export default function Home() {
     return (
         <>
             <Hero />
+            <AboutSection />
             {isMobile ? (
                 <VerticalInfo />
             ) : (
