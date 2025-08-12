@@ -18,12 +18,55 @@ import {
     HelpCircle,
     CreditCard,
     Zap,
+    CheckCircle,
+    Calendar,
 } from "lucide-react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import t1 from "@/public/images/timeline/t1.png";
 import t2 from "@/public/images/timeline/t2.png";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
+import { motion } from "framer-motion";
+
+import utm from "@/public/images/unis/utm.png";
+import uitm from "@/public/images/unis/uitm.png";
+import usm from "@/public/images/unis/usm.png";
+import um from "@/public/images/unis/um.png";
+import ukm from "@/public/images/unis/ukm.png";
+import utem from "@/public/images/unis/utem.png";
+import uthm from "@/public/images/unis/uthm.png";
+import ump from "@/public/images/unis/ump.png";
+import { Marquee } from "../magicui/marquee";
+
+const universities = [
+    { name: "UTHM", img: uthm },
+    { name: "UTM", img: utm },
+    { name: "USM", img: usm },
+    { name: "UM", img: um },
+    { name: "UKM", img: ukm },
+    { name: "UTEM", img: utem },
+    { name: "UITM", img: uitm },
+    { name: "UMP", img: ump },
+];
+
+type Props = {
+    name: string;
+    img: string | StaticImageData;
+};
+
+const UniLogoCard = ({ name, img }: Props) => {
+    return (
+        <div className="hover:shadow-lg hover:shadow-blue-500/20 transition-all bg-white p-4 rounded-md shadow-md md:w-full min-w-[150px] h-40 flex flex-col items-center justify-center">
+            <Image
+                src={img}
+                alt={name}
+                width={1080}
+                height={1920}
+                className="w-[24vw] md:w-44 h-auto object-contain drop-shadow-md"
+            />
+        </div>
+    );
+};
 
 export function TimelineEvent() {
     const data = [
@@ -285,48 +328,214 @@ export function TimelineEvent() {
     ];
 
     return (
-        <section className="relative w-full bg-black overflow-hidden">
-            <div className="absolute inset-0 overflow-hidden">
-                {/* Blue Blobs */}
-                <div className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-blue-500/20 blur-3xl animate-pulse"></div>
-                <div className="absolute top-1/3 right-1/3 w-40 h-40 rounded-full bg-blue-400/15 blur-3xl animate-pulse delay-100"></div>
+        <>
+            {/* Panel 3*/}
+            <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 text-center bg-gradient-to-bl from-gray-900 to-black">
+                <div className="max-w-7xl mx-auto w-full">
+                    {/* Centered Header Section */}
+                    <motion.div
+                        className="text-center mt-20 mb-5"
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <span className="inline-block text-blue-400 font-medium mb-3 tracking-wider">
+                            JOIN THE CHALLENGE
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-5">
+                            Participation{" "}
+                            <span className="text-blue-400">Details</span>
+                        </h2>
+                        <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+                            Everything you need to know about joining our
+                            innovation challenge
+                        </p>
+                    </motion.div>
 
-                {/* Emerald/Green Blobs */}
-                <div className="absolute bottom-1/3 right-1/4 w-40 h-40 rounded-full bg-emerald-500/20 blur-3xl animate-pulse delay-300"></div>
-                <div className="absolute top-1/5 left-3/4 w-36 h-36 rounded-full bg-emerald-400/15 blur-3xl animate-pulse delay-700"></div>
+                    {/* Two Column Content Below Title */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                        {/* Left Column - Team Formation */}
+                        <motion.div
+                            className="bg-gray-800 p-8 rounded-xl border border-gray-700"
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.2, duration: 0.6 }}
+                        >
+                            <div className="flex flex-col items-center text-center mb-6">
+                                <div className="w-16 h-16 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
+                                    <Users className="w-7 h-7 text-blue-400" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-white mb-2">
+                                    Team Formation
+                                </h3>
+                                <div className="w-16 h-1 bg-blue-400 rounded-full"></div>
+                            </div>
+                            <ul className="space-y-4 text-gray-300">
+                                <li className="flex items-start gap-4">
+                                    <span className="text-blue-400 mt-1 flex-shrink-0">
+                                        <CheckCircle className="w-5 h-5" />
+                                    </span>
+                                    <span>
+                                        Open to all university students
+                                        nationwide with valid student ID
+                                    </span>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <span className="text-blue-400 mt-1 flex-shrink-0">
+                                        <CheckCircle className="w-5 h-5" />
+                                    </span>
+                                    <span>
+                                        Teams of 2-5 members (cross-university
+                                        teams allowed)
+                                    </span>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <span className="text-blue-400 mt-1 flex-shrink-0">
+                                        <CheckCircle className="w-5 h-5" />
+                                    </span>
+                                    <span>
+                                        Single registration per team with all
+                                        member details
+                                    </span>
+                                </li>
+                            </ul>
+                        </motion.div>
 
-                {/* Purple Blobs */}
-                <div className="absolute bottom-1/4 right-3/4 w-28 h-28 rounded-full bg-purple-500/20 blur-3xl animate-pulse delay-500"></div>
-                <div className="absolute top-3/4 left-1/5 w-44 h-44 rounded-full bg-purple-400/15 blur-3xl animate-pulse delay-200"></div>
+                        {/* Right Column - Event Structure */}
+                        <motion.div
+                            className="bg-gray-800 p-8 rounded-xl border border-gray-700"
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.3, duration: 0.6 }}
+                        >
+                            <div className="flex flex-col items-center text-center mb-6">
+                                <div className="w-16 h-16 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4">
+                                    <Calendar className="w-7 h-7 text-purple-400" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-white mb-2">
+                                    Event Structure
+                                </h3>
+                                <div className="w-16 h-1 bg-purple-400 rounded-full"></div>
+                            </div>
+                            <ul className="space-y-4 text-gray-300">
+                                <li className="flex items-start gap-4">
+                                    <span className="text-purple-400 mt-1 flex-shrink-0">
+                                        <CheckCircle className="w-5 h-5" />
+                                    </span>
+                                    <span>
+                                        Intensive 48-hour innovation sprint with
+                                        milestones
+                                    </span>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <span className="text-purple-400 mt-1 flex-shrink-0">
+                                        <CheckCircle className="w-5 h-5" />
+                                    </span>
+                                    <span>
+                                        Daily expert mentorship sessions and
+                                        workshops
+                                    </span>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <span className="text-purple-400 mt-1 flex-shrink-0">
+                                        <CheckCircle className="w-5 h-5" />
+                                    </span>
+                                    <span>
+                                        Final pitch showcase with $10,000+ in
+                                        prizes
+                                    </span>
+                                </li>
+                            </ul>
+                        </motion.div>
+                    </div>
 
-                {/* Additional Color Variations */}
-                <div className="absolute top-2/5 left-1/5 w-24 h-24 rounded-full bg-cyan-500/15 blur-3xl animate-pulse delay-400"></div>
-                <div className="absolute bottom-1/5 right-1/5 w-48 h-48 rounded-full bg-indigo-500/15 blur-3xl animate-pulse delay-600"></div>
+                    {/* Universities Section Below */}
+                    <motion.div
+                        className="mt-10"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.4, duration: 0.6 }}
+                    >
+                        <div className="text-center mb-10">
+                            <h3 className="text-2xl font-bold text-white mb-3">
+                                Participating Universities
+                            </h3>
+                            <p className="text-gray-400 max-w-2xl mx-auto">
+                                Open to students from every university in
+                                Malaysia — your campus could be next to shine!
+                            </p>
+                        </div>
 
-                {/* Large Background Blobs */}
-                <div className="absolute top-1/5 left-0 -translate-y-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl animate-pulse delay-1000"></div>
-                <div className="absolute bottom-1/6 right-0 translate-y-1/2 translate-x-1/2 w-80 h-80 rounded-full bg-purple-500/10 blur-3xl animate-pulse delay-800"></div>
-            </div>
-            <div
-                className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8"
-                id="schedule"
-            >
-                <div className="mt-12 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                        Event Timeline
-                    </h2>
-                    <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-                        Important dates and milestones for the symposium
-                    </p>
+                        <motion.div
+                            initial={{ x: "-10%" }}
+                            animate={{ x: 0 }}
+                            transition={{ delay: 0.5, duration: 0.8 }}
+                            className="relative overflow-hidden"
+                        >
+                            <Marquee className="w-full" pauseOnHover={true}>
+                                <div className="flex items-center py-2">
+                                    {universities.map((uni, index) => (
+                                        <motion.div
+                                            key={index}
+                                            className="px-5"
+                                            whileHover={{ scale: 1.08 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <UniLogoCard
+                                                name={uni.name}
+                                                img={uni.img}
+                                            />
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </Marquee>
+                        </motion.div>
+                    </motion.div>
                 </div>
-
-                <div className="relative">
-                    <div className="absolute -left-20 top-1/3 w-64 h-64 bg-emerald-500 rounded-full filter blur-3xl opacity-10"></div>
-                    <div className="absolute -right-20 top-2/3 w-64 h-64 bg-purple-500 rounded-full filter blur-3xl opacity-10"></div>
-
-                    <Timeline data={data} />
-                </div>
             </div>
-        </section>
+            <section className="relative w-full bg-black overflow-hidden">
+                <div className="absolute inset-0 overflow-hidden">
+                    {/* Blue Blobs */}
+                    <div className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-blue-500/20 blur-3xl animate-pulse"></div>
+                    <div className="absolute top-1/3 right-1/3 w-40 h-40 rounded-full bg-blue-400/15 blur-3xl animate-pulse delay-100"></div>
+
+                    {/* Emerald/Green Blobs */}
+                    <div className="absolute bottom-1/3 right-1/4 w-40 h-40 rounded-full bg-emerald-500/20 blur-3xl animate-pulse delay-300"></div>
+                    <div className="absolute top-1/5 left-3/4 w-36 h-36 rounded-full bg-emerald-400/15 blur-3xl animate-pulse delay-700"></div>
+
+                    {/* Purple Blobs */}
+                    <div className="absolute bottom-1/4 right-3/4 w-28 h-28 rounded-full bg-purple-500/20 blur-3xl animate-pulse delay-500"></div>
+                    <div className="absolute top-3/4 left-1/5 w-44 h-44 rounded-full bg-purple-400/15 blur-3xl animate-pulse delay-200"></div>
+
+                    {/* Additional Color Variations */}
+                    <div className="absolute top-2/5 left-1/5 w-24 h-24 rounded-full bg-cyan-500/15 blur-3xl animate-pulse delay-400"></div>
+                    <div className="absolute bottom-1/5 right-1/5 w-48 h-48 rounded-full bg-indigo-500/15 blur-3xl animate-pulse delay-600"></div>
+
+                    {/* Large Background Blobs */}
+                    <div className="absolute top-1/5 left-0 -translate-y-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl animate-pulse delay-1000"></div>
+                    <div className="absolute bottom-1/6 right-0 translate-y-1/2 translate-x-1/2 w-80 h-80 rounded-full bg-purple-500/10 blur-3xl animate-pulse delay-800"></div>
+                </div>
+                <div
+                    className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8"
+                    id="schedule"
+                >
+                    <div className="mt-12 text-center">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                            Event Timeline
+                        </h2>
+                        <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+                            Important dates and milestones for the symposium
+                        </p>
+                    </div>
+
+                    <div className="relative">
+                        <div className="absolute -left-20 top-1/3 w-64 h-64 bg-emerald-500 rounded-full filter blur-3xl opacity-10"></div>
+                        <div className="absolute -right-20 top-2/3 w-64 h-64 bg-purple-500 rounded-full filter blur-3xl opacity-10"></div>
+
+                        <Timeline data={data} />
+                    </div>
+                </div>
+            </section>
+        </>
     );
 }

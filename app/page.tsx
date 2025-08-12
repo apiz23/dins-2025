@@ -26,7 +26,6 @@ export default function Home() {
                     <HorizontolInfo />
                 </div>
             )}
-            <Speakers />
             <TimelineEvent />
             <CTA />
             <Footer />

@@ -118,7 +118,7 @@ const speakers: Speaker[] = [
 
 export default function Speakers() {
     return (
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-bl from-gray-900 to-black">
+        <>
             <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -159,6 +159,6 @@ export default function Speakers() {
                     <div className="mt-4 h-1 w-24 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto rounded-full" />
                 </motion.div>
             </div>
-        </section>
+        </>
     );
 }

@@ -17,6 +17,7 @@ import { Marquee } from "../magicui/marquee";
 import { ArrowRight, Calendar, CheckCircle, Users } from "lucide-react";
 import mdec from "@/public/images/mdec-logo.png";
 import { AnimatedGradientText } from "../magicui/animated-gradient-text";
+import Speakers from "./speaker";
 
 const universities = [
     { name: "UTHM", img: uthm },
@@ -190,8 +191,8 @@ export function HorizontolInfo() {
                 </div>
             </div>
 
-            {/* Panel 2*/}
-            <div className="panel w-screen min-h-screen flex-shrink-0 flex items-center justify-center px-4 sm:px-6 py-16 text-center bg-black">
+            {/* Panel 2 - Partner */}
+            <div className="panel w-screen h-screen flex-shrink-0 flex items-center justify-center px-6 text-center bg-black">
                 <div className="absolute inset-0 overflow-hidden">
                     {/* Blue Blobs */}
                     <div className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-blue-500/20 blur-3xl animate-pulse"></div>
@@ -212,176 +213,6 @@ export function HorizontolInfo() {
                     {/* Large Background Blobs */}
                     <div className="absolute top-1/5 left-70 -translate-y-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl animate-pulse delay-1000"></div>
                     <div className="absolute bottom-1/6 right-72 translate-y-1/2 translate-x-1/2 w-80 h-80 rounded-full bg-purple-500/10 blur-3xl animate-pulse delay-800"></div>
-                </div>
-                <div className="max-w-7xl mx-auto w-full">
-                    {/* Centered Header Section */}
-                    <motion.div
-                        className="text-center mt-20 mb-5"
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <span className="inline-block text-blue-400 font-medium mb-3 tracking-wider">
-                            JOIN THE CHALLENGE
-                        </span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-5">
-                            Participation{" "}
-                            <span className="text-blue-400">Details</span>
-                        </h2>
-                        <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-                            Everything you need to know about joining our
-                            innovation challenge
-                        </p>
-                    </motion.div>
-
-                    {/* Two Column Content Below Title */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                        {/* Left Column - Team Formation */}
-                        <motion.div
-                            className="bg-gray-800 p-8 rounded-xl border border-gray-700"
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.2, duration: 0.6 }}
-                        >
-                            <div className="flex flex-col items-center text-center mb-6">
-                                <div className="w-16 h-16 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
-                                    <Users className="w-7 h-7 text-blue-400" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-white mb-2">
-                                    Team Formation
-                                </h3>
-                                <div className="w-16 h-1 bg-blue-400 rounded-full"></div>
-                            </div>
-                            <ul className="space-y-4 text-gray-300">
-                                <li className="flex items-start gap-4">
-                                    <span className="text-blue-400 mt-1 flex-shrink-0">
-                                        <CheckCircle className="w-5 h-5" />
-                                    </span>
-                                    <span>
-                                        Open to all university students
-                                        nationwide with valid student ID
-                                    </span>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <span className="text-blue-400 mt-1 flex-shrink-0">
-                                        <CheckCircle className="w-5 h-5" />
-                                    </span>
-                                    <span>
-                                        Teams of 2-5 members (cross-university
-                                        teams allowed)
-                                    </span>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <span className="text-blue-400 mt-1 flex-shrink-0">
-                                        <CheckCircle className="w-5 h-5" />
-                                    </span>
-                                    <span>
-                                        Single registration per team with all
-                                        member details
-                                    </span>
-                                </li>
-                            </ul>
-                        </motion.div>
-
-                        {/* Right Column - Event Structure */}
-                        <motion.div
-                            className="bg-gray-800 p-8 rounded-xl border border-gray-700"
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.3, duration: 0.6 }}
-                        >
-                            <div className="flex flex-col items-center text-center mb-6">
-                                <div className="w-16 h-16 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4">
-                                    <Calendar className="w-7 h-7 text-purple-400" />
-                                </div>
-                                <h3 className="text-2xl font-bold text-white mb-2">
-                                    Event Structure
-                                </h3>
-                                <div className="w-16 h-1 bg-purple-400 rounded-full"></div>
-                            </div>
-                            <ul className="space-y-4 text-gray-300">
-                                <li className="flex items-start gap-4">
-                                    <span className="text-purple-400 mt-1 flex-shrink-0">
-                                        <CheckCircle className="w-5 h-5" />
-                                    </span>
-                                    <span>
-                                        Intensive 48-hour innovation sprint with
-                                        milestones
-                                    </span>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <span className="text-purple-400 mt-1 flex-shrink-0">
-                                        <CheckCircle className="w-5 h-5" />
-                                    </span>
-                                    <span>
-                                        Daily expert mentorship sessions and
-                                        workshops
-                                    </span>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <span className="text-purple-400 mt-1 flex-shrink-0">
-                                        <CheckCircle className="w-5 h-5" />
-                                    </span>
-                                    <span>
-                                        Final pitch showcase with $10,000+ in
-                                        prizes
-                                    </span>
-                                </li>
-                            </ul>
-                        </motion.div>
-                    </div>
-
-                    {/* Universities Section Below */}
-                    <motion.div
-                        className="mt-10"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.4, duration: 0.6 }}
-                    >
-                        <div className="text-center mb-10">
-                            <h3 className="text-2xl font-bold text-white mb-3">
-                                Participating Universities
-                            </h3>
-                            <p className="text-gray-400 max-w-2xl mx-auto">
-                                Open to students from every university in
-                                Malaysia — your campus could be next to shine!
-                            </p>
-                        </div>
-
-                        <motion.div
-                            initial={{ x: "-10%" }}
-                            animate={{ x: 0 }}
-                            transition={{ delay: 0.5, duration: 0.8 }}
-                            className="relative overflow-hidden"
-                        >
-                            <Marquee className="w-full" pauseOnHover={true}>
-                                <div className="flex items-center py-2">
-                                    {universities.map((uni, index) => (
-                                        <motion.div
-                                            key={index}
-                                            className="px-5"
-                                            whileHover={{ scale: 1.08 }}
-                                            transition={{ duration: 0.2 }}
-                                        >
-                                            <UniLogoCard
-                                                name={uni.name}
-                                                img={uni.img}
-                                            />
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </Marquee>
-                        </motion.div>
-                    </motion.div>
-                </div>
-            </div>
-
-            {/* Panel 3 - Commitment */}
-            <div className="panel w-screen h-screen flex-shrink-0 flex items-center justify-center bg-gradient-to-tl from-gray-900 to-black px-6 text-center">
-                {/* Decorative elements */}
-                <div className="absolute top-0 left-0 w-full h-full opacity-10">
-                    <div className="absolute top-20 left-10 w-40 h-40 bg-blue-500 rounded-full filter blur-3xl opacity-20"></div>
-                    <div className="absolute bottom-10 right-10 w-60 h-60 bg-purple-500 rounded-full filter blur-3xl opacity-20"></div>
                 </div>
 
                 <div className="max-w-7xl mx-auto relative z-10">
@@ -438,6 +269,9 @@ export function HorizontolInfo() {
                         ))}
                     </div>
                 </div>
+            </div>
+            <div className="panel w-screen min-h-screen flex items-center justify-center  text-center bg-gradient-to-tl from-gray-900 to-black ">
+                <Speakers />
             </div>
         </div>
     );
@@ -530,158 +364,8 @@ export function VerticalInfo() {
                 </div>
             </section>
 
-            {/* Section 2: Participation Details */}
-            <section className="w-full py-12 md:py-16 px-4 bg-gradient-to-br from-gray-800 via-black to-black">
-                <div className="max-w-4xl mx-auto">
-                    {/* Header */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        viewport={{ once: true }}
-                        className="mb-10 text-center"
-                    >
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                            Participation{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-                                Details
-                            </span>
-                        </h2>
-                        <p className="text-gray-400 text-base md:text-lg max-w-lg mx-auto">
-                            Key information about joining the innovation
-                            challenge
-                        </p>
-                    </motion.div>
-
-                    {/* Cards Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
-                        {/* Team Formation Card */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                            viewport={{ once: true }}
-                            className="bg-gray-800/80 p-6 rounded-xl border border-gray-700 hover:border-blue-400/50 transition-all duration-300 shadow-lg hover:shadow-blue-500/10"
-                        >
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                                    <Users className="w-5 h-5 text-blue-400" />
-                                </div>
-                                <h3 className="text-xl font-semibold text-white">
-                                    Team Formation
-                                </h3>
-                            </div>
-                            <ul className="space-y-3 text-gray-300 text-sm md:text-base">
-                                {[
-                                    "Open to all university students nationwide",
-                                    "Teams of 2-5 members (cross-university allowed)",
-                                    "Single registration per team required",
-                                ].map((item, i) => (
-                                    <li
-                                        key={i}
-                                        className="flex items-start gap-3"
-                                    >
-                                        <span className="text-blue-400 mt-1">
-                                            <CheckCircle className="w-4 h-4" />
-                                        </span>
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
-
-                        {/* Event Structure Card */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                            viewport={{ once: true }}
-                            className="bg-gray-800/80 p-6 rounded-xl border border-gray-700 hover:border-purple-400/50 transition-all duration-300 shadow-lg hover:shadow-purple-500/10"
-                        >
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
-                                    <Calendar className="w-5 h-5 text-purple-400" />
-                                </div>
-                                <h3 className="text-xl font-semibold text-white">
-                                    Event Structure
-                                </h3>
-                            </div>
-                            <ul className="space-y-3 text-gray-300 text-sm md:text-base">
-                                {[
-                                    "48-hour intensive innovation sprint",
-                                    "Daily expert mentorship sessions",
-                                    "Final pitch showcase with prizes",
-                                ].map((item, i) => (
-                                    <li
-                                        key={i}
-                                        className="flex items-start gap-3"
-                                    >
-                                        <span className="text-purple-400 mt-1">
-                                            <CheckCircle className="w-4 h-4" />
-                                        </span>
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
-                    </div>
-
-                    {/* Universities Section */}
-                    <div className="text-center">
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ delay: 0.3, duration: 0.6 }}
-                            viewport={{ once: true }}
-                            className="mb-8"
-                        >
-                            <h3 className="text-2xl md:text-3xl font-semibold text-white mb-3">
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
-                                    Participating Universities
-                                </span>
-                            </h3>
-                            <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
-                                Open to students from every university in
-                                Malaysia — your campus could be next to shine!
-                            </p>
-                        </motion.div>
-
-                        {/* Mobile-optimized Marquee */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ delay: 0.4, duration: 0.6 }}
-                            viewport={{ once: true }}
-                            className="w-full"
-                        >
-                            <div className="relative overflow-hidden py-4">
-                                <Marquee className="w-full" pauseOnHover>
-                                    <div className="flex items-center space-x-6 px-2">
-                                        {universities.map((uni, index) => (
-                                            <div
-                                                key={index}
-                                                className="flex-shrink-0"
-                                            >
-                                                <UniLogoCard
-                                                    name={uni.name}
-                                                    img={uni.img}
-                                                />
-                                            </div>
-                                        ))}
-                                    </div>
-                                </Marquee>
-                            </div>
-
-                            <p className="text-gray-500 text-sm mt-4">
-                                And many more institutions nationwide
-                            </p>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Section 3: Partner */}
-            <section className="w-full py-16 px-4 bg-gradient-to-tl from-gray-900 to-black">
+            {/* Section 2: Partner */}
+            <section className="w-full py-16 px-4  bg-gradient-to-br from-gray-800 via-black to-black">
                 {/* Decorative elements */}
                 <div className="absolute top-0 left-0 w-full h-full opacity-10">
                     <div className="absolute top-20 left-10 w-40 h-40 bg-blue-500 rounded-full filter blur-3xl opacity-20"></div>
@@ -747,6 +431,9 @@ export function VerticalInfo() {
                     </div>
                 </div>
             </section>
+            <div className="panel w-screen min-h-screen flex items-center justify-center  text-center bg-gradient-to-tl from-gray-900 to-black ">
+                <Speakers />
+            </div>
         </div>
     );
 }
