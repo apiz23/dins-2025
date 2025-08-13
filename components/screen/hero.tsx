@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { AnimatedGradientText } from "../magicui/animated-gradient-text";
-import AboutSection from "./about";
 
 export default function Hero() {
     const [timeLeft, setTimeLeft] = useState({

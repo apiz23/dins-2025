@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { TextIntroEffect } from "../TextIntroEffect";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function SplashScreenWrapper({
     children,
@@ -11,7 +10,6 @@ export default function SplashScreenWrapper({
 }) {
     const [showSplash, setShowSplash] = useState(true);
     const [dimension, setDimension] = useState({ width: 0, height: 0 });
-    const isMobile = useIsMobile();
 
     useEffect(() => {
         setDimension({ width: window.innerWidth, height: window.innerHeight });

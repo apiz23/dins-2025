@@ -12,7 +12,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
     title: "Digital Innovathon Symposium",
-    description: "Digital Innovathon Symposium",
+    description:
+        "The Digital Innovathon Symposium 2025 (DINS 2025) is a premier platform dedicated to showcasing the latest advancements in digital innovation, technology, and creative solutions for the future.",
     icons: {
         icon: [
             {

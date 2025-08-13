@@ -1,13 +1,8 @@
 import React from "react";
-import { Timeline } from "@/components/timeline";
 import {
-    CalendarDays,
     Clock,
-    AlertCircle,
-    PartyPopper,
     Download,
     MapPin,
-    AlertTriangle,
     FileText,
     File,
     Info,
@@ -16,17 +11,19 @@ import {
     Users,
     Mail,
     HelpCircle,
-    CreditCard,
-    Zap,
     CheckCircle,
     Calendar,
+    FileInput,
+    Type,
+    Award,
+    ArrowUpRight,
+    Star,
+    Mic,
 } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
-import t1 from "@/public/images/timeline/t1.png";
-import t2 from "@/public/images/timeline/t2.png";
 import Link from "next/link";
-import { Badge } from "../ui/badge";
 import { motion } from "framer-motion";
+import { Separator } from "@/components/ui/separator";
 
 import utm from "@/public/images/unis/utm.png";
 import uitm from "@/public/images/unis/uitm.png";
@@ -69,264 +66,6 @@ const UniLogoCard = ({ name, img }: Props) => {
 };
 
 export function TimelineEvent() {
-    const data = [
-        {
-            title: "15 Aug – 30 Sept",
-            icon: <CalendarDays className="h-5 w-5 text-emerald-400" />,
-            content: (
-                <div className="space-y-6">
-                    <div className="bg-gradient-to-r from-gray-800/40 to-gray-900/30 p-5 rounded-xl border border-gray-700/80 backdrop-blur-sm">
-                        <div className="flex items-start gap-3">
-                            <div className="bg-blue-500/10 p-2 rounded-lg border border-blue-500/20">
-                                <CalendarCheck className="h-5 w-5 text-blue-400" />
-                            </div>
-                            <div className="flex flex-col gap-2">
-                                <h3 className="text-base sm:text-lg font-medium text-neutral-100">
-                                    Registration & Payment Period
-                                </h3>
-
-                                <div className="flex flex-wrap items-center gap-3">
-                                    <Badge variant="secondary">
-                                        All Participants
-                                    </Badge>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/60 p-5 rounded-xl border border-gray-700 shadow-xl overflow-hidden">
-                        <div className="relative w-full h-[250px] sm:aspect-square sm:h-auto rounded-xl overflow-hidden border-2 border-gray-700 shadow-2xl">
-                            <Image
-                                src={t1}
-                                alt="Registration period"
-                                fill
-                                className="object-cover"
-                                priority
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/30 to-transparent pointer-events-none" />
-                        </div>
-
-                        {/* Enhanced Action Buttons */}
-                        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3">
-                            <button className="group w-full py-3 bg-gradient-to-r from-emerald-600/40 to-emerald-700/30 hover:from-emerald-600/50 hover:to-emerald-700/40 rounded-lg text-emerald-100 border border-emerald-500/30 flex items-center justify-center gap-2 transition-all hover:shadow-emerald-500/20 hover:shadow-md">
-                                <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
-                                <span className="font-medium">
-                                    Registration Guide
-                                </span>
-                            </button>
-                            <button className="group w-full py-3 bg-gradient-to-r from-blue-600/40 to-blue-700/30 hover:from-blue-600/50 hover:to-blue-700/40 rounded-lg text-blue-100 border border-blue-500/30 flex items-center justify-center gap-2 transition-all hover:shadow-blue-500/20 hover:shadow-md">
-                                <FileText className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
-                                <span className="font-medium">
-                                    View Eligibility
-                                </span>
-                            </button>
-                        </div>
-
-                        {/* Quick Links */}
-                        <div className="mt-6 pt-4 border-t border-gray-700/50">
-                            <h4 className="text-sm font-semibold text-neutral-300 mb-3 flex items-center gap-2">
-                                <Zap className="h-4 w-4 text-amber-400" />
-                                Quick Actions
-                            </h4>
-                            <div className="grid grid-cols-2 gap-2">
-                                <Link
-                                    href="#"
-                                    className="text-xs px-3 py-2 bg-gray-700/50 hover:bg-gray-700 rounded-lg text-neutral-300 border border-gray-600 flex items-center gap-2 transition-colors"
-                                >
-                                    <CreditCard className="h-3.5 w-3.5" />
-                                    Payment Portal
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="text-xs px-3 py-2 bg-gray-700/50 hover:bg-gray-700 rounded-lg text-neutral-300 border border-gray-600 flex items-center gap-2 transition-colors"
-                                >
-                                    <HelpCircle className="h-3.5 w-3.5" />
-                                    FAQ
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="text-xs px-3 py-2 bg-gray-700/50 hover:bg-gray-700 rounded-lg text-neutral-300 border border-gray-600 flex items-center gap-2 transition-colors"
-                                >
-                                    <Mail className="h-3.5 w-3.5" />
-                                    Contact
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="text-xs px-3 py-2 bg-gray-700/50 hover:bg-gray-700 rounded-lg text-neutral-300 border border-gray-600 flex items-center gap-2 transition-colors"
-                                >
-                                    <Users className="h-3.5 w-3.5" />
-                                    Team Registration
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "20 Oct",
-            icon: <AlertCircle className="h-5 w-5 text-amber-400" />,
-            content: (
-                <div className="space-y-6">
-                    <div className="bg-gradient-to-r from-gray-800/40 to-gray-900/30 p-5 rounded-xl border border-gray-700/80 backdrop-blur-sm">
-                        <div className="flex items-start gap-3">
-                            <div className="bg-amber-500/10 p-2 rounded-lg border border-amber-500/20">
-                                <AlertTriangle className="h-5 w-5 text-amber-400" />
-                            </div>
-                            <div>
-                                <h3 className="text-lg font-medium text-neutral-100">
-                                    Deadline for Abstract & Draft Submission
-                                </h3>
-                                <p className="mt-1.5 text-sm text-neutral-400">
-                                    Final submissions must be in PDF format and
-                                    adhere to the conference guidelines
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/60 p-5 rounded-xl border border-gray-700 shadow-xl overflow-hidden">
-                        <div className="relative w-full h-[250px] sm:aspect-square sm:h-auto rounded-xl overflow-hidden border-2 border-gray-700 shadow-2xl">
-                            <Image
-                                src={t2}
-                                alt="Registration period"
-                                fill
-                                className="object-cover"
-                                priority
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-transparent to-transparent pointer-events-none" />
-                            <div className="absolute bottom-4 left-4">
-                                <span className="text-xs font-semibold px-3 py-1.5 bg-amber-600/90 text-white rounded-full shadow-lg">
-                                    ⏰ Final Countdown
-                                </span>
-                            </div>
-                        </div>
-
-                        {/* Enhanced Tags Section */}
-                        <div className="mt-5 flex flex-wrap gap-3">
-                            <span className="text-xs px-3 py-1.5 bg-amber-600/20 rounded-full text-amber-300 border border-amber-400/30 flex items-center gap-1.5 font-medium">
-                                <AlertCircle className="h-3.5 w-3.5" />
-                                Strict Deadline
-                            </span>
-                            <span className="text-xs px-3 py-1.5 bg-blue-600/20 rounded-full text-blue-300 border border-blue-400/30 flex items-center gap-1.5 font-medium">
-                                <File className="h-3.5 w-3.5" />
-                                Max 5MB file size
-                            </span>
-                            <span className="text-xs px-3 py-1.5 bg-gray-700/80 rounded-full text-gray-100 border border-gray-600 flex items-center gap-1.5 font-medium">
-                                <FileText className="h-3.5 w-3.5" />
-                                PDF format required
-                            </span>
-                        </div>
-
-                        {/* Submission Guidelines */}
-                        <div className="mt-6 space-y-3">
-                            <h4 className="text-sm font-semibold text-neutral-300 flex items-center gap-2">
-                                <Info className="h-4 w-4 text-blue-400" />
-                                Submission Guidelines
-                            </h4>
-                            <ul className="text-xs text-neutral-400 space-y-2 pl-5 list-disc">
-                                <li>Include author names and affiliations</li>
-                                <li>Minimum 12pt font size for readability</li>
-                                <li>Maximum 8 pages including references</li>
-                                <li>Submit through conference portal only</li>
-                            </ul>
-                        </div>
-
-                        {/* Action Buttons */}
-                        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3">
-                            <button className="w-full py-3 bg-gradient-to-r from-blue-600/40 to-blue-700/30 hover:from-blue-600/50 hover:to-blue-700/40 rounded-lg text-blue-100 border border-blue-500/30 flex items-center justify-center gap-2 transition-all hover:shadow-blue-500/20 hover:shadow-md">
-                                <UploadCloud className="h-4 w-4" />
-                                <span className="font-medium">Submit Now</span>
-                            </button>
-                            <button className="w-full py-3 bg-gradient-to-r from-gray-700/40 to-gray-800/30 hover:from-gray-700/50 hover:to-gray-800/40 rounded-lg text-neutral-100 border border-gray-600/30 flex items-center justify-center gap-2 transition-all hover:shadow-gray-500/10 hover:shadow-md">
-                                <FileText className="h-4 w-4" />
-                                <span className="font-medium">
-                                    Download Template
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "3 Nov",
-            icon: <PartyPopper className="h-5 w-5 text-purple-400" />,
-            content: (
-                <div className="space-y-6">
-                    <div className="bg-gray-800/40 p-5 rounded-xl border border-gray-700/80 backdrop-blur-sm">
-                        <h3 className="text-lg font-medium text-neutral-100 flex items-center gap-2">
-                            <CalendarDays className="h-5 w-5 text-purple-400" />
-                            Symposium Day @ Universiti Tun Hussein Onn Malaysia
-                        </h3>
-
-                        <p className="mt-2 text-sm text-neutral-400 flex items-center gap-2">
-                            <Clock className="h-4 w-4 text-purple-400" />
-                            <span>Main Campus, 9:00 AM - 5:00 PM</span>
-                            <span className="text-xs bg-purple-900/30 text-purple-300 px-2 py-1 rounded-full ml-2">
-                                All Day Event
-                            </span>
-                        </p>
-                    </div>
-
-                    <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/60 p-5 rounded-xl border border-gray-700 shadow-xl">
-                        <h4 className="text-md font-medium text-neutral-200 mb-4 flex items-center gap-2">
-                            <MapPin className="h-5 w-5 text-rose-400" />
-                            Location Details
-                        </h4>
-
-                        {/* Enhanced Google Map Embed */}
-                        <div className="relative w-full aspect-video max-h-[400px] md:max-h-[450px] rounded-xl overflow-hidden border-2 border-gray-700 shadow-2xl">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.160378290877!2d103.0852!3d1.8554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da72f8a7a8b2c5%3A0x9f7cf7e6b9a05a!2sUniversiti%20Tun%20Hussein%20Onn%20Malaysia!5e0!3m2!1sen!2smy!4v1691505630664!5m2!1sen!2smy"
-                                allowFullScreen
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                                className="w-full h-full"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent pointer-events-none" />
-                        </div>
-
-                        <div className="mt-6 space-y-3">
-                            <div className="flex items-start gap-3 text-sm text-neutral-300">
-                                <div className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-pulse mt-1 flex-shrink-0"></div>
-                                <span className="font-medium">
-                                    Keynote speeches from industry leaders
-                                </span>
-                            </div>
-                            <div className="flex items-start gap-3 text-sm text-neutral-300">
-                                <div className="w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse mt-1 flex-shrink-0"></div>
-                                <span className="font-medium">
-                                    Interactive networking sessions
-                                </span>
-                            </div>
-                            <div className="flex items-start gap-3 text-sm text-neutral-300">
-                                <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse mt-1 flex-shrink-0"></div>
-                                <span className="font-medium">
-                                    Award ceremony and closing dinner
-                                </span>
-                            </div>
-                        </div>
-
-                        {/* Enhanced Action Buttons */}
-                        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-3">
-                            <Link
-                                href="https://maps.app.goo.gl/D21WZe5Uz8kDCM3L9"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-full py-3 bg-gradient-to-r from-purple-600/40 to-purple-700/30 hover:from-purple-600/50 hover:to-purple-700/40 rounded-lg text-purple-100 border border-purple-500/30 flex items-center justify-center gap-2 transition-all hover:shadow-purple-500/20 hover:shadow-md"
-                            >
-                                <MapPin className="h-5 w-5" />
-                                <span className="font-medium">
-                                    View Campus Map
-                                </span>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            ),
-        },
-    ];
-
     return (
         <>
             {/* Panel 3*/}
@@ -522,23 +261,409 @@ export function TimelineEvent() {
                     <div className="absolute bottom-1/6 right-0 translate-y-1/2 translate-x-1/2 w-80 h-80 rounded-full bg-purple-500/10 blur-3xl animate-pulse delay-800"></div>
                 </div>
                 <div
-                    className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8"
+                    className="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8"
                     id="schedule"
                 >
-                    <div className="mt-12 text-center">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                    <div className="text-center mb-16">
+                        <h2 className="text-5xl md:text-6xl font-bold mb-4 text-white bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
                             Event Timeline
                         </h2>
-                        <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-                            Important dates and milestones for the symposium
+                        <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
+                            Key dates and milestones for your innovation journey
                         </p>
                     </div>
 
                     <div className="relative">
-                        <div className="absolute -left-20 top-1/3 w-64 h-64 bg-emerald-500 rounded-full filter blur-3xl opacity-10"></div>
-                        <div className="absolute -right-20 top-2/3 w-64 h-64 bg-purple-500 rounded-full filter blur-3xl opacity-10"></div>
+                        {/* Animated background elements */}
+                        <div className="absolute -left-20 top-1/3 w-64 h-64 bg-emerald-500 rounded-full filter blur-3xl opacity-10 animate-pulse duration-5000"></div>
+                        <div className="absolute -right-20 top-2/3 w-64 h-64 bg-purple-500 rounded-full filter blur-3xl opacity-10 animate-pulse duration-7000"></div>
 
-                        <Timeline data={data} />
+                        <div className="space-y-12">
+                            {/* Pricing Section - Enhanced */}
+                            <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                                {/* Registration Period Card - More prominent */}
+                                <div className="bg-gradient-to-r from-indigo-900/40 to-purple-900/40 p-8 rounded-2xl border border-gray-700 backdrop-blur-sm shadow-xl mb-12 transform transition-all hover:scale-[1.01]">
+                                    <div className="flex flex-col sm:flex-row items-start gap-6">
+                                        <div className="bg-indigo-500/20 p-4 rounded-xl border border-indigo-500/30 flex-shrink-0">
+                                            <CalendarCheck className="h-8 w-8 text-indigo-400" />
+                                        </div>
+                                        <div className="flex-1">
+                                            <h3 className="text-2xl font-semibold text-white mb-2">
+                                                Registration Now Open
+                                            </h3>
+                                            <p className="text-lg text-gray-300 mb-4">
+                                                August 15 – September 30, 2025
+                                            </p>
+                                            <div className="flex flex-wrap gap-3">
+                                                <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-gray-800 text-gray-200 border border-gray-700">
+                                                    Limited slots available
+                                                </span>
+                                                <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-amber-500/15 text-amber-400 border border-amber-500/30">
+                                                    Early bird discounts until
+                                                    August 31
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Header with better spacing */}
+                                <div className="text-center mb-20">
+                                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-900/30 border border-blue-700/50 mb-4">
+                                        <span className="text-blue-300 text-sm font-medium">
+                                            Simple Pricing
+                                        </span>
+                                    </div>
+                                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+                                        Choose Your Plan
+                                    </h2>
+                                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                                        Flexible options tailored for students.
+                                        All plans include full event access and
+                                        exclusive benefits.
+                                    </p>
+                                </div>
+
+                                {/* Pricing Cards - Improved layout and styling */}
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                                    {/* UTHM Student */}
+                                    <div className="relative group">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                        <div className="relative bg-gray-900/80 rounded-2xl border border-gray-700 overflow-hidden h-full hover:border-blue-400 transition-all backdrop-blur-sm z-10">
+                                            <div className="p-8">
+                                                <div className="flex justify-between items-start">
+                                                    <div>
+                                                        <h3 className="text-2xl font-bold text-white mb-2">
+                                                            UTHM Student
+                                                        </h3>
+                                                        <p className="text-blue-300 text-sm">
+                                                            Exclusive rate for
+                                                            UTHM students
+                                                        </p>
+                                                    </div>
+                                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-500/20 text-blue-300">
+                                                        Best Value
+                                                    </span>
+                                                </div>
+                                                <div className="my-6">
+                                                    <div className="flex items-end">
+                                                        <span className="text-4xl font-bold text-white">
+                                                            RM70
+                                                        </span>
+                                                        <span className="text-lg text-gray-400 ml-2 line-through">
+                                                            RM80
+                                                        </span>
+                                                    </div>
+                                                    <p className="text-blue-300 text-sm mt-1">
+                                                        Save RM10 with student
+                                                        discount
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="border-t border-gray-700/50 p-8 bg-gray-900/30">
+                                                <h4 className="text-lg font-medium text-white mb-4">
+                                                    What{"'"}s included:
+                                                </h4>
+                                                <ul className="space-y-3">
+                                                    {[
+                                                        "Official participation certificate",
+                                                        "Team medal for all members",
+                                                        "Dedicated exhibition booth",
+                                                        "Event souvenirs & merchandise",
+                                                        "Access to all workshops",
+                                                    ].map((item, idx) => (
+                                                        <li
+                                                            key={idx}
+                                                            className="flex items-start"
+                                                        >
+                                                            <CheckCircle className="h-5 w-5 text-emerald-400 mr-3 mt-0.5 flex-shrink-0" />
+                                                            <span className="text-gray-300">
+                                                                {item}
+                                                            </span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Non–UTHM Student */}
+                                    <div className="relative group">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                        <div className="relative bg-gray-900/80 rounded-2xl border border-gray-700 overflow-hidden h-full hover:border-purple-400 transition-all backdrop-blur-sm z-10">
+                                            <div className="p-8">
+                                                <div className="flex justify-between items-start">
+                                                    <div>
+                                                        <h3 className="text-2xl font-bold text-white mb-2">
+                                                            Non UTHM Student
+                                                        </h3>
+                                                        <p className="text-gray-400 text-sm">
+                                                            Open to all
+                                                            university students
+                                                        </p>
+                                                    </div>
+                                                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-500/20 text-purple-300">
+                                                        Popular
+                                                    </span>
+                                                </div>
+                                                <div className="my-6">
+                                                    <div className="flex items-end">
+                                                        <span className="text-4xl font-bold text-white">
+                                                            RM100
+                                                        </span>
+                                                        <span className="text-lg text-gray-400 ml-2 line-through">
+                                                            RM110
+                                                        </span>
+                                                    </div>
+                                                    <p className="text-purple-300 text-sm mt-1">
+                                                        Save RM10 with early
+                                                        registration
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="border-t border-gray-700/50 p-8 bg-gray-900/30">
+                                                <h4 className="text-lg font-medium text-white mb-4">
+                                                    What{"'"}s included:
+                                                </h4>
+                                                <ul className="space-y-3">
+                                                    {[
+                                                        "Official participation certificate",
+                                                        "Team medal for all members",
+                                                        "Dedicated exhibition booth",
+                                                        "Event souvenirs & merchandise",
+                                                        "Access to all workshops",
+                                                    ].map((item, idx) => (
+                                                        <li
+                                                            key={idx}
+                                                            className="flex items-start"
+                                                        >
+                                                            <CheckCircle className="h-5 w-5 text-emerald-400 mr-3 mt-0.5 flex-shrink-0" />
+                                                            <span className="text-gray-300">
+                                                                {item}
+                                                            </span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* CTA Section - More prominent */}
+                            <div className="text-center px-6">
+                                <div className="inline-flex flex-col sm:flex-row gap-4 bg-gray-900/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-700 max-w-2xl mx-auto">
+                                    <Link
+                                        href="#faqs"
+                                        className="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg text-gray-200 border border-gray-700 flex items-center justify-center gap-2 transition-colors hover:border-gray-600"
+                                    >
+                                        <HelpCircle className="h-5 w-5" />
+                                        <span>View FAQs</span>
+                                    </Link>
+                                    <Link
+                                        href="#contact"
+                                        className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 rounded-lg text-white border border-blue-500 flex items-center justify-center gap-2 transition-colors hover:border-blue-400 shadow-lg shadow-blue-500/20"
+                                    >
+                                        <Mail className="h-5 w-5" />
+                                        <span>Contact Organizers</span>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <Separator className="max-w-6xl mx-auto bg-white/20" />
+
+                <div className="space-y-6">
+                    <div className="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-4">
+                        {/* Deadline Alert - Simplified */}
+
+                        <div className="bg-gradient-to-r from-indigo-900/40 to-purple-900/40 p-8 rounded-2xl border border-gray-700 backdrop-blur-sm shadow-xl mb-12 transform transition-all hover:scale-[1.01]">
+                            <div className="flex flex-col sm:flex-row items-start gap-6">
+                                <div className="bg-indigo-500/20 p-4 rounded-xl border border-indigo-500/30 flex-shrink-0">
+                                    <CalendarCheck className="h-8 w-8 text-indigo-400" />
+                                </div>
+                                <div className="flex-1">
+                                    <h3 className="text-2xl font-semibold text-white mb-2">
+                                        Abstract & Draft Submission Deadline
+                                    </h3>
+                                    <p className="text-lg text-gray-300 mb-4">
+                                        20 Oct 2025
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Submission Card - Streamlined */}
+                        <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/60 p-6 rounded-xl border border-gray-700 backdrop-blur-sm">
+                            {/* Key Requirements */}
+                            <div className="mb-6">
+                                <h4 className="text-sm font-medium text-neutral-200 mb-3 flex items-center gap-2">
+                                    <Info className="h-4 w-4 text-blue-400" />
+                                    Key Requirements
+                                </h4>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div className="flex items-center gap-2 text-sm text-neutral-300">
+                                        <FileText className="h-4 w-4 text-blue-400 flex-shrink-0" />
+                                        PDF format only
+                                    </div>
+                                    <div className="flex items-center gap-2 text-sm text-neutral-300">
+                                        <File className="h-4 w-4 text-blue-400 flex-shrink-0" />
+                                        Max 5MB file size
+                                    </div>
+                                    <div className="flex items-center gap-2 text-sm text-neutral-300">
+                                        <Type className="h-4 w-4 text-blue-400 flex-shrink-0" />
+                                        12pt minimum font
+                                    </div>
+                                    <div className="flex items-center gap-2 text-sm text-neutral-300">
+                                        <FileInput className="h-4 w-4 text-blue-400 flex-shrink-0" />
+                                        Conference portal submission
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Action Buttons - More prominent */}
+                            <div className="flex flex-col sm:flex-row gap-3">
+                                <button className="flex-1 py-3 px-4 bg-blue-600/90 hover:bg-blue-500 rounded-lg text-white font-medium flex items-center justify-center gap-2 transition-all hover:shadow-lg hover:shadow-blue-500/20">
+                                    <UploadCloud className="h-4 w-4" />
+                                    Submit Now
+                                </button>
+                                <button className="flex-1 py-3 px-4 bg-gray-700/80 hover:bg-gray-600/90 rounded-lg text-neutral-100 font-medium flex items-center justify-center gap-2 transition-all border border-gray-600/50">
+                                    <Download className="h-4 w-4" />
+                                    Download Guidelines
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <Separator className="max-w-6xl mx-auto bg-white/20" />
+
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+                    <div className="bg-gradient-to-r from-indigo-900/40 to-purple-900/40 p-8 rounded-2xl border border-gray-700 backdrop-blur-sm shadow-xl mb-12 transform transition-all hover:scale-[1.01]">
+                        <div className="flex flex-col sm:flex-row items-start gap-6">
+                            <div className="bg-indigo-500/20 p-4 rounded-xl border border-indigo-500/30 flex-shrink-0">
+                                <CalendarCheck className="h-8 w-8 text-indigo-400" />
+                            </div>
+                            <div className="flex-1">
+                                <h3 className="text-2xl font-semibold text-white mb-2">
+                                    Symposium Day @ UTHM
+                                </h3>
+                                <p className="text-lg text-gray-300 mb-4">
+                                    3 Nov 2025
+                                </p>
+                                <div className="mt-2 flex flex-wrap items-center gap-3">
+                                    <div className="flex items-center text-sm text-purple-200">
+                                        <Clock className="h-4 w-4 mr-2" />
+                                        <span>9:00 AM - 5:00 PM</span>
+                                    </div>
+                                    <div className="flex items-center text-sm text-gray-300">
+                                        <MapPin className="h-4 w-4 mr-2 text-rose-300" />
+                                        <span>
+                                            Main Campus, Universiti Tun Hussein
+                                            Onn Malaysia
+                                        </span>
+                                    </div>
+                                    <span className="text-xs bg-purple-900/40 text-purple-200 px-3 py-1 rounded-full border border-purple-700/50">
+                                        All Day Event
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Location Section - Enhanced */}
+                    <div className="bg-gray-800/50 rounded-2xl border border-gray-700/80 overflow-hidden backdrop-blur-sm">
+                        <div className="p-6">
+                            <div className="flex items-center gap-3 mb-5">
+                                <div className="bg-rose-500/20 p-2 rounded-lg border border-rose-500/30">
+                                    <MapPin className="h-5 w-5 text-rose-300" />
+                                </div>
+                                <h3 className="text-lg font-semibold text-white">
+                                    Venue Location
+                                </h3>
+                            </div>
+
+                            {/* Interactive Map - Improved */}
+                            <div className="relative w-full aspect-video rounded-xl overflow-hidden border-2 border-gray-700 shadow-lg hover:border-purple-500 transition-all duration-300">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.160378290877!2d103.0852!3d1.8554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da72f8a7a8b2c5%3A0x9f7cf7e6b9a05a!2sUniversiti%20Tun%20Hussein%20Onn%20Malaysia!5e0!3m2!1sen!2smy!4v1691505630664!5m2!1sen!2smy"
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    className="w-full h-full absolute inset-0"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-transparent to-transparent pointer-events-none" />
+                            </div>
+
+                            {/* Event Highlights - More Engaging */}
+                            <div className="mt-6 space-y-4">
+                                <h4 className="text-sm font-medium text-gray-300 flex items-center gap-2">
+                                    <Star className="h-4 w-4 text-yellow-400" />
+                                    Event Highlights
+                                </h4>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    {[
+                                        {
+                                            icon: (
+                                                <Mic className="h-5 w-5 text-purple-400" />
+                                            ),
+                                            title: "Keynote Speeches",
+                                            desc: "Industry leaders sharing insights",
+                                            color: "bg-purple-500/10",
+                                        },
+                                        {
+                                            icon: (
+                                                <Users className="h-5 w-5 text-blue-400" />
+                                            ),
+                                            title: "Networking",
+                                            desc: "Connect with professionals",
+                                            color: "bg-blue-500/10",
+                                        },
+                                        {
+                                            icon: (
+                                                <Award className="h-5 w-5 text-emerald-400" />
+                                            ),
+                                            title: "Awards Ceremony",
+                                            desc: "Recognizing excellence",
+                                            color: "bg-emerald-500/10",
+                                        },
+                                    ].map((item, index) => (
+                                        <div
+                                            key={index}
+                                            className={`${item.color} p-4 rounded-xl border border-gray-700/50`}
+                                        >
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <div className="p-1.5 rounded-lg">
+                                                    {item.icon}
+                                                </div>
+                                                <h5 className="font-medium text-white">
+                                                    {item.title}
+                                                </h5>
+                                            </div>
+                                            <p className="text-xs text-gray-300">
+                                                {item.desc}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* CTA Button - More Prominent */}
+                            <div className="mt-8 flex justify-center">
+                                <Link
+                                    href="https://maps.app.goo.gl/D21WZe5Uz8kDCM3L9"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 rounded-lg text-white font-medium flex items-center justify-center gap-2 transition-all hover:shadow-lg hover:shadow-purple-500/30"
+                                >
+                                    <MapPin className="h-5 w-5" />
+                                    <span>Open in Google Maps</span>
+                                    <ArrowUpRight className="h-4 w-4" />
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

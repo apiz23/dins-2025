@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import utm from "@/public/images/unis/utm.png";
 import uitm from "@/public/images/unis/uitm.png";
 import usm from "@/public/images/unis/usm.png";
@@ -13,23 +13,9 @@ import utem from "@/public/images/unis/utem.png";
 import uthm from "@/public/images/unis/uthm.png";
 import ump from "@/public/images/unis/ump.png";
 import Image, { StaticImageData } from "next/image";
-import { Marquee } from "../magicui/marquee";
-import { ArrowRight, Calendar, CheckCircle, Users } from "lucide-react";
 import mdec from "@/public/images/mdec-logo.png";
-import { AnimatedGradientText } from "../magicui/animated-gradient-text";
 import Speakers from "./speaker";
 import { BlurFade } from "../magicui/blur-fade";
-
-const universities = [
-    { name: "UTHM", img: uthm },
-    { name: "UTM", img: utm },
-    { name: "USM", img: usm },
-    { name: "UM", img: um },
-    { name: "UKM", img: ukm },
-    { name: "UTEM", img: utem },
-    { name: "UITM", img: uitm },
-    { name: "UMP", img: ump },
-];
 
 const partners = [
     {
@@ -41,25 +27,6 @@ const partners = [
         logo: mdec,
     },
 ];
-
-type Props = {
-    name: string;
-    img: string | StaticImageData;
-};
-
-const UniLogoCard = ({ name, img }: Props) => {
-    return (
-        <div className="hover:shadow-lg hover:shadow-blue-500/20 transition-all bg-white p-4 rounded-md shadow-md md:w-full min-w-[150px] h-40 flex flex-col items-center justify-center">
-            <Image
-                src={img}
-                alt={name}
-                width={1080}
-                height={1920}
-                className="w-[24vw] md:w-44 h-auto object-contain drop-shadow-md"
-            />
-        </div>
-    );
-};
 
 export function HorizontolInfo() {
     useEffect(() => {
