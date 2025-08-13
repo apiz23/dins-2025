@@ -59,13 +59,13 @@ export default function Hero() {
                 <div className="absolute bottom-1/5 right-1/5 w-48 h-48 rounded-full bg-indigo-500/15 blur-3xl animate-pulse delay-600"></div>
             </div>
 
-            <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8">
+            <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-24 sm:pt-0">
                 {/* Main Heading */}
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="w-full text-center mb-8"
+                    className="w-full text-center mb-6 sm:mb-8 pt-32"
                 >
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -76,7 +76,7 @@ export default function Hero() {
                             speed={1.2}
                             colorFrom="#3b82f6"
                             colorTo="#10b981"
-                            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4"
+                            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-3 sm:mb-4 leading-tight"
                         >
                             DIGITAL INNOVATHON
                         </AnimatedGradientText>
@@ -86,7 +86,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6"
+                        className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6"
                     >
                         SYMPOSIUM 2025
                     </motion.h2>
@@ -95,7 +95,7 @@ export default function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4, duration: 0.8 }}
-                        className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed"
+                        className="text-base sm:text-lg text-gray-300 max-w-lg sm:max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed px-2"
                     >
                         Where{" "}
                         <span className="font-semibold text-blue-300">
@@ -117,18 +117,17 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.8 }}
-                    className="flex flex-col sm:flex-row gap-4 mb-12 w-full sm:w-auto"
+                    className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10 sm:mb-12 w-full max-w-xs sm:max-w-none justify-center"
                 >
                     <Link
                         href="https://docs.google.com/forms/d/e/1FAIpQLScTZ-hp-i0fr51nNivRIInBJSYiiU4VIakaiFxULgAOoLECtw/viewform"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="relative px-8 py-3 sm:px-10 sm:py-4 bg-gradient-to-r from-blue-500 to-emerald-500 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 text-base"
+                        className="relative px-6 py-3 sm:px-10 sm:py-4 bg-gradient-to-r from-blue-500 to-emerald-500 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 text-base w-full sm:w-auto text-center"
                     >
                         <motion.span
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="flex items-center justify-center"
                         >
                             Register Now →
                         </motion.span>
@@ -136,12 +135,11 @@ export default function Hero() {
 
                     <Link
                         href="#about"
-                        className="relative px-8 py-3 sm:px-10 sm:py-4 bg-transparent border-2 border-white/20 text-white font-semibold rounded-full hover:bg-white/5 hover:border-white/40 transition-all duration-300 text-base"
+                        className="relative px-6 py-3 sm:px-10 sm:py-4 bg-transparent border-2 border-white/20 text-white font-semibold rounded-full hover:bg-white/5 hover:border-white/40 transition-all duration-300 text-base w-full sm:w-auto text-center"
                     >
                         <motion.span
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="flex items-center justify-center"
                         >
                             Learn More ↓
                         </motion.span>
@@ -153,7 +151,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.8 }}
-                    className="grid grid-cols-3 gap-4 sm:gap-6 w-full max-w-md sm:max-w-2xl mb-12"
+                    className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 w-full max-w-sm sm:max-w-2xl mb-10 sm:mb-12"
                 >
                     {[
                         { number: "24-26", label: "October 2025" },
@@ -162,10 +160,10 @@ export default function Hero() {
                     ].map((item, index) => (
                         <motion.div
                             key={index}
-                            whileHover={{ y: -5 }}
+                            whileHover={{ y: -3 }}
                             className="p-4 sm:p-5 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-white/20 transition-all"
                         >
-                            <div className="text-2xl sm:text-3xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                            <div className="text-xl sm:text-3xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
                                 {item.number}
                             </div>
                             <div className="text-xs sm:text-sm text-gray-300">
@@ -175,61 +173,37 @@ export default function Hero() {
                     ))}
                 </motion.div>
 
-                 <motion.div
+                {/* Countdown */}
+                <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7, duration: 0.8 }}
-                    className="mb-16"
+                    className="mb-12 sm:mb-16"
                 >
-                    <h3 className="text-lg sm:text-xl text-gray-300/80 mb-6 tracking-wider">
+                    <h3 className="text-sm sm:text-lg text-gray-300/80 mb-4 sm:mb-6 tracking-wider">
                         COUNTDOWN TO EVENT
                     </h3>
-                    <div className="flex justify-center gap-4">
+                    <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
                         {Object.entries(timeLeft).map(([unit, value]) => (
                             <div
                                 key={unit}
-                                className="flex flex-col items-center p-4 w-20 bg-white/5 backdrop-blur-md rounded-lg border border-white/10 hover:border-white/30 transition-colors"
+                                className="flex flex-col items-center p-3 w-16 sm:w-20 bg-white/5 backdrop-blur-md rounded-lg border border-white/10 hover:border-white/30 transition-colors"
                             >
                                 <motion.span
                                     key={value}
                                     initial={{ opacity: 0, y: -10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.3 }}
-                                    className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent"
+                                    className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent"
                                 >
                                     {value.toString().padStart(2, "0")}
                                 </motion.span>
-                                <span className="text-xs text-gray-300/80 uppercase tracking-wider mt-1">
+                                <span className="text-[10px] sm:text-xs text-gray-300/80 uppercase tracking-wider mt-1">
                                     {unit}
                                 </span>
                             </div>
                         ))}
                     </div>
-                </motion.div>
-
-                {/* Scroll Indicator */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.2, duration: 0.8 }}
-                    className="absolute bottom-20 left-1/2 transform -translate-x-1/2"
-                >
-                    <motion.div
-                        animate={{
-                            y: [0, 10, 0],
-                        }}
-                        transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        }}
-                        className="flex flex-col items-center cursor-pointer"
-                    >
-                        <span className="text-sm text-white/80 mb-1 tracking-wider">
-                            EXPLORE MORE
-                        </span>
-                        <ChevronDown className="w-5 h-5 text-white/80" />
-                    </motion.div>
                 </motion.div>
             </div>
         </section>
