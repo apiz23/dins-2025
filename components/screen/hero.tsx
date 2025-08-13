@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { AnimatedGradientText } from "../magicui/animated-gradient-text";
 
