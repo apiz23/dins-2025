@@ -54,7 +54,7 @@ export function HorizontolInfo() {
     }, []);
 
     return (
-        <div className="horizontal-scroll-container flex h-screen w-[300vw] overflow-hidden ">
+        <div className="horizontal-scroll-container flex h-screen w-[300vw] overflow-hidden">
             {/* Panel 1 - Why Participate */}
             <div className="panel w-screen min-h-screen flex-shrink-0 flex items-center justify-center bg-gradient-to-tr from-gray-800 via-black to-black px-4 sm:px-6 py-16 text-center">
                 <div className="w-full max-w-6xl mx-auto">
@@ -220,7 +220,7 @@ export function VerticalInfo() {
         <div className="w-full overflow-x-hidden">
             {/* Section 1: Benefits */}
             <section className="w-full py-16 px-4 bg-gradient-to-tr from-gray-800 via-black to-black">
-                <div className="max-w-5xl mx-auto">
+                <div className="max-w-5xl mx-auto p-4">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -310,7 +310,7 @@ export function VerticalInfo() {
                     <div className="absolute bottom-10 right-10 w-60 h-60 bg-purple-500 rounded-full filter blur-3xl opacity-20"></div>
                 </div>
 
-                <div className="max-w-7xl mx-auto relative z-10">
+                <div className="max-w-7xl mx-auto relative z-10 p-4">
                     <div className="text-center mb-20">
                         <span className="inline-block text-blue-400 font-medium mb-4 tracking-wider">
                             STRATEGIC PARTNERSHIPS

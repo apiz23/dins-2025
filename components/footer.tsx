@@ -132,7 +132,7 @@ export default function Footer() {
                         DINS 2025
                     </h1>
 
-                    <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-center sm:text-left">
                         <div className="flex items-center gap-3">
                             <Image
                                 src={uthmLogo}

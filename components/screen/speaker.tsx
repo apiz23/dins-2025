@@ -113,7 +113,7 @@ const speakers: Speaker[] = [
 
 export default function Speakers() {
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto p-4">
             <BlurFade inView>
                 <div className="text-center mb-16">
                     <AnimatedGradientText

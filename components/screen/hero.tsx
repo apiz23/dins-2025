@@ -186,7 +186,7 @@ export default function Hero() {
                         {Object.entries(timeLeft).map(([unit, value]) => (
                             <div
                                 key={unit}
-                                className="flex flex-col items-center p-2 sm:p-3 w-14 sm:w-20 bg-white/5 backdrop-blur-md rounded-md sm:rounded-lg border border-white/10 hover:border-white/30 transition-colors"
+                                className="flex flex-col items-center p-2 sm:p-3 w-fit bg-white/5 backdrop-blur-md rounded-md sm:rounded-lg border border-white/10 hover:border-white/30 transition-colors"
                             >
                                 <motion.span
                                     key={value}

@@ -14,9 +14,10 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 // @ts-expect-error no types available
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { PanelBottomOpen } from "lucide-react";
+import { ArrowRight, PanelBottomOpen } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import dinsLogo from "@/public/icon/android-chrome-512x512.png";
+import Link from "next/link";
 
 export default function Navbar() {
     const isMobile = useIsMobile();
@@ -115,12 +116,13 @@ export default function Navbar() {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.6 }}
                                 >
-                                    <AnchorLink
+                                    <Link
                                         href="https://docs.google.com/forms/d/e/1FAIpQLScTZ-hp-i0fr51nNivRIInBJSYiiU4VIakaiFxULgAOoLECtw/viewform"
+                                        target="_blank"
                                         className="ml-2 px-6 py-2 rounded-lg font-medium text-white bg-gradient-to-r from-blue-600 to-emerald-500 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300"
                                     >
                                         Register
-                                    </AnchorLink>
+                                    </Link>
                                 </motion.div>
                             </motion.div>
 
@@ -196,19 +198,7 @@ export default function Navbar() {
                                                         <span className="flex-1">
                                                             {item.name}
                                                         </span>
-                                                        <svg
-                                                            className="h-4 w-4 text-gray-500"
-                                                            fill="none"
-                                                            viewBox="0 0 24 24"
-                                                            stroke="currentColor"
-                                                        >
-                                                            <path
-                                                                strokeLinecap="round"
-                                                                strokeLinejoin="round"
-                                                                strokeWidth={2}
-                                                                d="M9 5l7 7-7 7"
-                                                            />
-                                                        </svg>
+                                                        <ArrowRight />
                                                     </AnchorLink>
                                                 </motion.div>
                                             ))}
@@ -220,13 +210,13 @@ export default function Navbar() {
                                                 animate={{ opacity: 1, y: 0 }}
                                                 transition={{ delay: 0.6 }}
                                             >
-                                                <AnchorLink
+                                                <Link
                                                     href="https://docs.google.com/forms/d/e/1FAIpQLScTZ-hp-i0fr51nNivRIInBJSYiiU4VIakaiFxULgAOoLECtw/viewform"
-                                                    offset={80}
+                                                    target="_blank"
                                                     className="mt-4 px-4 py-3 rounded-lg w-full block text-center font-medium text-white bg-gradient-to-r from-blue-600 to-emerald-500 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300"
                                                 >
                                                     Register Now
-                                                </AnchorLink>
+                                                </Link>
                                             </motion.div>
                                             <motion.div
                                                 initial={{ opacity: 0, y: 10 }}

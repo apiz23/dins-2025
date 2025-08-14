@@ -25,7 +25,7 @@ export default function AboutSection() {
 
     return (
         <section
-            className="relative py-16 bg-black text-center text-white"
+            className="relative py-16 px-6 bg-black text-center text-white"
             id="about"
         >
             {/* Decorative background blur elements */}
