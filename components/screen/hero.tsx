@@ -58,13 +58,13 @@ export default function Hero() {
                 <div className="absolute bottom-1/5 right-1/5 w-48 h-48 rounded-full bg-indigo-500/15 blur-3xl animate-pulse delay-600"></div>
             </div>
 
-            <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-24 sm:pt-0">
+            <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-0">
                 {/* Main Heading */}
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="w-full text-center mb-6 sm:mb-8 pt-32"
+                    className="w-full text-center mb-6 sm:mb-8 pt-10"
                 >
                     <motion.div
                         initial={{ opacity: 0 }}
@@ -177,27 +177,27 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7, duration: 0.8 }}
-                    className="mb-12 sm:mb-16"
+                    className="mb-8 sm:mb-16"
                 >
-                    <h3 className="text-sm sm:text-lg text-gray-300/80 mb-4 sm:mb-6 tracking-wider">
+                    <h3 className="text-xs sm:text-lg text-gray-300/80 mb-3 sm:mb-6 tracking-wider text-center">
                         COUNTDOWN TO EVENT
                     </h3>
-                    <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+                    <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
                         {Object.entries(timeLeft).map(([unit, value]) => (
                             <div
                                 key={unit}
-                                className="flex flex-col items-center p-3 w-16 sm:w-20 bg-white/5 backdrop-blur-md rounded-lg border border-white/10 hover:border-white/30 transition-colors"
+                                className="flex flex-col items-center p-2 sm:p-3 w-14 sm:w-20 bg-white/5 backdrop-blur-md rounded-md sm:rounded-lg border border-white/10 hover:border-white/30 transition-colors"
                             >
                                 <motion.span
                                     key={value}
                                     initial={{ opacity: 0, y: -10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.3 }}
-                                    className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent"
+                                    className="text-base sm:text-2xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent"
                                 >
                                     {value.toString().padStart(2, "0")}
                                 </motion.span>
-                                <span className="text-[10px] sm:text-xs text-gray-300/80 uppercase tracking-wider mt-1">
+                                <span className="text-[9px] sm:text-xs text-gray-300/80 uppercase tracking-wider mt-0.5">
                                     {unit}
                                 </span>
                             </div>
