@@ -85,7 +85,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
-                        className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6"
+                        className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6"
                     >
                         SYMPOSIUM 2025
                     </motion.h2>

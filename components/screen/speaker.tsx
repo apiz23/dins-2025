@@ -83,16 +83,6 @@ const SpeakerItem = ({ speaker }: { speaker: Speaker }) => {
 const speakers: Speaker[] = [
     {
         id: 1,
-        name: "Dr. Sarah Johnson",
-        bio: "AI Researcher with 10+ years experience in machine learning and neural networks.",
-        image: "https://github.com/shadcn.png",
-        socialLinks: [
-            { platform: "twitter", url: "#" },
-            { platform: "website", url: "#" },
-        ],
-    },
-    {
-        id: 2,
         name: "PROF. Ts. Dr. MOHD FARHAN BIN MD. FUDZEE",
         bio: "Dean of FSKTM, UTHM, specializing in Multimedia Computing, Digitalization, and ICT Governance.",
         image: "/images/speakers/2.png",
@@ -102,7 +92,7 @@ const speakers: Speaker[] = [
         ],
     },
     {
-        id: 3,
+        id: 2,
         name: "To Be Announced",
         bio: "Special guest speaker - details coming soon!",
         image: "",
@@ -130,7 +120,7 @@ export default function Speakers() {
                 </div>
             </BlurFade>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                 {speakers.map((speaker, i) => (
                     <BlurFade key={speaker.id} delay={i * 0.15} inView>
                         <SpeakerItem speaker={speaker} />

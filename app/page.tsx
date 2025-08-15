@@ -1,7 +1,7 @@
 "use client";
 
 import Footer from "@/components/footer";
-import { TimelineEvent } from "@/components/screen/timeline-event";
+import { TimelineEvent } from "@/components/screen/timeline/timeline-event";
 import {
     HorizontolInfo,
     VerticalInfo,
@@ -10,6 +10,7 @@ import Hero from "@/components/screen/hero";
 import { useIsMobile } from "@/hooks/use-mobile";
 import CTA from "@/components/screen/cta";
 import AboutSection from "@/components/screen/about";
+import FAQS from "@/components/screen/faqs";
 
 export default function Home() {
     const isMobile = useIsMobile();
@@ -26,6 +27,7 @@ export default function Home() {
                 </div>
             )}
             <TimelineEvent />
+            <FAQS />
             <CTA />
             <Footer />
         </>
