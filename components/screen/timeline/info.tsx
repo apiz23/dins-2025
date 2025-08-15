@@ -106,7 +106,7 @@ export default function Info() {
                                         <ul className="space-y-3 sm:space-y-4 text-gray-300 text-sm sm:text-base text-start">
                                             {[
                                                 "Open to all university students nationwide with valid student ID",
-                                                "Teams of Individual or up to 5 members (cross-university teams allowed)",
+                                                "Teams of Individual or up to 5 members (cross-university teams NOT ALLOWED)",
                                                 "Single registration per team with all member details",
                                             ].map((item, index) => (
                                                 <motion.li

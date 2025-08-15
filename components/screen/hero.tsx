@@ -13,7 +13,7 @@ export default function Hero() {
 
     useEffect(() => {
         const calculateTimeLeft = () => {
-            const endDate = new Date("September 30, 2025 23:59:59").getTime();
+            const endDate = new Date("November 3, 2025 23:59:59").getTime();
             const now = new Date().getTime();
             const difference = endDate - now;
 
@@ -150,12 +150,11 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.8 }}
-                    className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 w-full max-w-sm sm:max-w-2xl mb-10 sm:mb-12"
+                    className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 w-full max-w-sm sm:max-w-2xl mb-10 sm:mb-12"
                 >
                     {[
-                        { number: "24-26", label: "October 2025" },
-                        { number: "100+", label: "Innovators" },
-                        { number: "30+", label: "Speakers" },
+                        { number: "3", label: "November 2025" },
+                        { number: "50+", label: "Innovators" },
                     ].map((item, index) => (
                         <motion.div
                             key={index}

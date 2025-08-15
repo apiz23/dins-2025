@@ -67,8 +67,8 @@ export default function Navbar() {
                                                 DINS
                                             </AvatarFallback>
                                         </Avatar>
-                                        <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent tracking-tight">
-                                            DIGITAL INNOVATHON
+                                        <span className="hidden md:block text-xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent tracking-tight">
+                                            DIGITAL INNOVATHON SYMPOSIUM
                                         </span>
                                     </div>
                                 </AnchorLink>
