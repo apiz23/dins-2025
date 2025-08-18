@@ -6,7 +6,7 @@ export default function CTA() {
     return (
         <>
             {/* Registration CTA Section */}
-            <div className="relative flex flex-col justify-center items-center min-h-screen bg-gradient-to-b from-black to-gray-900 px-4 overflow-hidden">
+            <div className="relative flex flex-col justify-center items-center min-h-[70vh] bg-gradient-to-b from-black to-gray-900 px-4 overflow-hidden">
                 {/* Animated background elements */}
                 <div className="absolute inset-0 overflow-hidden">
                     <div className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-blue-500/20 blur-3xl animate-pulse"></div>

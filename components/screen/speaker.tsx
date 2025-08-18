@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { Twitter, Linkedin, Globe, Github } from "lucide-react";
+import { Globe, Github, Book } from "lucide-react"; // ✅ added Book icon
 import { AnimatedGradientText } from "../magicui/animated-gradient-text";
 import { BlurFade } from "@/components/magicui/blur-fade";
 
-type SocialPlatform = "twitter" | "linkedin" | "website" | "github";
+type SocialPlatform = "website" | "github" | "globe" | "scholar";
 
 interface SocialLink {
     platform: SocialPlatform;
@@ -22,11 +22,11 @@ interface Speaker {
 }
 
 const SpeakerItem = ({ speaker }: { speaker: Speaker }) => {
-    const iconComponents = {
-        twitter: Twitter,
-        linkedin: Linkedin,
+    const iconComponents: Record<SocialPlatform, React.ElementType> = {
         website: Globe,
         github: Github,
+        globe: Globe,
+        scholar: Book, // ✅ use Book icon for Scholar
     };
 
     return (
@@ -87,8 +87,14 @@ const speakers: Speaker[] = [
         bio: "Dean of FSKTM, UTHM, specializing in Multimedia Computing, Digitalization, and ICT Governance.",
         image: "/images/speakers/2.png",
         socialLinks: [
-            { platform: "twitter", url: "#" },
-            { platform: "linkedin", url: "#" },
+            {
+                platform: "globe",
+                url: "https://community.uthm.edu.my/farhan",
+            },
+            {
+                platform: "scholar",
+                url: "https://scholar.google.com.my/citations?hl=en&user=WITC10EAAAAJ&view_op=list_works",
+            },
         ],
     },
     {

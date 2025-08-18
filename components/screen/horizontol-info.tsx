@@ -180,7 +180,7 @@ export function HorizontolInfo() {
                     </div>
 
                     {/* Partner Logos */}
-                    <div className="grid grid-cols-2 gap-16 md:gap-24">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
                         {partners.slice(0, 2).map((partner, index) => (
                             <BlurFade
                                 key={index}
@@ -188,18 +188,30 @@ export function HorizontolInfo() {
                                 inView
                             >
                                 <div className="flex flex-col items-center group">
-                                    <div className="bg-green-100/10 hover:bg-green-100/60 w-64 h-64 md:w-80 md:h-80 rounded-full border border-white/10 flex items-center justify-center p-8 transition-all duration-300 ease-in-out group-hover:border-emerald-400 group-hover:shadow-[0_0_20px_rgba(52,211,153,0.3)] group-hover:scale-105">
-                                        <Image
-                                            src={partner.logo}
-                                            alt={partner.name}
-                                            width={320}
-                                            height={320}
-                                            className="object-contain w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-110"
-                                            priority
-                                        />
+                                    <div
+                                        className="relative bg-gray-900 w-64 h-64 md:w-72 md:h-72 rounded-full flex items-center justify-center p-8 transition-all duration-500 ease-in-out 
+                    group-hover:shadow-[0_0_30px_rgba(52,211,153,0.2)]
+                    before:absolute before:inset-0 before:rounded-full before:p-[2px] before:bg-gradient-to-br before:from-transparent before:via-emerald-500/30 before:to-transparent"
+                                    >
+                                        <div className="absolute inset-[2px] bg-gradient-to-br from-gray-900 to-gray-950 rounded-full flex items-center justify-center p-4">
+                                            <div className="w-full h-full flex items-center justify-center bg-white/5 rounded-full backdrop-blur-sm">
+                                                <Image
+                                                    src={partner.logo}
+                                                    alt={partner.name}
+                                                    width={280}
+                                                    height={280}
+                                                    className="object-contain rounded-full w-full h-full p-4 transition-transform duration-500 ease-in-out group-hover:scale-105 bg-white/80"
+                                                    priority
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.1)_0%,transparent_70%)]"></div>
                                     </div>
-                                    <h3 className="mt-8 text-white font-medium text-center text-2xl transition-colors duration-300 group-hover:text-emerald-400">
+
+                                    <h3 className="mt-6 text-white font-medium text-center text-xl md:text-2xl transition-colors duration-300 group-hover:text-emerald-400 relative inline-block">
                                         {partner.name}
+                                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-emerald-400 transition-all duration-300 group-hover:w-full"></span>
                                     </h3>
                                 </div>
                             </BlurFade>
@@ -331,38 +343,38 @@ export function VerticalInfo() {
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+                    <div className="grid grid-cols-1 gap-5">
                         {partners.map((partner, index) => (
                             <div
                                 key={index}
-                                className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-gray-800 to-gray-950 border border-gray-700 hover:border-blue-400/30 shadow-xl sm:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 hover:-translate-y-2"
+                                className="mb-5 group relative overflow-hidden rounded-xl bg-gray-900 border border-gray-700 hover:border-blue-400/40 shadow-md transition-all duration-300"
                             >
-                                {/* Content */}
-                                <div className="relative h-full flex flex-col bg-gray-200 sm:bg-black">
-                                    {/* Logo container */}
-                                    <div className="relative h-40 xs:h-48 sm:h-64 lg:h-72 w-full flex items-center justify-center p-4 sm:p-8">
-                                        <div className="absolute inset-0 bg-gradient-to-b sm:from-gray-50 to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                        <Image
-                                            src={partner.logo}
-                                            alt={partner.name}
-                                            width={300}
-                                            height={200}
-                                            className="object-contain transition-all duration-500 group-hover:scale-110"
-                                            style={{
-                                                maxWidth: "75%",
-                                                maxHeight: "75%",
-                                                opacity: 0.9,
-                                            }}
-                                        />
-                                    </div>
+                                {/* Logo container */}
+                                <div className="relative h-44 w-full flex items-center justify-center p-5 bg-gray-800/50">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-gray-800/60 to-gray-900/60 opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                                    {/* Text content */}
-                                    <div className="p-4 sm:p-8 pt-0 text-center">
-                                        <h3 className="text-lg sm:text-xl font-bold text-black sm:text-white mb-2 sm:mb-3">
-                                            {partner.name}
-                                        </h3>
-                                    </div>
+                                    <Image
+                                        src={partner.logo}
+                                        alt={partner.name}
+                                        width={240}
+                                        height={120}
+                                        className="object-contain w-full h-full p-4 transition-transform duration-300 group-hover:scale-[1.03] bg-white/80"
+                                        style={{
+                                            maxWidth: "90%",
+                                            maxHeight: "90%",
+                                        }}
+                                    />
                                 </div>
+
+                                {/* Text content */}
+                                <div className="p-4 text-center">
+                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-blue-300 transition-colors duration-300">
+                                        {partner.name}
+                                    </h3>
+                                </div>
+
+                                {/* Subtle hover glow */}
+                                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0%,transparent_70%)]"></div>
                             </div>
                         ))}
                     </div>
