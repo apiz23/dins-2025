@@ -12,15 +12,7 @@ import ukm from "@/public/images/unis/ukm.png";
 import utem from "@/public/images/unis/utem.png";
 import uthm from "@/public/images/unis/uthm.png";
 import ump from "@/public/images/unis/ump.png";
-import {
-    Card,
-    CardAction,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const universities = [
     { name: "UTHM", img: uthm },

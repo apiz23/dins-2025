@@ -1,16 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import {
-    Facebook,
-    Instagram,
-    Twitter,
-    Youtube,
-    MapPin,
-    Mail,
-    Phone,
-    User,
-    Users,
-} from "lucide-react";
+import { Instagram, MapPin, Phone, User, Users } from "lucide-react";
 import Lenis from "lenis";
 import Link from "next/link";
 import Image from "next/image";

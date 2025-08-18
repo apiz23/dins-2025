@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { HelpCircle, Mail, MessageSquare } from "lucide-react";
 
 import {
     Accordion,
@@ -10,6 +9,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import { BlurFade } from "../magicui/blur-fade";
 
 export default function FAQS() {
     const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -72,8 +72,6 @@ export default function FAQS() {
             category: "Collaboration",
         },
     ];
-
-    // ✅ Extract categories (unique list)
     const categories = Array.from(new Set(faqs.map((faq) => faq.category)));
 
     const filteredFAQs = activeCategory
@@ -82,90 +80,130 @@ export default function FAQS() {
 
     return (
         <div
-            className="relative flex flex-col justify-center items-center min-h-screen bg-black px-6 overflow-hidden pt-44"
+            className="relative flex flex-col justify-center items-center min-h-screen bg-black px-4 sm:px-6 overflow-hidden py-24"
             id="faqs"
         >
-            {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-blue-500/20 blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-1/3 right-1/4 w-40 h-40 rounded-full bg-emerald-500/20 blur-3xl animate-pulse delay-300"></div>
-                <div className="absolute bottom-1/4 right-3/4 w-28 h-28 rounded-full bg-purple-500/20 blur-3xl animate-pulse delay-500"></div>
-            </div>
-            <div className="max-w-3xl mx-auto relative">
-                {/* Header */}
+            {/* Enhanced Animated Background */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="text-center mb-12"
-                >
-                    <div className="text-center mb-8">
-                        <h2 className="text-5xl md:text-6xl font-bold mb-4 text-white bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.2 }}
+                    transition={{ duration: 1.5 }}
+                    className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-gradient-to-br from-blue-500 to-transparent blur-[100px]"
+                />
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.15 }}
+                    transition={{ duration: 1.5, delay: 0.3 }}
+                    className="absolute bottom-1/3 right-1/4 w-72 h-72 rounded-full bg-gradient-to-br from-emerald-500 to-transparent blur-[100px]"
+                />
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.1 }}
+                    transition={{ duration: 1.5, delay: 0.6 }}
+                    className="absolute bottom-1/4 right-3/4 w-56 h-56 rounded-full bg-gradient-to-br from-purple-500 to-transparent blur-[100px]"
+                />
+            </div>
+
+            <div className="max-w-4xl w-full mx-auto relative z-10">
+                {/* Enhanced Header with BlurFade */}
+                <div className="text-center mb-12 px-4">
+                    <BlurFade delay={0.2} inView>
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 leading-tight">
                             Frequently Asked Questions
                         </h2>
-                        <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
+                    </BlurFade>
+                    <BlurFade delay={0.4} inView>
+                        <p className="text-lg sm:text-xl text-neutral-300 max-w-3xl mx-auto">
                             Find answers to common questions about our
-                            innovation challenge{" "}
+                            innovation challenge
                         </p>
-                    </div>
-                </motion.div>
-
-                {/* Category Filter */}
-                <div className="flex flex-wrap justify-center gap-2 mb-8">
-                    <button
-                        onClick={() => setActiveCategory(null)}
-                        className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                            !activeCategory
-                                ? "bg-blue-600 text-white"
-                                : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                        }`}
-                    >
-                        All
-                    </button>
-                    {categories.map((category) => (
-                        <button
-                            key={category}
-                            onClick={() => setActiveCategory(category)}
-                            className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                                activeCategory === category
-                                    ? "bg-blue-600 text-white"
-                                    : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                            }`}
-                        >
-                            {category}
-                        </button>
-                    ))}
+                    </BlurFade>
                 </div>
 
-                {/* Accordion FAQs */}
-                <Accordion type="single" collapsible className="space-y-2">
-                    {filteredFAQs.map((faq, index) => (
-                        <AccordionItem
-                            key={index}
-                            value={`item-${index}`}
-                            className="border-b border-gray-700"
+                {/* Improved Category Filter with BlurFade */}
+                <BlurFade delay={0.6} inView>
+                    <div className="flex flex-wrap justify-center gap-3 mb-10 px-2">
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={() => setActiveCategory(null)}
+                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                                !activeCategory
+                                    ? "bg-gradient-to-r from-blue-500 to-emerald-500 text-white shadow-lg shadow-blue-500/30"
+                                    : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70 backdrop-blur-sm border border-gray-700"
+                            }`}
                         >
-                            <AccordionTrigger className="py-4 hover:no-underline group">
-                                <div className="flex items-start">
-                                    <span className="text-lg font-medium text-gray-400 mt-0.5 mr-3">
-                                        0{index + 1}
-                                    </span>
-                                    <div>
-                                        <h3 className="text-left text-lg font-medium text-white group-hover:text-blue-400 transition-colors">
-                                            {faq.question}
-                                        </h3>
-                                        <span className="text-md text-gray-400 mt-1 block">
-                                            {faq.category}
-                                        </span>
-                                    </div>
-                                </div>
-                            </AccordionTrigger>
-                            <AccordionContent className="pb-4 text-gray-300 pl-9">
-                                {faq.answer}
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
+                            All Categories
+                        </motion.button>
+                        {categories.map((category) => (
+                            <motion.button
+                                key={category}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={() => setActiveCategory(category)}
+                                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                                    activeCategory === category
+                                        ? "bg-gradient-to-r from-blue-500 to-emerald-500 text-white shadow-lg shadow-blue-500/30"
+                                        : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/70 backdrop-blur-sm border border-gray-700"
+                                }`}
+                            >
+                                {category}
+                            </motion.button>
+                        ))}
+                    </div>
+                </BlurFade>
+
+                {/* Enhanced Accordion with BlurFade */}
+                <BlurFade delay={0.8} inView>
+                    <div className="space-y-3">
+                        <Accordion type="single" collapsible>
+                            {filteredFAQs.map((faq, index) => (
+                                <AccordionItem
+                                    key={index}
+                                    value={`item-${index}`}
+                                    className="border border-gray-800 rounded-xl overflow-hidden bg-gradient-to-br from-gray-900/80 to-gray-900/20 backdrop-blur-sm hover:bg-gray-800/30 transition-all mb-4 shadow-lg hover:shadow-[0_4px_20px_-4px_rgba(139,92,246,0.3)]"
+                                >
+                                    <AccordionTrigger className="py-5 px-6 hover:no-underline group">
+                                        <div className="flex items-start w-full">
+                                            <div className="flex-shrink-0 mr-4">
+                                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500/30 to-purple-500/30 flex items-center justify-center text-blue-300 font-bold ring-1 ring-blue-500/30 ring-inset">
+                                                    {String(index + 1).padStart(
+                                                        2,
+                                                        "0"
+                                                    )}
+                                                </div>
+                                            </div>
+                                            <div className="text-left flex-grow">
+                                                <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-blue-400 to-purple-400 transition-all">
+                                                    {faq.question}
+                                                </h3>
+                                                <div className="mt-1">
+                                                    <span className="inline-block px-2 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-blue-900/50 to-purple-900/50 text-blue-200 border border-blue-800/30">
+                                                        {faq.category}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </AccordionTrigger>
+                                    <AccordionContent className="px-6 pb-5 text-gray-300">
+                                        <div className="relative pl-4">
+                                            {/* Gradient border using pseudo-element */}
+                                            <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+
+                                            {/* Content with background gradient */}
+                                            <div className="bg-gradient-to-r from-blue-900/10 via-transparent to-purple-900/10">
+                                                <div className="prose prose-invert max-w-none">
+                                                    {faq.answer}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            ))}
+                        </Accordion>
+                    </div>
+                </BlurFade>
             </div>
         </div>
     );

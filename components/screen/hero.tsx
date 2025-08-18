@@ -39,7 +39,7 @@ export default function Hero() {
 
     return (
         <section
-            className="relative h-screen w-full bg-gradient-to-t from-black via-black to-gray-900"
+            className="relative h-screen w-full bg-gradient-to-t from-black via-black to-gray-900 "
             id="hero"
         >
             {/* Background Blobs */}
@@ -58,7 +58,7 @@ export default function Hero() {
                 <div className="absolute bottom-1/5 right-1/5 w-48 h-48 rounded-full bg-indigo-500/15 blur-3xl animate-pulse delay-600"></div>
             </div>
 
-            <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-0">
+            <div className="max-w-6xl mx-auto relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-0">
                 {/* Main Heading */}
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
