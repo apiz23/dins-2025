@@ -154,7 +154,6 @@ export default function FAQS() {
                     </div>
                 </BlurFade>
 
-                {/* Enhanced Accordion with BlurFade */}
                 <BlurFade delay={0.8} inView>
                     <div className="space-y-3">
                         <Accordion type="single" collapsible>
@@ -188,14 +187,8 @@ export default function FAQS() {
                                     </AccordionTrigger>
                                     <AccordionContent className="px-6 pb-5 text-gray-300">
                                         <div className="relative pl-4">
-                                            {/* Gradient border using pseudo-element */}
-                                            <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
-
-                                            {/* Content with background gradient */}
                                             <div className="bg-gradient-to-r from-blue-900/10 via-transparent to-purple-900/10">
-                                                <div className="prose prose-invert max-w-none">
-                                                    {faq.answer}
-                                                </div>
+                                                {faq.answer}
                                             </div>
                                         </div>
                                     </AccordionContent>
