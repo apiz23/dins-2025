@@ -314,16 +314,16 @@ export function VerticalInfo() {
             </section>
 
             {/* Section 2: Partner */}
-            <section className="w-full py-16 px-4  bg-gradient-to-br from-gray-800 via-black to-black">
-                {/* Decorative elements */}
-                <div className="absolute top-0 left-0 w-full h-full opacity-10">
-                    <div className="absolute top-20 left-10 w-40 h-40 bg-blue-500 rounded-full filter blur-3xl opacity-20"></div>
-                    <div className="absolute bottom-10 right-10 w-60 h-60 bg-purple-500 rounded-full filter blur-3xl opacity-20"></div>
+            <section className="w-full py-16 px-4 bg-gradient-to-br from-gray-800 via-black to-black relative overflow-hidden">
+                {/* Decorative elements - simplified */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-20 left-10 w-40 h-40 bg-blue-500 rounded-full blur-[100px] opacity-10"></div>
+                    <div className="absolute bottom-10 right-10 w-60 h-60 bg-purple-500 rounded-full blur-[100px] opacity-10"></div>
                 </div>
 
-                <div className="max-w-7xl mx-auto relative z-10 p-4">
-                    <div className="text-center mb-20">
-                        <span className="inline-block text-blue-400 font-medium mb-4 tracking-wider">
+                <div className="max-w-7xl mx-auto relative z-10 px-4">
+                    <div className="text-center mb-16">
+                        <span className="inline-block text-blue-400 font-medium mb-4 tracking-widest text-sm uppercase">
                             STRATEGIC PARTNERSHIPS
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -333,7 +333,6 @@ export function VerticalInfo() {
                             </span>{" "}
                             Collaborators
                         </h2>
-
                         <div className="max-w-2xl mx-auto">
                             <p className="text-gray-300 text-lg leading-relaxed">
                                 We partner with industry leaders and academic
@@ -343,38 +342,27 @@ export function VerticalInfo() {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-5">
+                    <div className="grid grid-cols-1 gap-6">
                         {partners.map((partner, index) => (
-                            <div
-                                key={index}
-                                className="mb-5 group relative overflow-hidden rounded-xl bg-gray-900 border border-gray-700 hover:border-blue-400/40 shadow-md transition-all duration-300"
-                            >
-                                {/* Logo container */}
-                                <div className="relative h-44 w-full flex items-center justify-center p-5 bg-gray-800/50">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-gray-800/60 to-gray-900/60 opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                                    <Image
-                                        src={partner.logo}
-                                        alt={partner.name}
-                                        width={240}
-                                        height={120}
-                                        className="object-contain w-full h-full p-4 transition-transform duration-300 group-hover:scale-[1.03] bg-white/80"
-                                        style={{
-                                            maxWidth: "90%",
-                                            maxHeight: "90%",
-                                        }}
-                                    />
+                            <div key={index}>
+                                <div className="relative h-fit w-full flex items-center justify-center p-6 rounded-2xl border bg-white">
+                                    <div className="relative w-full h-full flex items-center justify-center">
+                                        <Image
+                                            src={partner.logo}
+                                            alt={partner.name}
+                                            width={500}
+                                            height={500}
+                                            className={`object-contain w-auto h-auto max-w-full`}
+                                        />
+                                    </div>
                                 </div>
 
                                 {/* Text content */}
                                 <div className="p-4 text-center">
-                                    <h3 className="text-base font-medium text-gray-200 group-hover:text-blue-300 transition-colors duration-300">
+                                    <h3 className="text-sm font-medium text-gray-200 group-hover:text-blue-300 transition-colors duration-300">
                                         {partner.name}
                                     </h3>
                                 </div>
-
-                                {/* Subtle hover glow */}
-                                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0%,transparent_70%)]"></div>
                             </div>
                         ))}
                     </div>

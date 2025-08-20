@@ -150,7 +150,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.8 }}
-                    className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 w-full max-w-sm sm:max-w-2xl mb-10 sm:mb-12"
+                    className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-sm sm:max-w-3xl lg:max-w-5xl mb-10 sm:mb-12"
                 >
                     {[
                         { number: "3", label: "November 2025" },
@@ -159,12 +159,16 @@ export default function Hero() {
                         <motion.div
                             key={index}
                             whileHover={{ y: -3 }}
-                            className="p-4 sm:p-5 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-white/20 transition-all"
+                            className="w-3/4 mx-auto p-4 sm:p-5 lg:p-6 bg-white/5 backdrop-blur-sm rounded-xl 
+                       border border-white/10 hover:border-white/20 transition-all"
                         >
-                            <div className="text-xl sm:text-3xl font-bold mb-1 bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                            <div
+                                className="text-lg sm:text-2xl lg:text-3xl font-bold mb-1 
+                            bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent"
+                            >
                                 {item.number}
                             </div>
-                            <div className="text-xs sm:text-sm text-gray-300">
+                            <div className="text-xs sm:text-sm lg:text-base text-gray-300">
                                 {item.label}
                             </div>
                         </motion.div>

@@ -1,9 +1,15 @@
+"use client";
+
 import { BlurFade } from "@/components/magicui/blur-fade";
 import React from "react";
 import { motion } from "framer-motion";
 import { Calendar, CheckCircle, Users } from "lucide-react";
-import { Marquee } from "@/components/magicui/marquee";
 import Image, { StaticImageData } from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+    ScrollVelocityContainer,
+    ScrollVelocityRow,
+} from "@/components/magicui/scroll-based-velocity";
 import utm from "@/public/images/unis/utm.png";
 import uitm from "@/public/images/unis/uitm.png";
 import usm from "@/public/images/unis/usm.png";
@@ -12,7 +18,6 @@ import ukm from "@/public/images/unis/ukm.png";
 import utem from "@/public/images/unis/utem.png";
 import uthm from "@/public/images/unis/uthm.png";
 import ump from "@/public/images/unis/ump.png";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const universities = [
     { name: "UTHM", img: uthm },
@@ -43,6 +48,7 @@ const UniLogoCard = ({ name, img }: Props) => {
         </div>
     );
 };
+
 export default function Info() {
     return (
         <>
@@ -97,7 +103,7 @@ export default function Info() {
                                     <CardContent>
                                         <ul className="space-y-3 sm:space-y-4 text-gray-300 text-sm sm:text-base text-start">
                                             {[
-                                                "Open to all university students nationwide with valid student ID",
+                                                "Open to all university and high school students nationwide with valid student ID",
                                                 "Teams of Individual or up to 5 members (cross-university teams NOT ALLOWED)",
                                                 "Single registration per team with all member details",
                                             ].map((item, index) => (
@@ -178,7 +184,7 @@ export default function Info() {
 export const Universiti = () => {
     return (
         <motion.div
-            className="max-w-6xl mx-auto mb-20"
+            className="max-w-6xl mx-auto mb-20 relative"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -193,20 +199,9 @@ export const Universiti = () => {
                 </p>
             </div>
 
-            <motion.div
-                initial={{ x: "-10%" }}
-                animate={{ x: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="relative overflow-hidden"
-            >
-                {/* Left shadow gradient */}
-                <div className="absolute left-0 top-0 h-full w-24 z-10 bg-gradient-to-r from-black to-transparent pointer-events-none" />
-
-                {/* Right shadow gradient */}
-                <div className="absolute right-0 top-0 h-full w-24 z-10 bg-gradient-to-l from-black to-transparent pointer-events-none" />
-
-                <Marquee className="w-full" pauseOnHover={true}>
-                    <div className="flex items-center py-2">
+            <ScrollVelocityContainer className="overflow-hidden">
+                <ScrollVelocityRow baseVelocity={5} direction={1}>
+                    <div className="flex items-center gap-3">
                         {universities.map((uni, index) => (
                             <motion.div
                                 key={index}
@@ -218,8 +213,8 @@ export const Universiti = () => {
                             </motion.div>
                         ))}
                     </div>
-                </Marquee>
-            </motion.div>
+                </ScrollVelocityRow>
+            </ScrollVelocityContainer>
         </motion.div>
     );
 };

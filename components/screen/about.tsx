@@ -37,30 +37,32 @@ export default function AboutSection() {
             </div>
 
             <div className="max-w-6xl mx-auto px-4">
-                <BlurFade delay={0.1} inView>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                        About Digital Innovathon Symposium 2025
-                    </h2>
-                </BlurFade>
+                <div className="mx-auto max-w-3xl">
+                    <BlurFade delay={0.1} inView>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                            About Digital Innovathon Symposium 2025
+                        </h2>
+                    </BlurFade>
 
-                <BlurFade delay={0.2} inView>
-                    <p className="text-gray-300 mb-4 leading-relaxed">
-                        The Digital Innovathon Symposium 2025 (DINS 2025) is a
-                        premier platform dedicated to showcasing the latest
-                        advancements in digital innovation, technology, and
-                        creative solutions for the future.
-                    </p>
-                </BlurFade>
+                    <BlurFade delay={0.2} inView>
+                        <p className="text-gray-300 mb-4 leading-relaxed md:text-center text-justify">
+                            The Digital Innovathon Symposium 2025 (DINS 2025) is
+                            a premier platform dedicated to showcasing the
+                            latest advancements in digital innovation,
+                            technology, and creative solutions for the future.
+                        </p>
+                    </BlurFade>
 
-                <BlurFade delay={0.3} inView>
-                    <p className="text-gray-300 leading-relaxed mb-12">
-                        Bringing together visionaries from academia, industry,
-                        government, and the startup ecosystem, DINS 2025
-                        encourages knowledge sharing, networking, and
-                        collaborative projects that push the boundaries of
-                        digital transformation across multiple sectors.
-                    </p>
-                </BlurFade>
+                    <BlurFade delay={0.3} inView>
+                        <p className="text-gray-300 leading-relaxed mb-12 md:text-center text-justify">
+                            Bringing together visionaries from academia,
+                            industry, government, and the startup ecosystem,
+                            DINS 2025 encourages knowledge sharing, networking,
+                            and collaborative projects that push the boundaries
+                            of digital transformation across multiple sectors.
+                        </p>
+                    </BlurFade>
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {highlights.map((item, index) => (
