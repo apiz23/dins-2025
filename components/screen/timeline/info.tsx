@@ -137,7 +137,7 @@ export default function Info() {
                                 whileHover={{ y: -5 }}
                                 className="h-full"
                             >
-                                <Card className="h-full bg-gradient-to-br from-gray-900/80 to-gray-800/90 border border-gray-700/50 shadow-lg hover:shadow-purple-500/20 transition-shadow duration-300">
+                                <Card className="h-full bg-gradient-to-br from-gray-900/80 to-gray-800/90 border border-gray-700/50 shadow-lg hover:shadow-purple-500/20 transition-shadow duration-300 overflow-hidden">
                                     <CardHeader>
                                         <CardTitle>
                                             <div className="w-fit h-fit rounded-xl flex items-center justify-center space-x-3 bg-purple-900/20 px-4 py-2 border border-purple-500/20">
@@ -148,8 +148,23 @@ export default function Info() {
                                             </div>
                                         </CardTitle>
                                     </CardHeader>
-                                    <CardContent>
-                                        <ul className="space-y-3 sm:space-y-4 text-gray-300 text-sm sm:text-base text-start">
+
+                                    <CardContent className="relative">
+                                        <div className="flex flex-col items-center justify-center h-40 p-4">
+                                            <div className="relative">
+                                                <div className="relative z-10 flex items-center">
+                                                    <div className="mr-3 h-2 w-2 bg-emerald-400/60 rounded-full animate-ping"></div>
+                                                    <p className="text-lg font-medium text-gray-300/90">
+                                                        To Be Announced
+                                                    </p>
+                                                </div>
+
+                                                <p className="text-sm text-gray-500/80 mt-2 text-center">
+                                                    Check back later for updates
+                                                </p>
+                                            </div>
+                                        </div>
+                                        {/*<ul className="space-y-3 sm:space-y-4 text-gray-300 text-sm sm:text-base text-start">
                                             {[
                                                 "Intensive 48-hour innovation sprint with milestones",
                                                 "Daily expert mentorship sessions and workshops",
@@ -157,8 +172,7 @@ export default function Info() {
                                             ].map((item, index) => (
                                                 <motion.li
                                                     key={index}
-                                                    className="flex items-start gap-3 sm:gap-4 bg-gray-800/50 rounded-lg p-3 hover:bg-gray-700/50 transition-colors"
-                                                    whileHover={{ x: 5 }}
+                                                    className="flex items-start gap-3 sm:gap-4 bg-gray-800/50 rounded-lg p-3"
                                                 >
                                                     <span className="text-purple-400 mt-0.5 flex-shrink-0">
                                                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -168,7 +182,7 @@ export default function Info() {
                                                     </span>
                                                 </motion.li>
                                             ))}
-                                        </ul>
+                                        </ul>*/}
                                     </CardContent>
                                 </Card>
                             </motion.div>
