@@ -1,10 +1,18 @@
 "use client";
 import React, { useEffect } from "react";
-import { Instagram, MapPin, Phone, User, Users } from "lucide-react";
+import {
+    Instagram,
+    InstagramIcon,
+    MapPin,
+    Phone,
+    User,
+    Users,
+} from "lucide-react";
 import Lenis from "lenis";
 import Link from "next/link";
 import Image from "next/image";
 import tvLogo from "@/public/images/tv-logo.svg";
+import itcLogo from "@/public/images/itc-logo.png";
 import uthmLogo from "@/public/images/unis/uthm.png";
 
 export default function Footer() {
@@ -40,7 +48,7 @@ export default function Footer() {
                                     alt="UTHM Logo"
                                     width={2000}
                                     height={2000}
-                                    className="w-20 h-20 object-contain bg-white rounded-full p-1 hover:shadow-lg hover:shadow-blue-500/20 transition-all"
+                                    className="w-20 h-20 object-contain p-2 bg-white rounded-full hover:shadow-lg hover:shadow-blue-500/20 transition-all"
                                 />
                             </Link>
                             <Link
@@ -54,9 +62,18 @@ export default function Footer() {
                                     alt="Tech Ventura Logo"
                                     width={2000}
                                     height={2000}
-                                    className="w-20 h-20 object-contain bg-white rounded-full hover:shadow-lg hover:shadow-emerald-500/20 transition-all"
+                                    className="w-20 h-20 object-contain p-2 bg-white rounded-full hover:shadow-lg hover:shadow-emerald-500/20 transition-all"
                                 />
                             </Link>
+                            <div className="transition-transform hover:scale-105">
+                                <Image
+                                    src={itcLogo}
+                                    alt="Tech Ventura Logo"
+                                    width={1000}
+                                    height={1000}
+                                    className="w-20 h-20 object-contain p-2 bg-white rounded-full hover:shadow-lg hover:shadow-emerald-500/20 transition-all"
+                                />
+                            </div>
                         </div>
                         <p className="text-sm text-gray-400">
                             © 2024 Universiti Tun Hussein Onn Malaysia
@@ -116,29 +133,22 @@ export default function Footer() {
                     </div>
 
                     {/* Social Media */}
-                    <div className="space-y-6">
-                        <h3 className="text-lg font-semibold text-white">
-                            Follow Us
-                        </h3>
-                        <div className="flex gap-3">
-                            {[
-                                {
-                                    icon: Instagram,
-                                    name: "Instagram",
-                                    link: "https://www.instagram.com/dins.uthm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-                                },
-                            ].map((social) => (
-                                <Link
-                                    key={social.name}
-                                    href={social.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="p-3 rounded-lg bg-gray-900 hover:bg-gray-800 transition-all border border-gray-800 hover:border-emerald-500/30"
-                                    aria-label={social.name}
-                                >
-                                    <social.icon className="h-5 w-5" />
-                                </Link>
-                            ))}
+                    <div className="relative group">
+                        <div className="relative flex items-center justify-center w-full h-[400px] md:h-[470px] overflow-hidden">
+                            <iframe
+                                src="https://www.instagram.com/dins.uthm/embed"
+                                className="w-[90%] h-[90%] rounded-lg border-none"
+                                title="Instagram Profile"
+                                allowTransparency={true}
+                            />
+
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
+                                <div className="text-center mb-6">
+                                    <span className="text-white text-sm font-medium bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-sm">
+                                        Click to interact
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
