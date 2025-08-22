@@ -6,11 +6,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
 import uthm from "@/public/images/unis/uthm.png";
 import Image from "next/image";
-import mdec from "@/public/images/mdec-logo.png";
+import mdec from "@/public/images/mdec_logo.png";
+import dscUtem from "@/public/images/dsc-utem2.png";
+import csUsm from "@/public/images/cs-usm.png";
+import zeroday from "@/public/images/0day.png";
+import runcloud from "@/public/images/runcloud.svg";
 import Speakers from "./speaker";
 import { BlurFade } from "../magicui/blur-fade";
+import {
+    ScrollVelocityContainer,
+    ScrollVelocityRow,
+} from "../magicui/scroll-based-velocity";
 
-const partners = [
+const co_organizer = [
     {
         name: "Faculty of Computer Science and Information Technology UTHM",
         logo: uthm,
@@ -18,6 +26,25 @@ const partners = [
     {
         name: "Malaysia Digital Economy Corporation",
         logo: mdec,
+    },
+];
+
+const partners = [
+    {
+        name: "Developer Student Club UTEM",
+        logo: dscUtem,
+    },
+    {
+        name: "Computer Science Society USM",
+        logo: csUsm,
+    },
+    {
+        name: "Zer0Day Technology",
+        logo: zeroday,
+    },
+    {
+        name: "RunCloud",
+        logo: runcloud,
     },
 ];
 
@@ -53,7 +80,7 @@ export function HorizontolInfo() {
     }, []);
 
     return (
-        <div className="horizontal-scroll-container flex h-screen w-[300vw] overflow-hidden">
+        <div className="horizontal-scroll-container flex h-screen w-[400vw] overflow-hidden">
             {/* Panel 1 - Why Participate */}
             <div className="panel w-screen min-h-screen flex-shrink-0 flex items-center justify-center bg-gradient-to-tr from-gray-800 via-black to-black px-4 sm:px-6 py-16 text-center">
                 <div className="w-full max-w-6xl mx-auto">
@@ -149,7 +176,7 @@ export function HorizontolInfo() {
                     </div>
                 </div>
             </div>
-            {/* Panel 2 - Partner */}
+            {/* Panel 2 - Co-organizer */}
             <div className="panel w-screen h-screen flex items-center justify-center bg-black relative overflow-hidden">
                 {/* Background elements */}
                 <div className="absolute inset-0">
@@ -161,14 +188,14 @@ export function HorizontolInfo() {
                     <div className="mb-20 text-center">
                         <BlurFade delay={0.1} inView>
                             <span className="text-blue-400 font-medium tracking-wider uppercase text-lg">
-                                Strategic Partnerships
+                                Co-Organizers
                             </span>
                         </BlurFade>
                         <BlurFade delay={0.2} inView>
                             <h2 className="text-5xl md:text-6xl font-bold text-white mt-6 mb-8">
                                 Our{" "}
                                 <span className="text-blue-400">Trusted</span>{" "}
-                                Partners
+                                Co-Organizers
                             </h2>
                         </BlurFade>
                         <BlurFade delay={0.3} inView>
@@ -181,7 +208,7 @@ export function HorizontolInfo() {
 
                     {/* Partner Logos */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
-                        {partners.slice(0, 2).map((partner, index) => (
+                        {co_organizer.slice(0, 2).map((partner, index) => (
                             <BlurFade
                                 key={index}
                                 delay={0.4 + index * 0.2}
@@ -219,7 +246,108 @@ export function HorizontolInfo() {
                     </div>
                 </div>
             </div>
-            <div className="panel w-screen min-h-screen flex items-center justify-center  text-center bg-gradient-to-tl from-gray-900 to-black ">
+
+            <section className="panel w-screen min-h-screen flex items-center justify-center py-16 bg-black relative overflow-hidden">
+                {/* Enhanced decorative elements */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-28 right-24 w-52 h-52 bg-blue-600 rounded-full blur-[120px] opacity-25"></div>
+                    <div className="absolute bottom-16 left-20 w-72 h-72 bg-purple-600 rounded-full blur-[120px] opacity-25"></div>
+                    <div className="absolute top-1/2 left-2/5 w-40 h-40 bg-cyan-500 rounded-full blur-[100px] opacity-20"></div>
+                    <div className="absolute top-3/4 right-1/4 w-32 h-32 bg-indigo-500 rounded-full blur-[90px] opacity-15"></div>
+                </div>
+
+                {/* Subtle grid overlay for depth */}
+                <div className="absolute inset-0 pointer-events-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHBhdGggZD0iTTAgMEg2MFY2MEgwWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjAuNSIvPjwvc3ZnPg==')] opacity-10"></div>
+
+                <div className="max-w-6xl mx-auto relative z-10 px-8">
+                    <div className="text-center mb-20">
+                        <motion.span
+                            className="inline-block text-blue-400 font-medium mb-6 tracking-widest text-sm uppercase"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                        >
+                            STRATEGIC ALLIANCES
+                        </motion.span>
+                        <motion.h2
+                            className="text-5xl font-bold text-white mb-8 tracking-tight"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            viewport={{ once: true }}
+                        >
+                            Our Premier{" "}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                                Technology
+                            </span>{" "}
+                            Partners
+                        </motion.h2>
+                        <motion.div
+                            className="max-w-2xl mx-auto"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true }}
+                        >
+                            <p className="text-gray-300 text-lg leading-relaxed font-light">
+                                We are proud to collaborate with diverse
+                                organizations, institutions, and communities
+                                that support our mission and help us create a
+                                greater impact.
+                            </p>
+                        </motion.div>
+                    </div>
+
+                    {/* Enhanced Scroll Velocity Section with Cards */}
+                    <div className="relative">
+                        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black to-transparent z-10"></div>
+                        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent z-10"></div>
+
+                        <h3 className="text-xl font-semibold text-gray-300 mb-10 text-center tracking-wide flex items-center justify-center before:content-[''] before:flex-1 before:h-px before:bg-gradient-to-r before:from-transparent before:via-gray-700 before:to-transparent after:content-[''] after:flex-1 after:h-px after:bg-gradient-to-l after:from-transparent after:via-gray-700 after:to-transparent">
+                            <span className="mx-6">
+                                TRUSTED BY INDUSTRY LEADERS
+                            </span>
+                        </h3>
+
+                        <ScrollVelocityContainer className="overflow-hidden py-6">
+                            <ScrollVelocityRow baseVelocity={8} direction={1}>
+                                <div className="flex items-center gap-4 px-2">
+                                    {partners.map((partner, index) => (
+                                        <motion.div
+                                            key={index}
+                                            className="px-8 py-6 bg-gradient-to-b from-gray-900/70 to-black/70 rounded-2xl border border-gray-800/80 flex flex-col items-center justify-center shadow-lg backdrop-blur-sm min-w-[280px]"
+                                        >
+                                            {/* Logo Container */}
+                                            <div className="h-full w-full flex items-center justify-center mb-5 p-6 bg-gradient-to-br from-gray-200 to-gray-800 rounded-xl">
+                                                <div className="relative h-36 w-56">
+                                                    <Image
+                                                        src={partner.logo}
+                                                        alt={partner.name}
+                                                        fill
+                                                        className="object-contain" // Prevent cropping
+                                                    />
+                                                </div>
+                                            </div>
+                                            {/* Partner Info */}
+                                            <div className="text-center">
+                                                <h4 className="text-lg font-semibold text-white mb-1">
+                                                    {partner.name}
+                                                </h4>
+
+                                                <div className="flex justify-center mt-3">
+                                                    <span className="inline-block h-1 w-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></span>
+                                                </div>
+                                            </div>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </ScrollVelocityRow>
+                        </ScrollVelocityContainer>
+                    </div>
+                </div>
+            </section>
+            <div className="panel w-screen min-h-screen flex items-center justify-center text-center bg-gradient-to-tl from-gray-900 to-black ">
                 <Speakers />
             </div>
         </div>
@@ -313,7 +441,7 @@ export function VerticalInfo() {
                 </div>
             </section>
 
-            {/* Section 2: Partner */}
+            {/* Section 2: Co-organizer */}
             <section className="w-full py-16 px-4 bg-gradient-to-br from-gray-800 via-black to-black relative overflow-hidden">
                 {/* Decorative elements - simplified */}
                 <div className="absolute inset-0 pointer-events-none">
@@ -324,26 +452,26 @@ export function VerticalInfo() {
                 <div className="max-w-7xl mx-auto relative z-10 px-4">
                     <div className="text-center mb-16">
                         <span className="inline-block text-blue-400 font-medium mb-4 tracking-widest text-sm uppercase">
-                            STRATEGIC PARTNERSHIPS
+                            CO-ORGANIZERS
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                             Our{" "}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
                                 Valued
                             </span>{" "}
-                            Collaborators
+                            Co-Organizers
                         </h2>
                         <div className="max-w-2xl mx-auto">
                             <p className="text-gray-300 text-lg leading-relaxed">
-                                We partner with industry leaders and academic
-                                institutions to drive digital innovation and
-                                create impactful solutions.
+                                We collaborate with esteemed organizations and
+                                institutions to co-host impactful programs and
+                                foster meaningful innovation together.
                             </p>
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1 gap-6">
-                        {partners.map((partner, index) => (
+                        {co_organizer.map((partner, index) => (
                             <div key={index}>
                                 <div className="relative h-fit w-full flex items-center justify-center p-6 rounded-2xl border bg-white">
                                     <div className="relative w-full h-full flex items-center justify-center">
@@ -368,6 +496,84 @@ export function VerticalInfo() {
                     </div>
                 </div>
             </section>
+
+            <section className="w-full py-20 px-4 bg-black relative overflow-hidden">
+                {/* Decorative elements */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-20 right-10 w-40 h-40 bg-blue-500 rounded-full blur-[100px] opacity-20 animate-pulse-slow"></div>
+                    <div className="absolute bottom-10 left-10 w-60 h-60 bg-purple-500 rounded-full blur-[100px] opacity-20 animate-pulse-slow"></div>
+                    <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-cyan-400 rounded-full blur-[80px] opacity-15"></div>
+                </div>
+
+                <div className="max-w-7xl mx-auto relative z-10 px-4">
+                    <div className="text-center mb-16">
+                        <motion.span
+                            className="inline-block text-blue-400 font-medium mb-4 tracking-widest text-sm uppercase"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                            viewport={{ once: true }}
+                        >
+                            PARTNERSHIPS
+                        </motion.span>
+                        <motion.h2
+                            className="text-4xl md:text-5xl font-bold text-white mb-6"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            viewport={{ once: true }}
+                        >
+                            Our{" "}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                                Strategic
+                            </span>{" "}
+                            Partners
+                        </motion.h2>
+                        <motion.div
+                            className="max-w-2xl mx-auto"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            viewport={{ once: true }}
+                        >
+                            <p className="text-gray-300 text-lg leading-relaxed">
+                                We are proud to collaborate with diverse
+                                organizations, institutions, and communities
+                                that support our mission and help us create a
+                                greater impact.
+                            </p>
+                        </motion.div>
+                    </div>
+
+                    <div>
+                        <h3 className="text-xl font-semibold text-gray-200 mb-6 text-center">
+                            Technology Partners
+                        </h3>
+                        <ScrollVelocityContainer className="overflow-hidden">
+                            <ScrollVelocityRow baseVelocity={4} direction={1}>
+                                <div className="flex items-center gap-4 px-2">
+                                    {partners.map((partner, index) => (
+                                        <motion.div
+                                            key={index}
+                                            className="px-6 py-4 bg-gradient-to-br from-gray-200 to-gray-600 rounded-xl border border-white/10 flex items-center justify-center"
+                                        >
+                                            <div className="h-32 w-48 relative">
+                                                <Image
+                                                    src={partner.logo}
+                                                    alt={partner.name}
+                                                    fill
+                                                    className="object-contain"
+                                                />
+                                            </div>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </ScrollVelocityRow>
+                        </ScrollVelocityContainer>
+                    </div>
+                </div>
+            </section>
+
             <div className="panel w-screen min-h-screen flex items-center justify-center  text-center bg-gradient-to-tl from-gray-900 to-black ">
                 <Speakers />
             </div>
