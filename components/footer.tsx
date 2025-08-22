@@ -1,6 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
 import {
+    Instagram,
+    Linkedin,
+    Mail,
     MapPin,
     Phone,
     User,
@@ -63,7 +66,12 @@ export default function Footer() {
                                     className="w-16 h-16 sm:w-20 sm:h-20 object-contain p-2 bg-white rounded-full hover:shadow-lg hover:shadow-emerald-500/20 transition-all"
                                 />
                             </Link>
-                            <div className="transition-transform hover:scale-105">
+                            <Link
+                                href="https://www.linkedin.com/company/itc-uthm/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="transition-transform hover:scale-105"
+                            >
                                 <Image
                                     src={itcLogo}
                                     alt="ITC Logo"
@@ -71,7 +79,7 @@ export default function Footer() {
                                     height={80}
                                     className="w-16 h-16 sm:w-20 sm:h-20 object-contain p-2 bg-white rounded-full hover:shadow-lg hover:shadow-emerald-500/20 transition-all"
                                 />
-                            </div>
+                            </Link>
                         </div>
                         <p className="text-sm text-gray-400">
                             © 2024 Universiti Tun Hussein Onn Malaysia
@@ -131,20 +139,38 @@ export default function Footer() {
                     </div>
 
                     {/* Social Media */}
-                    <div className="relative group">
-                        <div className="relative w-full aspect-[9/12] sm:aspect-[4/5] overflow-hidden rounded-lg">
-                            <iframe
-                                src="https://www.instagram.com/dins.uthm/embed"
-                                className="absolute inset-0 w-full h-full border-none rounded-lg"
-                                title="Instagram Profile"
-                                allowTransparency={true}
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                                <span className="text-white text-sm font-medium bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-sm">
-                                    Click to interact
-                                </span>
-                            </div>
-                        </div>
+                    <div className="flex justify-left md:justify-center gap-6">
+                        <Link
+                            href="https://www.instagram.com/dins.uthm"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex h-fit items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:scale-105 transition-transform duration-300"
+                        >
+                            <Instagram className="h-5 w-5" />
+                            <span className="text-sm font-medium">
+                                Instagram
+                            </span>
+                        </Link>
+
+                        <Link
+                            href="https://www.linkedin.com/company/itc-uthm/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex h-fit items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white hover:scale-105 transition-transform duration-300"
+                        >
+                            <Linkedin className="h-5 w-5" />
+                            <span className="text-sm font-medium">
+                                LinkedIn
+                            </span>
+                        </Link>
+
+                        <Link
+                            href="mailto:itcfsktm@uthm.edu.my"
+                            className="flex h-fit items-center gap-2 px-4 py-2 rounded-lg bg-gray-700 text-white hover:scale-105 transition-transform duration-300"
+                        >
+                            <Mail className="h-5 w-5" />
+                            <span className="text-sm font-medium">Email</span>
+                        </Link>
                     </div>
                 </div>
 
