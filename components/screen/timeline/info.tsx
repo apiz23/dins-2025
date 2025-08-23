@@ -1,7 +1,7 @@
 "use client";
 
 import { BlurFade } from "@/components/magicui/blur-fade";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Calendar, CheckCircle, Download, File, Users } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
@@ -41,6 +41,7 @@ import r9 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const universities = [
     { name: "UTHM", img: uthm },
@@ -101,10 +102,9 @@ export default function Info() {
                                 innovation challenge
                             </p>
                         </motion.div>
-
                         <Carousel
                             orientation={isMobile ? "vertical" : "horizontal"}
-                            className="w-full max-w-2xl md:max-w-5xl mx-auto md:my-10 my-20"
+                            className="w-full max-w-2xl md:max-w-5xl mx-auto my-20"
                             opts={{
                                 align: "start",
                                 loop: true,
@@ -122,26 +122,41 @@ export default function Info() {
                                         : ""
                                 }
                             >
-                                {rulesImages.map((img, idx) => (
-                                    <CarouselItem
-                                        key={idx}
-                                        className={
-                                            isMobile
-                                                ? "basis-full"
-                                                : "md:basis-full"
-                                        }
-                                    >
-                                        <div className="flex justify-center p-2">
-                                            <Image
-                                                src={img}
-                                                alt={`Rule page ${idx + 1}`}
-                                                className="rounded-xl shadow-lg object-contain"
-                                                width={6000}
-                                                height={3375}
-                                            />
-                                        </div>
-                                    </CarouselItem>
-                                ))}
+                                {rulesImages.map((img, idx) => {
+                                    const [loading, setLoading] =
+                                        useState(true);
+
+                                    return (
+                                        <CarouselItem
+                                            key={idx}
+                                            className={
+                                                isMobile
+                                                    ? "basis-full"
+                                                    : "md:basis-full"
+                                            }
+                                        >
+                                            <div className="flex justify-center p-2">
+                                                {loading && (
+                                                    <Skeleton className="h-[500px] w-full rounded-xl" />
+                                                )}
+                                                <Image
+                                                    src={img}
+                                                    alt={`Rule page ${idx + 1}`}
+                                                    className={`rounded-xl shadow-lg object-contain transition-opacity duration-500 ${
+                                                        loading
+                                                            ? "opacity-0"
+                                                            : "opacity-100"
+                                                    }`}
+                                                    width={6000}
+                                                    height={3375}
+                                                    onLoadingComplete={() =>
+                                                        setLoading(false)
+                                                    }
+                                                />
+                                            </div>
+                                        </CarouselItem>
+                                    );
+                                })}
                             </CarouselContent>
                             <CarouselPrevious />
                             <CarouselNext />
