@@ -17,7 +17,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+// import Autoplay from "embla-carousel-autoplay";
 
 import utm from "@/public/images/unis/utm.png";
 import uitm from "@/public/images/unis/uitm.png";
@@ -28,15 +28,15 @@ import utem from "@/public/images/unis/utem.png";
 import uthm from "@/public/images/unis/uthm.png";
 import ump from "@/public/images/unis/ump.png";
 
-import r1 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0001.jpg";
-import r2 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0002.jpg";
-import r3 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0003.jpg";
-import r4 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0004.jpg";
-import r5 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0005.jpg";
-import r6 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0006.jpg";
-import r7 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0007.jpg";
-import r8 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0008.jpg";
-import r9 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0009.jpg";
+import r1 from "@/public/images/rules/1.jpg";
+import r2 from "@/public/images/rules/2.jpg";
+import r3 from "@/public/images/rules/3.jpg";
+import r4 from "@/public/images/rules/4.jpg";
+import r5 from "@/public/images/rules/5.jpg";
+import r6 from "@/public/images/rules/6.jpg";
+import r7 from "@/public/images/rules/7.jpg";
+import r8 from "@/public/images/rules/8.jpg";
+import r9 from "@/public/images/rules/9.jpg";
 
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
@@ -109,11 +109,13 @@ export default function Info() {
                                 align: "start",
                                 loop: true,
                             }}
+                            /*
                             plugins={[
                                 Autoplay({
                                     delay: 6000,
                                 }),
                             ]}
+                            */
                         >
                             <CarouselContent
                                 className={
@@ -147,7 +149,7 @@ export default function Info() {
                                 target="_blank"
                                 className="block"
                             >
-                                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2">
+                                <Button className="w-fit mx-auto bg-blue-600 hover:bg-blue-700 text-white p-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2">
                                     <Download />
                                     View Full Rules (PDF)
                                 </Button>

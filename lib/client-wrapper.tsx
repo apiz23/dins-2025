@@ -3,6 +3,7 @@
 import { useIsMobile } from "@/hooks/use-mobile";
 import SmoothCursor from "@/components/ui/smooth-cursor";
 import SplashScreenWrapper from "@/components/screen/splash";
+import { CommandMenu } from "@/components/cmd";
 
 export default function ClientWrapper({
     children,
@@ -22,6 +23,7 @@ export default function ClientWrapper({
         <>
             <SplashScreenWrapper>
                 <SmoothCursor />
+                <CommandMenu />
                 {children}
             </SplashScreenWrapper>
         </>

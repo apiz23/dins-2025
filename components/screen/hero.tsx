@@ -103,10 +103,6 @@ export default function Hero() {
                         meets{" "}
                         <span className="font-semibold text-emerald-300">
                             digital transformation
-                        </span>{" "}
-                        in a{" "}
-                        <span className="font-semibold text-purple-300">
-                            3-day immersive experience
                         </span>
                     </motion.p>
                 </motion.div>
