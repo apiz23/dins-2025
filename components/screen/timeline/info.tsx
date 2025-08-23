@@ -122,41 +122,9 @@ export default function Info() {
                                         : ""
                                 }
                             >
-                                {rulesImages.map((img, idx) => {
-                                    const [loading, setLoading] =
-                                        useState(true);
-
-                                    return (
-                                        <CarouselItem
-                                            key={idx}
-                                            className={
-                                                isMobile
-                                                    ? "basis-full"
-                                                    : "md:basis-full"
-                                            }
-                                        >
-                                            <div className="flex justify-center p-2">
-                                                {loading && (
-                                                    <Skeleton className="h-[500px] w-full rounded-xl" />
-                                                )}
-                                                <Image
-                                                    src={img}
-                                                    alt={`Rule page ${idx + 1}`}
-                                                    className={`rounded-xl shadow-lg object-contain transition-opacity duration-500 ${
-                                                        loading
-                                                            ? "opacity-0"
-                                                            : "opacity-100"
-                                                    }`}
-                                                    width={6000}
-                                                    height={3375}
-                                                    onLoadingComplete={() =>
-                                                        setLoading(false)
-                                                    }
-                                                />
-                                            </div>
-                                        </CarouselItem>
-                                    );
-                                })}
+                                {rulesImages.map((img, idx) => (
+                                    <RuleImage key={idx} img={img} idx={idx} />
+                                ))}
                             </CarouselContent>
                             <CarouselPrevious />
                             <CarouselNext />
@@ -341,5 +309,35 @@ export const Universiti = () => {
                 </ScrollVelocityRow>
             </ScrollVelocityContainer>
         </motion.div>
+    );
+};
+
+export const RuleImage = ({
+    img,
+    idx,
+}: {
+    img: StaticImageData;
+    idx: number;
+}) => {
+    const [loading, setLoading] = useState(true);
+
+    return (
+        <CarouselItem className="basis-full">
+            <div className="flex justify-center p-2">
+                {loading && (
+                    <Skeleton className="h-[500px] w-full rounded-xl" />
+                )}
+                <Image
+                    src={img}
+                    alt={`Rule page ${idx + 1}`}
+                    className={`rounded-xl shadow-lg object-contain transition-opacity duration-500 ${
+                        loading ? "opacity-0" : "opacity-100"
+                    }`}
+                    width={6000}
+                    height={3375}
+                    onLoadingComplete={() => setLoading(false)}
+                />
+            </div>
+        </CarouselItem>
     );
 };
