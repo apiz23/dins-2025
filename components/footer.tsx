@@ -139,7 +139,7 @@ export default function Footer() {
                     </div>
 
                     {/* Social Media */}
-                    <div className="flex justify-left md:justify-center gap-6">
+                    <div className="flex flex-wrap md:flex-nowrap justify-center md:justify-center gap-4 md:gap-6">
                         <Link
                             href="https://www.instagram.com/dins.uthm"
                             target="_blank"

@@ -46,7 +46,7 @@ export default function CTA() {
 
                         <Popover>
                             <PopoverTrigger
-                                className="flex items-center justify-center gap-2 w-fit sm:w-auto px-6 py-3 sm:px-8 sm:py-4 border border-gray-700 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-all cursor-pointer shadow-lg hover:shadow-gray-900/50 sm:rounded-xl hover:shadow-lg"
+                                className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 border border-gray-700 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-all cursor-pointer shadow-lg hover:shadow-gray-900/50 sm:rounded-xl hover:shadow-lg"
                                 asChild
                             >
                                 <button>

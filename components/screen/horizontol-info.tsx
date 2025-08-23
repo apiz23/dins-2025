@@ -550,14 +550,14 @@ export function VerticalInfo() {
                             Technology Partners
                         </h3>
                         <ScrollVelocityContainer className="overflow-hidden">
-                            <ScrollVelocityRow baseVelocity={4} direction={1}>
+                            <ScrollVelocityRow baseVelocity={8} direction={1}>
                                 <div className="flex items-center gap-4 px-2">
                                     {partners.map((partner, index) => (
                                         <motion.div
                                             key={index}
                                             className="px-6 py-4 bg-gradient-to-br from-gray-200 to-gray-600 rounded-xl border border-white/10 flex items-center justify-center"
                                         >
-                                            <div className="h-32 w-48 relative">
+                                            <div className="h-20 w-28 relative">
                                                 <Image
                                                     src={partner.logo}
                                                     alt={partner.name}

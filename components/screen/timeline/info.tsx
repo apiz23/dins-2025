@@ -3,13 +3,22 @@
 import { BlurFade } from "@/components/magicui/blur-fade";
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, CheckCircle, Users } from "lucide-react";
+import { Calendar, CheckCircle, Download, File, Users } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
     ScrollVelocityContainer,
     ScrollVelocityRow,
 } from "@/components/magicui/scroll-based-velocity";
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+
 import utm from "@/public/images/unis/utm.png";
 import uitm from "@/public/images/unis/uitm.png";
 import usm from "@/public/images/unis/usm.png";
@@ -18,6 +27,20 @@ import ukm from "@/public/images/unis/ukm.png";
 import utem from "@/public/images/unis/utem.png";
 import uthm from "@/public/images/unis/uthm.png";
 import ump from "@/public/images/unis/ump.png";
+
+import r1 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0001.jpg";
+import r2 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0002.jpg";
+import r3 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0003.jpg";
+import r4 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0004.jpg";
+import r5 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0005.jpg";
+import r6 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0006.jpg";
+import r7 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0007.jpg";
+import r8 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0008.jpg";
+import r9 from "@/public/images/rules/Copy of DINS - Rules and regulations_page-0009.jpg";
+
+import { useIsMobile } from "@/hooks/use-mobile";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const universities = [
     { name: "UTHM", img: uthm },
@@ -29,6 +52,8 @@ const universities = [
     { name: "UITM", img: uitm },
     { name: "UMP", img: ump },
 ];
+
+const rulesImages = [r1, r2, r3, r4, r5, r6, r7, r8, r9];
 
 type Props = {
     name: string;
@@ -50,6 +75,8 @@ const UniLogoCard = ({ name, img }: Props) => {
 };
 
 export default function Info() {
+    const isMobile = useIsMobile();
+
     return (
         <>
             <div className="min-h-fit flex items-center justify-center px-4 sm:px-6 py-16 text-center bg-gradient-to-bl from-gray-900 to-black">
@@ -74,6 +101,75 @@ export default function Info() {
                                 innovation challenge
                             </p>
                         </motion.div>
+
+                        <Carousel
+                            orientation={isMobile ? "vertical" : "horizontal"}
+                            className="w-full max-w-2xl md:max-w-5xl mx-auto md:my-10 my-20"
+                            opts={{
+                                align: "start",
+                                loop: true,
+                            }}
+                            plugins={[
+                                Autoplay({
+                                    delay: 6000,
+                                }),
+                            ]}
+                        >
+                            <CarouselContent
+                                className={
+                                    isMobile
+                                        ? "min-h-[260px] max-h-[350px]"
+                                        : ""
+                                }
+                            >
+                                {rulesImages.map((img, idx) => (
+                                    <CarouselItem
+                                        key={idx}
+                                        className={
+                                            isMobile
+                                                ? "basis-full"
+                                                : "md:basis-full"
+                                        }
+                                    >
+                                        <div className="flex justify-center p-2">
+                                            <Image
+                                                src={img}
+                                                alt={`Rule page ${idx + 1}`}
+                                                className="rounded-xl shadow-lg object-contain"
+                                                width={6000}
+                                                height={3375}
+                                            />
+                                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            <CarouselPrevious />
+                            <CarouselNext />
+                        </Carousel>
+
+                        <div className="max-w-2xl mx-auto text-center mb-20">
+                            <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+                                <File />
+                            </div>
+                            <h3 className="text-xl font-semibold text-slate-100 mb-2">
+                                Complete Rulebook
+                            </h3>
+                            <p className="text-slate-600 mb-5">
+                                Download the full rules document for detailed
+                                information about competition guidelines,
+                                judging criteria, and participant requirements.
+                            </p>
+                            <Link
+                                href="https://drive.google.com/file/d/1wj1APt3gGEfpmITkb--l0-HAhewttlAw/view"
+                                target="_blank"
+                                className="block"
+                            >
+                                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2">
+                                    <Download />
+                                    View Full Rules (PDF)
+                                </Button>
+                            </Link>
+                        </div>
 
                         {/* Two Column Content Below Title */}
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
