@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { AnimatedGradientText } from "../magicui/animated-gradient-text";
+import { BlurFade } from "../magicui/blur-fade";
 
 export default function Hero() {
     const [timeLeft, setTimeLeft] = useState({
@@ -32,7 +33,7 @@ export default function Hero() {
         };
 
         const timer = setInterval(calculateTimeLeft, 1000);
-        calculateTimeLeft(); // Initial call
+        calculateTimeLeft();
 
         return () => clearInterval(timer);
     }, []);
@@ -42,6 +43,7 @@ export default function Hero() {
             className="relative h-screen w-full bg-gradient-to-t from-black via-black to-gray-900 "
             id="hero"
         >
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
             {/* Background Blobs */}
             <div className="absolute inset-0 overflow-hidden">
                 {/* Blue Blobs */}
@@ -58,8 +60,13 @@ export default function Hero() {
                 <div className="absolute bottom-1/5 right-1/5 w-48 h-48 rounded-full bg-indigo-500/15 blur-3xl animate-pulse delay-600"></div>
             </div>
 
-            <div className="max-w-6xl mx-auto relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-0">
+            <div className="max-w-6xl mx-auto relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 sm:pt-0">
                 {/* Main Heading */}
+                <div className="mb-2">
+                    <span className="text-sm sm:text-base font-medium text-blue-300/80 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
+                        November 3, 2025
+                    </span>
+                </div>
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -75,7 +82,7 @@ export default function Hero() {
                             speed={1.2}
                             colorFrom="#3b82f6"
                             colorTo="#10b981"
-                            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-3 sm:mb-4 leading-tight"
+                            className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-3 sm:mb-4 leading-tight"
                         >
                             DIGITAL INNOVATHON
                         </AnimatedGradientText>
@@ -85,7 +92,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
-                        className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6"
+                        className="text-4xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6"
                     >
                         SYMPOSIUM 2025
                     </motion.h2>
@@ -141,36 +148,6 @@ export default function Hero() {
                     </Link>
                 </motion.div>
 
-                {/* Stats */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6, duration: 0.8 }}
-                    className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full max-w-sm sm:max-w-3xl lg:max-w-5xl mb-10 sm:mb-12"
-                >
-                    {[
-                        { number: "3", label: "November 2025" },
-                        { number: "50+", label: "Innovators" },
-                    ].map((item, index) => (
-                        <motion.div
-                            key={index}
-                            whileHover={{ y: -3 }}
-                            className="w-3/4 mx-auto p-4 sm:p-5 lg:p-6 bg-white/5 backdrop-blur-sm rounded-xl 
-                       border border-white/10 hover:border-white/20 transition-all"
-                        >
-                            <div
-                                className="text-lg sm:text-2xl lg:text-3xl font-bold mb-1 
-                            bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent"
-                            >
-                                {item.number}
-                            </div>
-                            <div className="text-xs sm:text-sm lg:text-base text-gray-300">
-                                {item.label}
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
-
                 {/* Countdown */}
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -203,6 +180,18 @@ export default function Hero() {
                         ))}
                     </div>
                 </motion.div>
+                <BlurFade delay={0.8} inView>
+                    <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2">
+                        <div className="flex flex-col items-center">
+                            <span className="text-xs text-gray-500 mb-2">
+                                Scroll to explore
+                            </span>
+                            <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
+                                <div className="w-1 h-3 bg-gray-500 rounded-full mt-2 animate-bounce"></div>
+                            </div>
+                        </div>
+                    </div>
+                </BlurFade>
             </div>
         </section>
     );
