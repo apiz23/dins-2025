@@ -7,14 +7,23 @@ import { motion } from "framer-motion";
 import uthm from "@/public/images/unis/uthm.png";
 import Image from "next/image";
 import mdec from "@/public/images/mdec_logo.png";
-import dscUtem from "@/public/images/dsc-utem2.png";
-import csUsm from "@/public/images/cs-usm.png";
+import dscUtem from "@/public/images/community_partner/dsc-utem2.png";
+import csUsm from "@/public/images/community_partner/cs-usm.png";
+import umDac from "@/public/images/community_partner/umdac-um.png";
+import dscSegi from "@/public/images/community_partner/dsc-segi.png";
 import zeroday from "@/public/images/0day.png";
 import runcloud from "@/public/images/runcloud.svg";
 import Speakers from "./speaker";
 import { BlurFade } from "../magicui/blur-fade";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const co_organizer = [
     {
@@ -51,6 +60,16 @@ const communityPartner = [
     {
         name: "Computer Science Society USM",
         logo: csUsm,
+        link: "https://www.instagram.com/cs.usm/",
+    },
+    {
+        name: "University Malaya Data Analytics Club",
+        logo: umDac,
+        link: "https://www.instagram.com/cs.usm/",
+    },
+    {
+        name: "Developer Student Clubs SEGI University",
+        logo: dscSegi,
         link: "https://www.instagram.com/cs.usm/",
     },
 ];
@@ -375,6 +394,7 @@ export function HorizontolInfo() {
                     </div>
                 </div>
             </section>
+
             {/** Community Partner */}
             <section className="panel w-screen min-h-screen flex items-center justify-center py-16 bg-black relative overflow-hidden">
                 {/* Enhanced decorative elements */}
@@ -437,55 +457,55 @@ export function HorizontolInfo() {
                             </span>
                         </h3>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
-                            {communityPartner
-                                .slice(0, 2)
-                                .map((partner, index) => (
-                                    <Link
-                                        href={partner.link}
-                                        target="_blank"
+                        <Carousel
+                            className="w-full max-w-4xl mx-auto"
+                            opts={{
+                                align: "start",
+                                loop: true,
+                            }}
+                        >
+                            <CarouselContent className="-ml-2">
+                                {communityPartner.map((partner, index) => (
+                                    <CarouselItem
                                         key={index}
+                                        className="pl-2 basis-1/2"
                                     >
-                                        <BlurFade
-                                            key={index}
-                                            delay={0.4 + index * 0.2}
-                                            inView
-                                        >
-                                            <div className="flex flex-col items-center group">
-                                                <div
-                                                    className="relative bg-gray-900 w-64 h-64 md:w-72 md:h-72 rounded-full flex items-center justify-center p-8 transition-all duration-500 ease-in-out 
-                    group-hover:shadow-[0_0_30px_rgba(52,211,153,0.2)]
-                    before:absolute before:inset-0 before:rounded-full before:p-[2px] before:bg-gradient-to-br before:from-transparent before:via-emerald-500/30 before:to-transparent"
-                                                >
-                                                    <div className="absolute inset-[2px] bg-gradient-to-br from-gray-900 to-gray-950 rounded-full flex items-center justify-center p-4">
-                                                        <div className="w-full h-full flex items-center justify-center bg-white/5 rounded-full backdrop-blur-sm">
-                                                            <Image
-                                                                src={
-                                                                    partner.logo
-                                                                }
-                                                                alt={
-                                                                    partner.name
-                                                                }
-                                                                width={280}
-                                                                height={280}
-                                                                className="object-contain rounded-full w-full h-full p-4 transition-transform duration-500 ease-in-out group-hover:scale-105 bg-white/80"
-                                                                priority
-                                                            />
-                                                        </div>
+                                        <div className="flex flex-col items-center group">
+                                            <div
+                                                className="relative bg-gray-900 w-64 h-64 rounded-full flex items-center justify-center p-8 transition-all duration-500 ease-in-out 
+                                            group-hover:shadow-[0_0_30px_rgba(52,211,153,0.2)]
+                                            before:absolute before:inset-0 before:rounded-full before:p-[2px] before:bg-gradient-to-br before:from-transparent before:via-emerald-500/30 before:to-transparent"
+                                            >
+                                                <div className="absolute inset-[2px] bg-gradient-to-br from-gray-900 to-gray-950 rounded-full flex items-center justify-center p-4">
+                                                    <div className="w-full h-full flex items-center justify-center bg-white/5 rounded-full backdrop-blur-sm">
+                                                        <Image
+                                                            src={partner.logo}
+                                                            alt={partner.name}
+                                                            width={240}
+                                                            height={240}
+                                                            className="object-contain rounded-full w-full h-full p-6 transition-transform duration-500 ease-in-out group-hover:scale-105 bg-white/80"
+                                                            priority={index < 2}
+                                                        />
                                                     </div>
-
-                                                    <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.1)_0%,transparent_70%)]"></div>
                                                 </div>
-
-                                                <h3 className="mt-6 text-white font-medium text-center text-xl md:text-2xl transition-colors duration-300 group-hover:text-emerald-400 relative inline-block">
+                                                <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_center,rgba(52,211,153,0.1)_0%,transparent_70%)]"></div>
+                                            </div>
+                                            <Link
+                                                href={partner.link}
+                                                target="_blank"
+                                            >
+                                                <h3 className="mt-6 text-white font-medium text-center text-xl transition-colors duration-300 group-hover:text-emerald-400 relative inline-block px-4">
                                                     {partner.name}
                                                     <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-emerald-400 transition-all duration-300 group-hover:w-full"></span>
                                                 </h3>
-                                            </div>
-                                        </BlurFade>
-                                    </Link>
+                                            </Link>
+                                        </div>
+                                    </CarouselItem>
                                 ))}
-                        </div>
+                            </CarouselContent>
+                            <CarouselPrevious className="left-2 md:left-4" />
+                            <CarouselNext className="right-2 md:right-4" />
+                        </Carousel>
                     </div>
                 </div>
             </section>
@@ -758,7 +778,7 @@ export function VerticalInfo() {
             </section>
 
             {/* Section 4: Community Partner */}
-            <section className="w-full py-20 px-4 bg-black relative overflow-hidden">
+            <section className="w-full py-16 px-4 bg-black relative overflow-hidden">
                 {/* Decorative elements */}
                 <div className="absolute inset-0 pointer-events-none">
                     <div className="absolute top-20 right-10 w-40 h-40 bg-blue-500 rounded-full blur-[100px] opacity-20 animate-pulse-slow"></div>
@@ -766,10 +786,10 @@ export function VerticalInfo() {
                     <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-cyan-400 rounded-full blur-[80px] opacity-15"></div>
                 </div>
 
-                <div className="max-w-7xl mx-auto relative z-10 px-4">
-                    <div className="text-center mb-16">
+                <div className="max-w-md mx-auto relative z-10 px-4">
+                    <div className="text-center mb-12">
                         <motion.span
-                            className="inline-block text-blue-400 font-medium mb-4 tracking-widest text-sm uppercase"
+                            className="inline-block text-blue-400 font-medium mb-3 tracking-widest text-xs uppercase"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
@@ -778,7 +798,7 @@ export function VerticalInfo() {
                             COMMUNITY PARTNERSHIPS
                         </motion.span>
                         <motion.h2
-                            className="text-4xl md:text-5xl font-bold text-white mb-6"
+                            className="text-3xl font-bold text-white mb-5"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.1 }}
@@ -791,13 +811,13 @@ export function VerticalInfo() {
                             Partners
                         </motion.h2>
                         <motion.div
-                            className="max-w-2xl mx-auto"
+                            className="mx-auto"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                             viewport={{ once: true }}
                         >
-                            <p className="text-gray-300 text-lg leading-relaxed">
+                            <p className="text-gray-300 text-base leading-relaxed px-2">
                                 We deeply appreciate the support of our
                                 community partners who collaborate with us to
                                 build meaningful connections, empower
@@ -808,51 +828,87 @@ export function VerticalInfo() {
                     </div>
 
                     <div className="relative">
-                        <h3 className="text-xl font-semibold text-gray-300 mb-10 text-center tracking-wide flex items-center justify-center before:content-[''] before:flex-1 before:h-px before:bg-gradient-to-r before:from-transparent before:via-gray-700 before:to-transparent after:content-[''] after:flex-1 after:h-px after:bg-gradient-to-l after:from-transparent after:via-gray-700 after:to-transparent">
-                            <span className="mx-6">
+                        <h3 className="text-lg font-semibold text-gray-300 mb-8 text-center tracking-wide flex items-center justify-center before:content-[''] before:flex-1 before:h-px before:bg-gradient-to-r before:from-transparent before:via-gray-700 before:to-transparent after:content-[''] after:flex-1 after:h-px after:bg-gradient-to-l after:from-transparent after:via-gray-700 after:to-transparent">
+                            <span className="mx-4">
                                 SUPPORTED BY OUR COMMUNITY
                             </span>
                         </h3>
-                        <div className="flex flex-col items-center gap-12 px-2">
-                            {communityPartner
-                                .slice(0, 2)
-                                .map((partner, index) => (
-                                    <div
-                                        key={index}
-                                        className="flex flex-col items-center"
-                                    >
-                                        {/* Circular container for the logo - larger size */}
-                                        <motion.div className="p-2 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
-                                            <div className="rounded-full overflow-hidden bg-gradient-to-br from-gray-200 to-gray-600 p-5 border-4 border-gray-900">
-                                                <div className="h-56 w-56 relative rounded-full overflow-hidden">
-                                                    <Image
-                                                        src={partner.logo}
-                                                        alt={partner.name}
-                                                        fill
-                                                        className="object-contain p-5"
-                                                        sizes="(max-width: 768px) 224px, 224px"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </motion.div>
 
-                                        {/* Title */}
-                                        <h3 className="mt-6 text-white font-medium text-center text-xl">
-                                            {partner.name}
-                                        </h3>
-
-                                        {/* Mobile-optimized button */}
-                                        <Link
-                                            href={partner.link}
-                                            target="_blank"
-                                            className="flex items-center justify-center gap-2 mt-4 px-8 py-3 bg-blue-500 text-white font-medium rounded-lg active:bg-blue-600 transition-colors min-h-[48px] w-full max-w-[280px]"
+                        <Carousel
+                            className="w-full max-w-md mx-auto"
+                            opts={{
+                                align: "start",
+                                loop: true,
+                            }}
+                        >
+                            <CarouselContent>
+                                {communityPartner
+                                    .slice(0, 4)
+                                    .map((partner, index) => (
+                                        <CarouselItem
+                                            key={index}
+                                            className="basis-full"
                                         >
-                                            <span>Visit Website</span>
-                                            <ExternalLink size={18} />
-                                        </Link>
-                                    </div>
-                                ))}
-                        </div>
+                                            <div className="flex flex-col items-center w-full">
+                                                {/* Circular container for the logo */}
+                                                <motion.div
+                                                    className="p-1.5 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center"
+                                                    initial={{
+                                                        opacity: 0,
+                                                        scale: 0.9,
+                                                    }}
+                                                    whileInView={{
+                                                        opacity: 1,
+                                                        scale: 1,
+                                                    }}
+                                                    transition={{
+                                                        duration: 0.5,
+                                                        delay: index * 0.1,
+                                                    }}
+                                                    viewport={{ once: true }}
+                                                >
+                                                    <div className="rounded-full overflow-hidden bg-gradient-to-br from-gray-50 to-gray-300 p-4 border-4 border-gray-900">
+                                                        <div className="h-40 w-40 relative rounded-full overflow-hidden">
+                                                            <Image
+                                                                src={
+                                                                    partner.logo
+                                                                }
+                                                                alt={
+                                                                    partner.name
+                                                                }
+                                                                fill
+                                                                className="object-contain p-4"
+                                                                sizes="160px"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </motion.div>
+
+                                                {/* Title */}
+                                                <h3 className="mt-5 text-white font-medium text-center text-lg px-2">
+                                                    {partner.name}
+                                                </h3>
+
+                                                {/* Mobile-optimized button */}
+                                                <Link
+                                                    href={partner.link}
+                                                    target="_blank"
+                                                    className="flex items-center justify-center gap-2 mt-3 px-6 py-2.5 bg-blue-500 text-white font-medium rounded-lg active:bg-blue-600 transition-colors min-h-[44px] w-full max-w-[240px]"
+                                                >
+                                                    <span className="text-sm">
+                                                        Visit Website
+                                                    </span>
+                                                    <ExternalLink size={16} />
+                                                </Link>
+                                            </div>
+                                        </CarouselItem>
+                                    ))}
+                            </CarouselContent>
+
+                            {/* Navigation controls */}
+                            <CarouselPrevious className="left-2" />
+                            <CarouselNext className="right-2" />
+                        </Carousel>
                     </div>
                 </div>
             </section>
