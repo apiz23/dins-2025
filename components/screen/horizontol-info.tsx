@@ -11,6 +11,7 @@ import dscUtem from "@/public/images/community_partner/dsc-utem2.png";
 import csUsm from "@/public/images/community_partner/cs-usm.png";
 import umDac from "@/public/images/community_partner/umdac-um.png";
 import dscSegi from "@/public/images/community_partner/dsc-segi.png";
+import pekom from "@/public/images/community_partner/pekom.png";
 import zeroday from "@/public/images/0day.png";
 import runcloud from "@/public/images/runcloud.svg";
 import Speakers from "./speaker";
@@ -71,6 +72,11 @@ const communityPartner = [
         name: "Developer Student Clubs SEGI University",
         logo: dscSegi,
         link: "https://www.instagram.com/cs.usm/",
+    },
+    {
+        name: "Persatuan Komputerr UM",
+        logo: pekom,
+        link: "https://pekom.vercel.app/",
     },
 ];
 
@@ -483,7 +489,7 @@ export function HorizontolInfo() {
                                                             alt={partner.name}
                                                             width={240}
                                                             height={240}
-                                                            className="object-contain rounded-full w-full h-full p-6 transition-transform duration-500 ease-in-out group-hover:scale-105 bg-white/80"
+                                                            className="object-contain rounded-full w-full h-full p-6 transition-transform duration-500 ease-in-out group-hover:scale-105 bg-black"
                                                             priority={index < 2}
                                                         />
                                                     </div>
