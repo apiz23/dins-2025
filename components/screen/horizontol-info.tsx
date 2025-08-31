@@ -12,6 +12,7 @@ import csUsm from "@/public/images/community_partner/cs-usm.png";
 import umDac from "@/public/images/community_partner/umdac-um.png";
 import dscSegi from "@/public/images/community_partner/dsc-segi.png";
 import pekom from "@/public/images/community_partner/pekom.png";
+import comcil from "@/public/images/community_partner/ComCil-upm.jpg";
 import zeroday from "@/public/images/0day.png";
 import runcloud from "@/public/images/runcloud.svg";
 import Speakers from "./speaker";
@@ -77,6 +78,11 @@ const communityPartner = [
         name: "Persatuan Komputerr UM",
         logo: pekom,
         link: "https://pekom.vercel.app/",
+    },
+    {
+        name: "Computer Science Representative Council UPM",
+        logo: comcil,
+        link: "https://www.instagram.com/comcil_upm/?hl=en",
     },
 ];
 
@@ -849,7 +855,7 @@ export function VerticalInfo() {
                         >
                             <CarouselContent>
                                 {communityPartner
-                                    .slice(0, 4)
+                                    .slice(0, 6)
                                     .map((partner, index) => (
                                         <CarouselItem
                                             key={index}
@@ -873,7 +879,7 @@ export function VerticalInfo() {
                                                     }}
                                                     viewport={{ once: true }}
                                                 >
-                                                    <div className="rounded-full overflow-hidden bg-gradient-to-br from-gray-50 to-gray-300 p-4 border-4 border-gray-900">
+                                                    <div className="rounded-full overflow-hidden bg-gradient-to-br from-gray-200 to-gray-400 p-4 border-4 border-gray-900">
                                                         <div className="h-40 w-40 relative rounded-full overflow-hidden">
                                                             <Image
                                                                 src={
