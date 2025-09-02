@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import ClientWrapper from "@/lib/client-wrapper";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
+import { Analytics } from "@vercel/analytics/next";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${poppins.className}`}>
+                <Analytics />
                 <Navbar />
                 <ClientWrapper>
                     <ScrollProgress />
