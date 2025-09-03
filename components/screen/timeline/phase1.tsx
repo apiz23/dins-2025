@@ -124,11 +124,12 @@ export default function Phase1() {
                                 {/* Header with better spacing */}
                                 <div className="text-center mb-20">
                                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-                                        Choose Your Plan
+                                        Student Registration Options
                                     </h2>
                                     <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                                        Flexible options tailored for students.
-                                        All plans include full event access and
+                                        Special rates for all university
+                                        students. Both options include full
+                                        event access, certificates, and
                                         exclusive benefits.
                                     </p>
                                 </div>
@@ -147,25 +148,23 @@ export default function Phase1() {
                                                         </h3>
                                                         <p className="text-blue-300 text-sm">
                                                             Exclusive rate for
-                                                            UTHM students
+                                                            verified UTHM
+                                                            students
                                                         </p>
                                                     </div>
                                                     <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-500/20 text-blue-300">
                                                         Best Value
                                                     </span>
                                                 </div>
-                                                <div className="my-6">
+                                                <div className="mt-6">
                                                     <div className="flex items-end">
                                                         <span className="text-4xl font-bold text-white">
-                                                            RM70
-                                                        </span>
-                                                        <span className="text-lg text-gray-400 ml-2 line-through">
                                                             RM80
                                                         </span>
                                                     </div>
                                                     <p className="text-blue-300 text-sm mt-1">
-                                                        Save RM10 with student
-                                                        discount
+                                                        Special discounted rate
+                                                        for UTHM students
                                                     </p>
                                                 </div>
                                             </div>
@@ -204,29 +203,28 @@ export default function Phase1() {
                                                 <div className="flex justify-between items-start">
                                                     <div>
                                                         <h3 className="text-2xl font-bold text-white mb-2">
-                                                            Non UTHM Student
+                                                            Non-UTHM Student
                                                         </h3>
                                                         <p className="text-gray-400 text-sm">
                                                             Open to all
                                                             university students
+                                                            worldwide
                                                         </p>
                                                     </div>
                                                     <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-500/20 text-purple-300">
                                                         Popular
                                                     </span>
                                                 </div>
-                                                <div className="my-6">
+                                                <div className="mt-6">
                                                     <div className="flex items-end">
                                                         <span className="text-4xl font-bold text-white">
-                                                            RM100
-                                                        </span>
-                                                        <span className="text-lg text-gray-400 ml-2 line-through">
                                                             RM110
                                                         </span>
                                                     </div>
                                                     <p className="text-purple-300 text-sm mt-1">
-                                                        Save RM10 with early
-                                                        registration
+                                                        Standard rate for all
+                                                        non-UTHM university
+                                                        students
                                                     </p>
                                                 </div>
                                             </div>

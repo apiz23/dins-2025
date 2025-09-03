@@ -55,7 +55,7 @@ export default function Phase3() {
                             {/* Interactive Map - Improved */}
                             <div className="relative w-full aspect-video rounded-xl overflow-hidden border-2 border-gray-700 shadow-lg hover:border-purple-500 transition-all duration-300">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.160378290877!2d103.0852!3d1.8554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da72f8a7a8b2c5%3A0x9f7cf7e6b9a05a!2sUniversiti%20Tun%20Hussein%20Onn%20Malaysia!5e0!3m2!1sen!2smy!4v1691505630664!5m2!1sen!2smy"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.160378290877!2d103.0852!3d1.8554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da72f8a7a8b2c5%3A0x9f7cf7e6b9a05a!2sUniversiti%20Tun%20Hussein%20Onn%20Malaysia!5e1!3m2!1sen!2smy!4v1691505630664!5m2!1sen!2smy"
                                     allowFullScreen
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
