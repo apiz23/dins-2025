@@ -2,10 +2,14 @@ import React from "react";
 import { ChevronDown, HelpCircle, Phone, User } from "lucide-react";
 import Link from "next/link";
 import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from "@/components/ui/popover";
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog";
+import { Button } from "../ui/button";
 
 export default function CTA() {
     return (
@@ -44,29 +48,26 @@ export default function CTA() {
                             Register Now →
                         </Link>
 
-                        <Popover>
-                            <PopoverTrigger
-                                className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 border border-gray-700 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-all cursor-pointer shadow-lg hover:shadow-gray-900/50 sm:rounded-xl hover:shadow-lg"
-                                asChild
-                            >
-                                <button>
-                                    <HelpCircle className="h-5 w-5 text-blue-400" />
-                                    <span>Have questions?</span>
-                                </button>
-                            </PopoverTrigger>
-
-                            <PopoverContent
-                                className="bg-gray-900 border border-gray-700 rounded-lg shadow-xl p-4 mx-2 sm:mx-0"
-                                align="center"
-                                sideOffset={8}
-                            >
-                                <div className="space-y-4">
-                                    <h3 className="text-sm font-semibold text-gray-300 mb-2">
+                        <Dialog>
+                            <DialogTrigger>
+                                <div className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-500 to-emerald-500 text-white font-semibold rounded-lg sm:rounded-xl hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:scale-[1.02] sm:hover:scale-105 text-center">
+                                    Have Question?
+                                </div>
+                            </DialogTrigger>
+                            <DialogContent className="bg-black">
+                                <DialogHeader>
+                                    <DialogTitle className="text-white">
                                         Contact our team
-                                    </h3>
-
+                                    </DialogTitle>
+                                    <DialogDescription>
+                                        Have questions or need assistance?
+                                        Contact our team directly using the
+                                        details below.
+                                    </DialogDescription>
+                                </DialogHeader>
+                                <div className="space-y-4">
                                     {/* Contact 1 */}
-                                    <div className="p-3 bg-gray-800/50 rounded-lg border-l-4 border-blue-500">
+                                    <div className="p-3 bg-gray-800/50 rounded-lg border-l-4 border-blue-500 flex justify-between items-center">
                                         <div className="flex items-start gap-3">
                                             <div className="p-2 bg-blue-500/10 rounded-full">
                                                 <User className="h-4 w-4 text-blue-400" />
@@ -78,19 +79,22 @@ export default function CTA() {
                                                         Program Director
                                                     </span>
                                                 </p>
-                                                <Link
-                                                    href="tel:01121768812"
-                                                    className="flex items-center gap-2 mt-2 text-sm text-gray-300 hover:text-emerald-400 transition-colors"
-                                                >
-                                                    <Phone className="h-4 w-4" />
+                                                <p className="text-sm text-gray-400">
                                                     011-2176 8812
-                                                </Link>
+                                                </p>
                                             </div>
                                         </div>
+                                        <Link
+                                            href="https://wa.me/601121768812"
+                                            target="_blank"
+                                            className="px-3 py-1.5 bg-emerald-500/20 text-emerald-400 rounded-lg text-sm font-medium hover:bg-emerald-500 hover:text-white transition-colors"
+                                        >
+                                            Contact
+                                        </Link>
                                     </div>
 
                                     {/* Contact 2 */}
-                                    <div className="p-3 bg-gray-800/50 rounded-lg border-l-4 border-purple-500">
+                                    <div className="p-3 bg-gray-800/50 rounded-lg border-l-4 border-purple-500 flex justify-between items-center">
                                         <div className="flex items-start gap-3">
                                             <div className="p-2 bg-purple-500/10 rounded-full">
                                                 <User className="h-4 w-4 text-purple-400" />
@@ -102,24 +106,27 @@ export default function CTA() {
                                                         Assistant Director
                                                     </span>
                                                 </p>
-                                                <Link
-                                                    href="tel:0163605017"
-                                                    className="flex items-center gap-2 mt-2 text-sm text-gray-300 hover:text-emerald-400 transition-colors"
-                                                >
-                                                    <Phone className="h-4 w-4" />
+                                                <p className="text-sm text-gray-400">
                                                     016-360 5017
-                                                </Link>
+                                                </p>
                                             </div>
                                         </div>
+                                        <Link
+                                            href="https://wa.me/60163605017"
+                                            target="_blank"
+                                            className="px-3 py-1.5 bg-emerald-500/20 text-emerald-400 rounded-lg text-sm font-medium hover:bg-emerald-500 hover:text-white transition-colors"
+                                        >
+                                            Contact
+                                        </Link>
                                     </div>
 
                                     <p className="text-xs text-gray-500 text-center mt-2">
-                                        We{"'"}re happy to help with any
+                                        We&apos;re happy to help with any
                                         questions
                                     </p>
                                 </div>
-                            </PopoverContent>
-                        </Popover>
+                            </DialogContent>
+                        </Dialog>
                     </div>
 
                     <p className="text-sm text-gray-400 mt-4">

@@ -14,10 +14,19 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 // @ts-expect-error no types available
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { ArrowRight, PanelBottomOpen } from "lucide-react";
+import { ArrowRight, PanelBottomOpen, User, Phone } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import dinsLogo from "@/public/icon/android-chrome-512x512.png";
 import Link from "next/link";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog";
+import { Button } from "./ui/button";
 
 export default function Navbar() {
     const isMobile = useIsMobile();
@@ -111,6 +120,88 @@ export default function Navbar() {
                                         </AnchorLink>
                                     </motion.div>
                                 ))}
+                                <Dialog>
+                                    <DialogTrigger className="relative text-sm font-medium group">
+                                        <Button className="bg-transparent text-gray-300 group-hover:text-white transition-colors duration-200">
+                                            Contact
+                                        </Button>
+                                        <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-emerald-400 group-hover:w-4/5 group-hover:left-[10%] transition-all duration-300" />
+                                    </DialogTrigger>
+                                    <DialogContent className="bg-black">
+                                        <DialogHeader>
+                                            <DialogTitle className="text-white">
+                                                Contact our team
+                                            </DialogTitle>
+                                            <DialogDescription>
+                                                Have questions or need
+                                                assistance? Contact our team
+                                                directly using the details
+                                                below.
+                                            </DialogDescription>
+                                        </DialogHeader>
+                                        <div className="space-y-4">
+                                            {/* Contact 1 */}
+                                            <div className="p-3 bg-gray-800/50 rounded-lg border-l-4 border-blue-500 flex justify-between items-center">
+                                                <div className="flex items-start gap-3">
+                                                    <div className="p-2 bg-blue-500/10 rounded-full">
+                                                        <User className="h-4 w-4 text-blue-400" />
+                                                    </div>
+                                                    <div>
+                                                        <p className="flex flex-wrap items-center gap-2 font-medium text-white">
+                                                            Ahmad Firas
+                                                            <span className="text-xs px-2 py-0.5 bg-gray-700 rounded-full text-gray-300">
+                                                                Program Director
+                                                            </span>
+                                                        </p>
+                                                        <p className="text-sm text-gray-400">
+                                                            011-2176 8812
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <Link
+                                                    href="https://wa.me/601121768812"
+                                                    target="_blank"
+                                                    className="px-3 py-1.5 bg-emerald-500/20 text-emerald-400 rounded-lg text-sm font-medium hover:bg-emerald-500 hover:text-white transition-colors"
+                                                >
+                                                    Contact
+                                                </Link>
+                                            </div>
+
+                                            {/* Contact 2 */}
+                                            <div className="p-3 bg-gray-800/50 rounded-lg border-l-4 border-purple-500 flex justify-between items-center">
+                                                <div className="flex items-start gap-3">
+                                                    <div className="p-2 bg-purple-500/10 rounded-full">
+                                                        <User className="h-4 w-4 text-purple-400" />
+                                                    </div>
+                                                    <div>
+                                                        <p className="flex flex-wrap items-center gap-2 font-medium text-white">
+                                                            Shaamalan
+                                                            <span className="text-xs px-2 py-0.5 bg-gray-700 rounded-full text-gray-300">
+                                                                Assistant
+                                                                Director
+                                                            </span>
+                                                        </p>
+                                                        <p className="text-sm text-gray-400">
+                                                            016-360 5017
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <Link
+                                                    href="https://wa.me/60163605017"
+                                                    target="_blank"
+                                                    className="px-3 py-1.5 bg-emerald-500/20 text-emerald-400 rounded-lg text-sm font-medium hover:bg-emerald-500 hover:text-white transition-colors"
+                                                >
+                                                    Contact
+                                                </Link>
+                                            </div>
+
+                                            <p className="text-xs text-gray-500 text-center mt-2">
+                                                We&apos;re happy to help with
+                                                any questions
+                                            </p>
+                                        </div>
+                                    </DialogContent>
+                                </Dialog>
                                 <motion.div
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
@@ -202,6 +293,108 @@ export default function Navbar() {
                                                     </AnchorLink>
                                                 </motion.div>
                                             ))}
+
+                                            {/* Contact - Same look but DialogTrigger */}
+                                            <motion.div
+                                                initial={{ opacity: 0, x: 20 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                transition={{
+                                                    delay: 0.1 + 3 * 0.1,
+                                                }} // after last link
+                                            >
+                                                <Dialog>
+                                                    <DialogTrigger asChild>
+                                                        <button className="w-full px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800/50 transition-colors duration-200 flex justify-between">
+                                                            Contact
+                                                            <ArrowRight />
+                                                        </button>
+                                                    </DialogTrigger>
+
+                                                    <DialogContent className="bg-black">
+                                                        <DialogHeader>
+                                                            <DialogTitle className="text-white">
+                                                                Contact our team
+                                                            </DialogTitle>
+                                                            <DialogDescription>
+                                                                Have questions
+                                                                or need
+                                                                assistance?
+                                                                Contact our team
+                                                                directly using
+                                                                the details
+                                                                below.
+                                                            </DialogDescription>
+                                                        </DialogHeader>
+
+                                                        <div className="space-y-4">
+                                                            {/* Contact 1 */}
+                                                            <div className="p-3 bg-gray-800/50 rounded-lg border-l-4 border-blue-500 flex justify-between items-center">
+                                                                <div className="flex items-start gap-3">
+                                                                    <div className="p-2 bg-blue-500/10 rounded-full">
+                                                                        <User className="h-4 w-4 text-blue-400" />
+                                                                    </div>
+                                                                    <div>
+                                                                        <p className="flex flex-wrap items-center gap-2 font-medium text-white">
+                                                                            Ahmad
+                                                                            Firas
+                                                                            <span className="text-xs px-2 py-0.5 bg-gray-700 rounded-full text-gray-300">
+                                                                                Program
+                                                                                Director
+                                                                            </span>
+                                                                        </p>
+                                                                        <p className="text-sm text-gray-400">
+                                                                            011-2176
+                                                                            8812
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <Link
+                                                                    href="https://wa.me/601121768812"
+                                                                    target="_blank"
+                                                                    className="px-3 py-1.5 bg-emerald-500/20 text-emerald-400 rounded-lg text-sm font-medium hover:bg-emerald-500 hover:text-white transition-colors"
+                                                                >
+                                                                    Contact
+                                                                </Link>
+                                                            </div>
+
+                                                            {/* Contact 2 */}
+                                                            <div className="p-3 bg-gray-800/50 rounded-lg border-l-4 border-purple-500 flex justify-between items-center">
+                                                                <div className="flex items-start gap-3">
+                                                                    <div className="p-2 bg-purple-500/10 rounded-full">
+                                                                        <User className="h-4 w-4 text-purple-400" />
+                                                                    </div>
+                                                                    <div>
+                                                                        <p className="flex flex-wrap items-center gap-2 font-medium text-white">
+                                                                            Shaamalan
+                                                                            <span className="text-xs px-2 py-0.5 bg-gray-700 rounded-full text-gray-300">
+                                                                                Assistant
+                                                                                Director
+                                                                            </span>
+                                                                        </p>
+                                                                        <p className="text-sm text-gray-400">
+                                                                            016-360
+                                                                            5017
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <Link
+                                                                    href="https://wa.me/60163605017"
+                                                                    target="_blank"
+                                                                    className="px-3 py-1.5 bg-emerald-500/20 text-emerald-400 rounded-lg text-sm font-medium hover:bg-emerald-500 hover:text-white transition-colors"
+                                                                >
+                                                                    Contact
+                                                                </Link>
+                                                            </div>
+
+                                                            <p className="text-xs text-gray-500 text-center mt-2">
+                                                                We&apos;re happy
+                                                                to help with any
+                                                                questions
+                                                            </p>
+                                                        </div>
+                                                    </DialogContent>
+                                                </Dialog>
+                                            </motion.div>
                                         </div>
 
                                         <DrawerFooter className="space-y-2">

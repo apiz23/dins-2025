@@ -111,7 +111,8 @@ export default function Footer() {
                                     </span>
                                 </p>
                                 <Link
-                                    href="tel:01121768812"
+                                    href="https://wa.me/601121768812"
+                                    target="_blank"
                                     className="flex items-center gap-2 mt-1 text-sm hover:text-emerald-400 transition-colors"
                                 >
                                     <Phone className="h-4 w-4" />
@@ -128,7 +129,8 @@ export default function Footer() {
                                     </span>
                                 </p>
                                 <Link
-                                    href="tel:0163605017"
+                                    href="https://wa.me/60163605017"
+                                    target="_blank"
                                     className="flex items-center gap-2 mt-1 text-sm hover:text-emerald-400 transition-colors"
                                 >
                                     <Phone className="h-4 w-4" />
