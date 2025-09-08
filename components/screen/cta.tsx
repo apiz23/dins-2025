@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronDown, HelpCircle, Phone, User } from "lucide-react";
+import { ChevronDown, User } from "lucide-react";
 import Link from "next/link";
 import {
     Dialog,
@@ -9,7 +9,6 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog";
-import { Button } from "../ui/button";
 
 export default function CTA() {
     return (

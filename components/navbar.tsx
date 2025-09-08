@@ -14,7 +14,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 // @ts-expect-error no types available
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { ArrowRight, PanelBottomOpen, User, Phone } from "lucide-react";
+import { ArrowRight, PanelBottomOpen, User } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import dinsLogo from "@/public/icon/android-chrome-512x512.png";
 import Link from "next/link";
