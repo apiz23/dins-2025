@@ -42,7 +42,7 @@ const co_organizer = [
 
 const partners = [
     {
-        name: "Zer0Day Technology",
+        name: "0day Academy",
         logo: zeroday,
         link: "https://my.linkedin.com/company/zer0day-technology",
     },
