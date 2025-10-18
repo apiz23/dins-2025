@@ -4,6 +4,7 @@ import Phase2 from "./phase2";
 import Phase3 from "./phase3";
 import { Separator } from "../../ui/separator";
 import Info from "./info";
+import Workshop from "./workshop";
 
 export function TimelineEvent() {
     return (
@@ -34,6 +35,8 @@ export function TimelineEvent() {
                 <Phase1 />
                 <Separator className="max-w-6xl mx-auto bg-white/20" />
                 <Phase2 />
+                <Separator className="max-w-6xl mx-auto bg-white/20" />
+                <Workshop />
                 <Separator className="max-w-6xl mx-auto bg-white/20" />
                 <Phase3 />
             </section>
