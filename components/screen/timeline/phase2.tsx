@@ -3,10 +3,8 @@ import { Button } from "@/components/ui/button";
 import {
     CalendarCheck,
     FileText,
-    Info,
     UploadCloud,
     Download,
-    Clock,
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -26,9 +24,6 @@ export default function Phase2() {
                                 <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-indigo-200 bg-clip-text text-transparent mb-2">
                                     Abstract & Draft Submission Deadline
                                 </h3>
-                                <p className="text-xl font-semibold text-indigo-200">
-                                    20 Oct 2025
-                                </p>
                             </div>
                         </div>
                     </div>
